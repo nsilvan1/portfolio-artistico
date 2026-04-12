@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nathan Silva — Ator dos palcos e das câmeras. Portfolio profissional com trabalhos em teatro, cinema e websérie.">
+  <meta name="keywords" content="ator, Nathan Silva, portfolio, cinema, teatro, websérie, Campos dos Goytacazes, 3 É Par">
+  <meta name="author" content="Nathan Silva">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nathan Silva — Ator | Palcos & Câmeras">
+  <meta property="og:description" content="Portfolio profissional de Nathan Silva. Ator dos palcos e das câmeras, com trabalhos em teatro, cinema e websérie desde 2017.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=1200">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <title>Nathan Silva — Ator | Palcos & Câmeras</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Noise overlay for texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <!-- Vertical decorative line -->
+  <div class="vertical-line" aria-hidden="true"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Nathan Silva</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#sobre" class="nav__link" data-scroll-to="sobre">Sobre</a></li>
+        <li><a href="#showreel" class="nav__link" data-scroll-to="showreel">Showreel</a></li>
+        <li><a href="#portfolio" class="nav__link" data-scroll-to="portfolio">Portfolio</a></li>
+        <li><a href="#habilidades" class="nav__link" data-scroll-to="habilidades">Habilidades</a></li>
+        <li><a href="#galeria" class="nav__link" data-scroll-to="galeria">Galeria</a></li>
+
+        <li><a href="#contato" class="nav__link" data-scroll-to="contato">Contato</a></li>
+      </ul>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="4" y1="7" x2="24" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="4" y1="21" x2="24" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__background">
+      <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=1920" alt="Palco iluminado com atmosfera cinematográfica" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="hero__vignette" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__kicker" data-animate="fade-up">Ator</p>
+      <h1 class="hero__name" data-animate="fade-up">
+        <span class="hero__name-line"><span class="hero__char">N</span><span class="hero__char">a</span><span class="hero__char">t</span><span class="hero__char">h</span><span class="hero__char">a</span><span class="hero__char">n</span></span>
+        <span class="hero__name-line hero__name-line--last"><span class="hero__char">S</span><span class="hero__char">i</span><span class="hero__char">l</span><span class="hero__char">v</span><span class="hero__char">a</span></span>
+      </h1>
+      <p class="hero__tagline" data-animate="fade-up" data-delay="200">Palcos <span class="hero__amp">&</span> Cameras</p>
+      <a href="#portfolio" class="hero__cta" data-scroll-to="portfolio" data-animate="fade-up" data-delay="400">Ver Meu Trabalho</a>
+    </div>
+
+    <div class="hero__scroll-indicator" data-scroll-to="sobre">
+      <span>Role para descobrir</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE ========== -->
+  <section class="section sobre" id="sobre" data-section="01">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">01</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Sobre Mim</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">A arte de dar vida a historias</p>
+        </div>
+      </div>
+
+      <div class="sobre__grid">
+        <div class="sobre__image-wrapper reveal reveal--left" data-animate="fade-left">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Nathan Silva — retrato profissional" class="sobre__image" loading="lazy">
+        </div>
+
+        <div class="sobre__content reveal reveal--right" data-animate="fade-right">
+          <div class="sobre__bio">
+            <p>Natural e residente de Campos dos Goytacazes, atuo nos palcos e diante das câmeras desde 2017. Minha trajetória passa pelo Teatro de Bolso Procópio Ferreira, pelo Santa Paciência Casa Criativa e por sets de filmagem que me ensinaram que contar histórias é um ofício sem fim.</p>
+            <p>Ao lado do diretor Fernando Rossi, participei de produções que vão do curta premiado <em>O homem do cachorro</em> ao elenco de <em>Ponciano — De Amores — Furtado</em>. Nos bastidores, assino sonoplastia e projeções cênicas em montagens como <em>O Beijo da Mulher Aranha</em> e <em>"fernandos" em busca de Pessoa</em>. No audiovisual, a websérie <em>3 É Par</em> e o curta <em>O menino da pipa avoada</em> completam essa jornada entre palco e tela.</p>
+            <p>Também empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>. Cada personagem é uma verdade que precisa ser encontrada — com o corpo, com a voz, com o silêncio.</p>
+          </div>
+
+          <div class="sobre__stats" data-animate="fade-up" data-delay="300">
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">14+</span>
+              <span class="sobre__stat-label">Produções</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">9</span>
+              <span class="sobre__stat-label">Anos de Carreira</span>
+            </div>
+            <div class="sobre__stat">
+              <span class="sobre__stat-number">1</span>
+              <span class="sobre__stat-label">Curta Premiado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SHOWREEL ========== -->
+  <section class="section showreel" id="showreel" data-section="02">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">02</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Showreel</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">Um recorte do meu trabalho</p>
+        </div>
+      </div>
+
+      <div class="showreel__video-wrapper reveal reveal--up" data-animate="scale" data-delay="200">
+        <iframe
+          class="showreel__video"
+          src="https://www.youtube.com/embed/AfaojNQX7nI"
+          title="Showreel — Nathan Silva"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+
+        <button class="showreel__play-btn" aria-label="Reproduzir showreel">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="31" stroke="currentColor" stroke-width="2"/>
+            <polygon points="26,20 26,44 46,32" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO ========== -->
+  <section class="section portfolio" id="portfolio" data-section="03">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">03</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Portfolio</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">Trabalhos que contam historias</p>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="portfolio__filters reveal reveal--up" data-animate="fade-up" data-delay="200">
+        <button class="portfolio__filter portfolio__filter--active" data-filter="todos">Todos</button>
+        <button class="portfolio__filter" data-filter="audiovisual">Audiovisual</button>
+        <button class="portfolio__filter" data-filter="teatro">Teatro</button>
+        <button class="portfolio__filter" data-filter="tecnico">Bastidores</button>
+        <button class="portfolio__filter" data-filter="dublagem">Dublagem</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="portfolio__grid">
+
+        <!-- AUDIOVISUAL ================================================ -->
+
+        <!-- Featured: O homem do cachorro — PREMIADO -->
+        <article class="portfolio__card portfolio__card--featured reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="100">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt="O homem do cachorro — Curta premiado no RibaCine 2022" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Cinema</span>
+            <h3 class="portfolio__card-title">O homem do cachorro</h3>
+            <p class="portfolio__card-role">Curta-metragem — Dir. Fernando Rossi — Premiado RibaCine 2022</p>
+            <span class="portfolio__card-year">2022</span>
+          </div>
+        </article>
+
+        <!-- 3 É PAR -->
+        <article class="portfolio__card reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="200">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600" alt="3 É PAR — Websérie" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Websérie</span>
+            <h3 class="portfolio__card-title">3 É PAR</h3>
+            <p class="portfolio__card-role">Websérie — Ator</p>
+            <span class="portfolio__card-year">2019–2023</span>
+          </div>
+        </article>
+
+        <!-- O menino da pipa avoada -->
+        <article class="portfolio__card reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="300">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600" alt="O menino da pipa avoada — Curta-metragem" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Cinema</span>
+            <h3 class="portfolio__card-title">O menino da pipa avoada</h3>
+            <p class="portfolio__card-role">Curta-metragem — Dir. Fernando Rossi — Ator + Assist. Direção</p>
+            <span class="portfolio__card-year">2025</span>
+          </div>
+        </article>
+
+        <!-- TEATRO (ATOR) ============================================== -->
+
+        <!-- Ponciano -->
+        <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="100">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600" alt="Ponciano — De Amores — Furtado" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Teatro</span>
+            <h3 class="portfolio__card-title">Ponciano — De Amores — Furtado</h3>
+            <p class="portfolio__card-role">Comédia musical — Dir. Fernando Rossi — Teatro de Bolso</p>
+            <span class="portfolio__card-year">2025</span>
+          </div>
+        </article>
+
+        <!-- O Mágico de Oz -->
+        <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="200">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" alt="O Mágico de Oz — Teatro de Bolso Procópio Ferreira" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Teatro</span>
+            <h3 class="portfolio__card-title">O Mágico de Oz</h3>
+            <p class="portfolio__card-role">Ator — Teatro de Bolso Procópio Ferreira</p>
+            <span class="portfolio__card-year">2019</span>
+          </div>
+        </article>
+
+        <!-- James Holmes -->
+        <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="300">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600" alt="Eu me chamo James Holmes — Grupo Nós Experimento" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Teatro</span>
+            <h3 class="portfolio__card-title">Eu me chamo James Holmes</h3>
+            <p class="portfolio__card-role">Ator — Grupo Nós Experimento</p>
+            <span class="portfolio__card-year">2019</span>
+          </div>
+        </article>
+
+        <!-- Piquenique no Front -->
+        <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="100">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600" alt="Piquenique no Front — Leituras Santas" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Leitura Dramática</span>
+            <h3 class="portfolio__card-title">Piquenique no Front</h3>
+            <p class="portfolio__card-role">Ator — Leituras Santas — Online durante a pandemia</p>
+            <span class="portfolio__card-year">2020</span>
+          </div>
+        </article>
+
+        <!-- Encontro no bar -->
+        <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="200">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600" alt="Encontro no bar — Leituras Santas" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Leitura Dramática</span>
+            <h3 class="portfolio__card-title">Encontro no bar</h3>
+            <p class="portfolio__card-role">Ator — Leituras Santas — Santa Paciência Casa Criativa</p>
+            <span class="portfolio__card-year">2021</span>
+          </div>
+        </article>
+
+        <!-- BASTIDORES / TÉCNICO ======================================= -->
+
+        <!-- O Beijo da Mulher Aranha -->
+        <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="100">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600" alt="O Beijo da Mulher Aranha — Som e Projeções" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Som &amp; Projeções</span>
+            <h3 class="portfolio__card-title">O Beijo da Mulher Aranha</h3>
+            <p class="portfolio__card-role">Som e Projeção — Dir. Fernando Rossi — Teatro de Bolso</p>
+            <span class="portfolio__card-year">2024</span>
+          </div>
+        </article>
+
+        <!-- fernandos em busca de Pessoa -->
+        <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="200">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600" alt="fernandos em busca de Pessoa — Som e Projeções" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Som &amp; Projeções</span>
+            <h3 class="portfolio__card-title">"fernandos" em busca de Pessoa</h3>
+            <p class="portfolio__card-role">Sonoplastia e Projeções — Dir. Fernando Rossi</p>
+            <span class="portfolio__card-year">2024</span>
+          </div>
+        </article>
+
+        <!-- O Julgamento de Lúcifer -->
+        <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="300">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600" alt="O Julgamento de Lúcifer — Sonoplastia" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Sonoplastia</span>
+            <h3 class="portfolio__card-title">O Julgamento de Lúcifer</h3>
+            <p class="portfolio__card-role">Sonoplastia — Dir. Fernando Rossi — Teatro de Bolso</p>
+            <span class="portfolio__card-year">2022</span>
+          </div>
+        </article>
+
+        <!-- DUBLAGEM ================================================== -->
+
+        <!-- Reino em Cena -->
+        <article class="portfolio__card reveal reveal--up" data-category="dublagem" data-animate="fade-up" data-delay="100">
+          <div class="portfolio__card-image">
+            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600" alt="Reino em Cena — Projeto de Dublagem" loading="lazy">
+          </div>
+          <div class="portfolio__card-overlay">
+            <span class="portfolio__card-category">Dublagem</span>
+            <h3 class="portfolio__card-title">Reino em Cena</h3>
+            <p class="portfolio__card-role">Dublador — Segunda Igreja Batista de Campos — @reinoemcenaoficial</p>
+            <span class="portfolio__card-year">Em atividade</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HABILIDADES ========== -->
+  <section class="section habilidades" id="habilidades" data-section="04">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">04</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Habilidades</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">Ferramentas do oficio</p>
+        </div>
+      </div>
+
+      <div class="habilidades__grid">
+
+        <!-- Atuação -->
+        <div class="habilidades__card reveal reveal--up" data-animate="fade-up" data-delay="100">
+          <div class="habilidades__card-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 20C8 13 13 8 24 8C35 8 40 13 40 20V24C40 24 36 28 24 28C12 28 8 24 8 24V20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="17" cy="18" r="2" fill="currentColor"/>
+              <circle cx="31" cy="18" r="2" fill="currentColor"/>
+              <path d="M18 24C18 24 20 26 24 26C28 26 30 24 30 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M10 30C10 30 14 40 24 40C34 40 38 30 38 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="habilidades__card-title">Atuação</h3>
+          <ul class="habilidades__card-list">
+            <li class="habilidades__card-item">Drama</li>
+            <li class="habilidades__card-item">Comédia</li>
+            <li class="habilidades__card-item">Ação</li>
+            <li class="habilidades__card-item">Musical</li>
+          </ul>
+        </div>
+
+        <!-- Voz -->
+        <div class="habilidades__card reveal reveal--up" data-animate="fade-up" data-delay="200">
+          <div class="habilidades__card-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="18" y="6" width="12" height="22" rx="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 24C10 31.732 16.268 38 24 38C31.732 38 38 31.732 38 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="24" y1="38" x2="24" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="18" y1="44" x2="30" y2="44" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="habilidades__card-title">Voz</h3>
+          <ul class="habilidades__card-list">
+            <li class="habilidades__card-item">Dublagem</li>
+            <li class="habilidades__card-item">Narração</li>
+            <li class="habilidades__card-item">Locução</li>
+            <li class="habilidades__card-item">Sonoplastia</li>
+          </ul>
+        </div>
+
+        <!-- Idiomas -->
+        <div class="habilidades__card reveal reveal--up" data-animate="fade-up" data-delay="300">
+          <div class="habilidades__card-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+              <ellipse cx="24" cy="24" rx="8" ry="18" stroke="currentColor" stroke-width="2"/>
+              <line x1="6" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 16H40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 32H40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="habilidades__card-title">Idiomas</h3>
+          <ul class="habilidades__card-list">
+            <li class="habilidades__card-item">Português (nativo)</li>
+            <li class="habilidades__card-item">Inglês (fluente)</li>
+            <li class="habilidades__card-item">Espanhol (intermediário)</li>
+          </ul>
+        </div>
+
+        <!-- Corpo -->
+        <div class="habilidades__card reveal reveal--up" data-animate="fade-up" data-delay="400">
+          <div class="habilidades__card-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="10" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 17V30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 30L16 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 30L32 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 22L24 20L34 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="habilidades__card-title">Corpo</h3>
+          <ul class="habilidades__card-list">
+            <li class="habilidades__card-item">Dança</li>
+            <li class="habilidades__card-item">Luta cênica</li>
+            <li class="habilidades__card-item">Acrobacia</li>
+          </ul>
+        </div>
+
+        <!-- Técnicas -->
+        <div class="habilidades__card reveal reveal--up" data-animate="fade-up" data-delay="500">
+          <div class="habilidades__card-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 8H36C37.1 8 38 8.9 38 10V42L30 38L24 42L18 38L12 42L8 40V10C8 8.9 8.9 8 8 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="14" y1="16" x2="32" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="14" y1="22" x2="28" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <line x1="14" y1="28" x2="24" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="habilidades__card-title">Técnicas</h3>
+          <ul class="habilidades__card-list">
+            <li class="habilidades__card-item">Método Stanislavski</li>
+            <li class="habilidades__card-item">Meisner</li>
+            <li class="habilidades__card-item">Commedia dell'Arte</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERIA ========== -->
+  <section class="section galeria" id="galeria" data-section="05">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">05</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Galeria</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">Bastidores, cenas e momentos</p>
+        </div>
+      </div>
+
+      <div class="galeria__grid">
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="100">
+          <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600" alt="Bastidores de filmagem" class="galeria__image" data-gallery-index="0" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="150">
+          <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600" alt="Ensaio no palco" class="galeria__image" data-gallery-index="1" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="200">
+          <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600" alt="Cena dramática sob holofotes" class="galeria__image" data-gallery-index="2" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="250">
+          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600" alt="Sessão de gravação em estúdio" class="galeria__image" data-gallery-index="3" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="300">
+          <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" alt="Espetáculo teatral" class="galeria__image" data-gallery-index="4" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="350">
+          <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600" alt="Preparação nos bastidores" class="galeria__image" data-gallery-index="5" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="400">
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt="Set de filmagem" class="galeria__image" data-gallery-index="6" loading="lazy">
+        </div>
+        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="450">
+          <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600" alt="Evento de estreia" class="galeria__image" data-gallery-index="7" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="galeria__lightbox" id="galeria-lightbox">
+      <button class="galeria__lightbox-close" aria-label="Fechar galeria">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="8" y1="8" x2="24" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="24" y1="8" x2="8" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <img src="" alt="Imagem ampliada da galeria" class="galeria__lightbox-image">
+
+      <div class="galeria__lightbox-nav">
+        <button class="galeria__lightbox-prev" aria-label="Imagem anterior">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8L12 16L20 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="galeria__lightbox-next" aria-label="Próxima imagem">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 8L20 16L12 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO ========== -->
+  <section class="section contato" id="contato" data-section="06">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__number reveal reveal--left" aria-hidden="true">06</span>
+        <div>
+          <h2 class="section__title reveal reveal--up" data-animate="fade-up">Contato</h2>
+          <p class="section__subtitle reveal reveal--up" data-animate="fade-up" data-delay="100">Vamos criar algo juntos</p>
+        </div>
+      </div>
+
+      <div class="contato__grid">
+
+        <!-- Info -->
+        <div class="contato__info reveal reveal--left" data-animate="fade-left" data-delay="200">
+          <div class="contato__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 16.92V19.92C22 20.48 21.56 20.93 21 20.97C20.63 21 20.27 21.01 19.9 21C10.6 20.53 3.47 13.4 3 4.1C2.99 3.73 3 3.37 3.03 3C3.07 2.44 3.52 2 4.08 2H7.08C7.56 2 7.97 2.34 8.06 2.81C8.22 3.65 8.48 4.46 8.82 5.24L7.26 6.8C8.58 9.35 10.65 11.42 13.2 12.74L14.76 11.18C15.54 11.52 16.35 11.78 17.19 11.94C17.66 12.03 18 12.44 18 12.92V16.92C18 17.46 17.54 17.92 17 17.92" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3>Telefone</h3>
+              <p>(22) 99710-6833</p>
+            </div>
+          </div>
+
+          <div class="contato__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3>E-mail</h3>
+              <p>nathan_nunes92@hotmail.com</p>
+            </div>
+          </div>
+
+          <div class="contato__info-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <div>
+              <h3>Cidade</h3>
+              <p>Campos dos Goytacazes, RJ — Brasil</p>
+            </div>
+          </div>
+
+          <!-- Redes Sociais -->
+          <div class="contato__social">
+            <a href="https://www.instagram.com/nsilvan1" class="contato__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com/@nsilvan1" class="contato__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.54 6.42C22.42 5.95 22.18 5.52 21.84 5.18C21.5 4.84 21.07 4.6 20.6 4.48C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.48C2.93 4.6 2.5 4.84 2.16 5.18C1.82 5.52 1.58 5.95 1.46 6.42C1 8.15 1 12 1 12C1 12 1 15.85 1.46 17.58C1.58 18.05 1.82 18.48 2.16 18.82C2.5 19.16 2.93 19.4 3.4 19.52C5.12 20 12 20 12 20C12 20 18.88 20 20.6 19.52C21.07 19.4 21.5 19.16 21.84 18.82C22.18 18.48 22.42 18.05 22.54 17.58C23 15.85 23 12 23 12C23 12 23 8.15 22.54 6.42Z" stroke="currentColor" stroke-width="1.5"/>
+                <polygon points="9.75,8.27 9.75,15.73 16.5,12" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@nsilvan1" class="contato__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 10.86 4.48V12.8A8.28 8.28 0 0 0 19.59 15V11.5a4.84 4.84 0 0 1-3.77-1.56V6.69z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/nsilvan1" class="contato__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulário -->
+        <form class="contato__form reveal reveal--right" data-animate="fade-right" data-delay="200" action="#" method="POST">
+          <div class="contato__field">
+            <input type="text" id="nome" name="nome" class="contato__input" placeholder=" " required>
+            <label for="nome" class="contato__label">Nome completo</label>
+          </div>
+
+          <div class="contato__field">
+            <input type="email" id="email" name="email" class="contato__input" placeholder=" " required>
+            <label for="email" class="contato__label">E-mail</label>
+          </div>
+
+          <div class="contato__field">
+            <select id="assunto" name="assunto" class="contato__input" required>
+              <option value="" disabled selected>Selecione o assunto</option>
+              <option value="casting">Casting / Audição</option>
+              <option value="comercial">Trabalho Comercial</option>
+              <option value="dublagem">Dublagem / Locução</option>
+              <option value="teatro">Teatro</option>
+              <option value="imprensa">Imprensa</option>
+              <option value="outro">Outro</option>
+            </select>
+            <label for="assunto" class="contato__label">Assunto</label>
+          </div>
+
+          <div class="contato__field">
+            <textarea id="mensagem" name="mensagem" class="contato__input" rows="5" placeholder=" " required></textarea>
+            <label for="mensagem" class="contato__label">Mensagem</label>
+          </div>
+
+          <button type="submit" class="contato__submit">Enviar Mensagem</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__content container">
+      <a href="#hero" class="footer__logo" data-scroll-to="hero">Nathan Silva</a>
+      <p class="footer__copyright">&copy; 2026 Nathan Silva. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

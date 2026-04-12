@@ -1,0 +1,7 @@
+PESQUISA_*.md
+DESCOBERTAS_*.md
+SPEC.md
+.vercel
+node_modules
+.DS_Store
+Thumbs.db

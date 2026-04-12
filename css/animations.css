@@ -1,0 +1,340 @@
+/* ============================================================
+   NATHAN SILVA — Portfolio
+   animations.css — Organic Motion & Reveals
+   ============================================================ */
+
+/* ============================================================
+   1. KEYFRAMES
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Character reveal: slides up from clip */
+@keyframes charReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%) rotate(3deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Organic float: asymmetric bob */
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  33% {
+    transform: translateX(-50%) translateY(5px);
+  }
+  66% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* Play button pulse: softer, slower */
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgba(200, 164, 90, 0.35);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+    box-shadow: 0 0 0 18px rgba(200, 164, 90, 0);
+  }
+}
+
+/* Hero background: slow cinematic drift */
+@keyframes heroZoom {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.06) translate(-0.5%, -0.3%);
+  }
+}
+
+/* Mobile menu slide */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer for decorative elements */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ============================================================
+   2. REVEAL CLASSES (viewport-triggered)
+   ============================================================ */
+
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--up {
+  transform: translateY(28px);
+}
+
+.reveal--left {
+  transform: translateX(-28px);
+}
+
+.reveal--right {
+  transform: translateX(28px);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ============================================================
+   3. FADE IN
+   ============================================================ */
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in--visible {
+  opacity: 1;
+}
+
+/* ============================================================
+   4. STAGGER DELAYS (accelerating, not linear)
+   ============================================================ */
+
+.reveal[data-delay="100"],
+.fade-in[data-delay="100"] {
+  transition-delay: 0.08s;
+}
+
+.reveal[data-delay="150"],
+.fade-in[data-delay="150"] {
+  transition-delay: 0.12s;
+}
+
+.reveal[data-delay="200"],
+.fade-in[data-delay="200"] {
+  transition-delay: 0.16s;
+}
+
+.reveal[data-delay="250"],
+.fade-in[data-delay="250"] {
+  transition-delay: 0.2s;
+}
+
+.reveal[data-delay="300"],
+.fade-in[data-delay="300"] {
+  transition-delay: 0.23s;
+}
+
+.reveal[data-delay="350"],
+.fade-in[data-delay="350"] {
+  transition-delay: 0.26s;
+}
+
+.reveal[data-delay="400"],
+.fade-in[data-delay="400"] {
+  transition-delay: 0.29s;
+}
+
+.reveal[data-delay="450"],
+.fade-in[data-delay="450"] {
+  transition-delay: 0.31s;
+}
+
+.reveal[data-delay="500"],
+.fade-in[data-delay="500"] {
+  transition-delay: 0.33s;
+}
+
+/* ============================================================
+   5. PORTFOLIO CARD TRANSITIONS
+   ============================================================ */
+
+.portfolio__card {
+  transition:
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio__card--hidden {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+}
+
+/* ============================================================
+   6. SPECIAL TRANSITIONS
+   ============================================================ */
+
+/* Header */
+.header {
+  transition:
+    background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Lightbox */
+.galeria__lightbox {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.galeria__lightbox-image {
+  animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Carousel */
+.depoimentos__track {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile nav */
+.nav__menu.nav__menu--open {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ============================================================
+   7. HERO ENTRANCE ANIMATIONS
+   ============================================================ */
+
+.hero__name[data-animate="fade-up"] {
+  /* Handled by per-char animations now */
+  animation: none;
+}
+
+.hero__tagline[data-animate="fade-up"] {
+  /* Handled inline via styles.css */
+}
+
+.hero__cta[data-animate="fade-up"] {
+  /* Handled inline via styles.css */
+}
+
+/* ============================================================
+   8. PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal--up,
+  .reveal--left,
+  .reveal--right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .fade-in {
+    opacity: 1;
+    transition: none;
+  }
+
+  .hero__name[data-animate],
+  .hero__tagline[data-animate],
+  .hero__cta[data-animate],
+  .hero__kicker {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero__char {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .hero__background img {
+    animation: none;
+  }
+
+  .hero__scroll-indicator {
+    animation: none;
+  }
+
+  .showreel__play-btn {
+    animation: none;
+  }
+
+  .galeria__lightbox-image {
+    animation: none;
+  }
+
+  .portfolio__card--hidden {
+    opacity: 0;
+    transform: none;
+  }
+}
