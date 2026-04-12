@@ -3,551 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nathan Silva — Ator dos palcos e das câmeras. Portfolio profissional com trabalhos em teatro, cinema e websérie.">
-  <meta name="keywords" content="ator, Nathan Silva, portfolio, cinema, teatro, websérie, Campos dos Goytacazes, 3 É Par">
+  <meta name="description" content="Nathan Silva — Ator, dublador e sonoplasta. Campos dos Goytacazes, RJ.">
   <meta name="author" content="Nathan Silva">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Nathan Silva — Ator | Palcos & Câmeras">
-  <meta property="og:description" content="Portfolio profissional de Nathan Silva. Ator dos palcos e das câmeras, com trabalhos em teatro, cinema e websérie desde 2017.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=1200">
+  <meta property="og:title" content="Nathan Silva — Ator">
+  <meta property="og:description" content="Portfolio profissional. Ator dos palcos e das cameras desde 2017. 2 curtas premiados.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-
-  <title>Nathan Silva — Ator | Palcos & Câmeras</title>
-
-  <!-- Google Fonts -->
+  <title>Nathan Silva — Ator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,700&family=Syne:wght@400;500;600;700;800&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <!-- debug styles removed -->
 </head>
 <body>
 
-  <!-- Noise overlay for texture -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-  <!-- Vertical decorative line -->
-  <div class="vertical-line" aria-hidden="true"></div>
-
-  <!-- ========== HEADER ========== -->
+  <!-- NAV -->
   <header class="header" id="header">
-    <nav class="nav container">
-      <div class="nav__brand">
-        <a href="#" class="nav__logo">Nathan Silva</a>
-        <span class="nav__tag">Ator &mdash; Campos dos Goytacazes</span>
-      </div>
-
+    <nav class="nav">
+      <a href="#" class="nav__logo">Nathan Silva</a>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#sobre" class="nav__link" data-scroll-to="sobre">Sobre</a></li>
-        <li><a href="#showreel" class="nav__link" data-scroll-to="showreel">Showreel</a></li>
-        <li><a href="#portfolio" class="nav__link" data-scroll-to="portfolio">Portfolio</a></li>
-        <li><a href="#habilidades" class="nav__link" data-scroll-to="habilidades">Habilidades</a></li>
-        <li><a href="#galeria" class="nav__link" data-scroll-to="galeria">Galeria</a></li>
+        <li><a href="#reel" class="nav__link" data-scroll-to="reel">Reel</a></li>
+        <li><a href="#creditos" class="nav__link" data-scroll-to="creditos">Creditos</a></li>
         <li><a href="#contato" class="nav__link" data-scroll-to="contato">Contato</a></li>
       </ul>
-
-      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="4" y1="7" x2="24" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4" y1="14" x2="24" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="4" y1="21" x2="24" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span>
       </button>
     </nav>
   </header>
 
-  <!-- ========== HERO ========== -->
+  <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero__background">
-      <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=1920" alt="Palco iluminado com atmosfera cinematográfica" loading="eager">
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__grain" aria-hidden="true"></div>
-
-    <div class="hero__filmstrip" aria-hidden="true"></div>
-
-    <div class="hero__content">
-      <div class="hero__name-block">
-        <h1 class="hero__name" data-animate="fade-up">
-          <span class="hero__name-first">Nathan</span>
-          <span class="hero__name-last">Silva</span>
-        </h1>
-        <div class="hero__tagline" data-animate="fade-up" data-delay="200">
-          <span class="hero__dash"></span>
-          <span>Palcos &amp; Câmeras</span>
-        </div>
-      </div>
-      <a href="#portfolio" class="hero__cta" data-scroll-to="portfolio" data-animate="fade-up" data-delay="400">
-        <span>Explorar trabalhos</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-
-    <span class="hero__counter" aria-hidden="true">Est. 2017</span>
-
-    <div class="hero__scroll-indicator" data-scroll-to="sobre">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ========== SOBRE ========== -->
-  <section class="section sobre" id="sobre" data-section="01">
-    <div class="sobre__split">
-      <div class="sobre__media reveal reveal--left" data-animate="fade-left">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Nathan Silva — retrato profissional" class="sobre__image" loading="lazy">
-      </div>
-
-      <div class="sobre__text reveal reveal--right" data-animate="fade-right">
-        <span class="sobre__label">001 / Sobre</span>
-        <h2 class="sobre__title" data-animate="fade-up">Sobre Mim</h2>
-
-        <div class="sobre__bio">
-          <p>Natural e residente de Campos dos Goytacazes, atuo nos palcos e diante das câmeras desde 2017. Minha trajetória passa pelo Teatro de Bolso Procópio Ferreira, pelo Santa Paciência Casa Criativa e por sets de filmagem que me ensinaram que contar histórias é um ofício sem fim.</p>
-          <p>Ao lado do diretor Fernando Rossi, participei de produções que vão do curta premiado <em>O homem do cachorro</em> ao elenco de <em>Ponciano — De Amores — Furtado</em>. Nos bastidores, assino sonoplastia e projeções cênicas em montagens como <em>O Beijo da Mulher Aranha</em> e <em>"fernandos" em busca de Pessoa</em>. No audiovisual, a websérie <em>3 É Par</em> e o curta <em>O menino da pipa avoada</em> completam essa jornada entre palco e tela.</p>
-          <p>Também empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>. Cada personagem é uma verdade que precisa ser encontrada — com o corpo, com a voz, com o silêncio.</p>
-        </div>
-
-        <blockquote class="sobre__quote">"Cada personagem é uma verdade que precisa ser encontrada."</blockquote>
-
-        <div class="sobre__stats" data-animate="fade-up" data-delay="300">
-          <div class="sobre__stat">
-            <span class="sobre__stat-number">14+</span>
-            <span class="sobre__stat-label">Produções</span>
-          </div>
-          <span class="sobre__stat-divider" aria-hidden="true">|</span>
-          <div class="sobre__stat">
-            <span class="sobre__stat-number">9</span>
-            <span class="sobre__stat-label">Anos de Carreira</span>
-          </div>
-          <span class="sobre__stat-divider" aria-hidden="true">|</span>
-          <div class="sobre__stat">
-            <span class="sobre__stat-number">2</span>
-            <span class="sobre__stat-label">Curtas Premiados</span>
-          </div>
-        </div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Ator &middot; Dublador &middot; Sonoplasta</p>
+      <h1 class="hero__name">Nathan<br>Silva</h1>
+      <p class="hero__location">Campos dos Goytacazes, RJ</p>
+      <div class="hero__stats">
+        <span>15+ producoes</span>
+        <span>2 curtas premiados</span>
+        <span>Desde 2017</span>
       </div>
     </div>
   </section>
 
-  <!-- ========== SHOWREEL ========== -->
-  <section class="section showreel" id="showreel" data-section="02">
-    <div class="showreel__inner">
-      <span class="showreel__label reveal reveal--up" data-animate="fade-up">002 / Showreel</span>
+  <!-- BIO -->
+  <section class="bio" id="sobre">
+    <div class="wrap">
+      <p>Natural e residente de Campos dos Goytacazes, atuo nos palcos e diante das cameras desde 2017. Minha trajetoria passa pelo Teatro de Bolso Procopio Ferreira, pelo Santa Paciencia Casa Criativa e por sets de filmagem. Ao lado do diretor Fernando Rossi, construi um percurso que vai de curtas premiados a sonoplastia e projecoes cenicas. Tambem empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>.</p>
+    </div>
+  </section>
 
-      <div class="showreel__video-wrapper reveal reveal--up" data-animate="scale" data-delay="200">
-        <iframe
-          class="showreel__video"
-          src="https://www.youtube.com/embed/AfaojNQX7nI"
-          title="Showreel — Nathan Silva"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+  <!-- REEL -->
+  <section class="reel" id="reel">
+    <div class="wrap">
+      <h2 class="section-label">Showreel</h2>
+      <div class="reel__frame">
+        <iframe src="https://www.youtube.com/embed/AfaojNQX7nI" title="Showreel — Nathan Silva" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
-  <!-- ========== PORTFOLIO ========== -->
-  <section class="section portfolio" id="portfolio" data-section="03">
-    <div class="portfolio__header">
-      <span class="portfolio__label reveal reveal--up" data-animate="fade-up">003 / Trabalhos</span>
-      <h2 class="portfolio__title reveal reveal--up" data-animate="fade-up" data-delay="100">Portfolio</h2>
-    </div>
+  <!-- CREDITOS -->
+  <section class="creditos" id="creditos">
+    <div class="wrap">
 
-    <!-- Filtros -->
-    <div class="portfolio__filters reveal reveal--up" data-animate="fade-up" data-delay="200">
-      <button class="portfolio__filter portfolio__filter--active" data-filter="todos">Todos</button>
-      <button class="portfolio__filter" data-filter="audiovisual">Audiovisual</button>
-      <button class="portfolio__filter" data-filter="teatro">Teatro</button>
-      <button class="portfolio__filter" data-filter="tecnico">Bastidores</button>
-      <button class="portfolio__filter" data-filter="dublagem">Dublagem</button>
-    </div>
+      <h2 class="section-label">Audiovisual</h2>
+      <table class="credits-table">
+        <tr class="credits-table__row credits-table__row--highlight">
+          <td class="credits-table__year">2025</td>
+          <td class="credits-table__title">O menino da pipa avoada <span class="badge">Premiado</span></td>
+          <td class="credits-table__detail">Curta-metragem &middot; Ator + Assist. Direcao</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; 1o Fest. Territorial Cinema Itinerante, Arcos da Lapa RJ</td>
+        </tr>
+        <tr class="credits-table__row credits-table__row--highlight">
+          <td class="credits-table__year">2022</td>
+          <td class="credits-table__title">O homem do cachorro <span class="badge">Premiado</span></td>
+          <td class="credits-table__detail">Curta-metragem &middot; Ator</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Melhor Filme + Melhor Roteiro, RibaCine 2022</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2019–23</td>
+          <td class="credits-table__title">3 E PAR</td>
+          <td class="credits-table__detail">Webserie &middot; Ator</td>
+          <td class="credits-table__extra"></td>
+        </tr>
+      </table>
 
-    <!-- Scroll horizontal -->
-    <div class="portfolio__grid portfolio__scroll">
+      <h2 class="section-label">Teatro — Ator</h2>
+      <table class="credits-table">
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2026</td>
+          <td class="credits-table__title">Uma Promessa pra Sao Salvador</td>
+          <td class="credits-table__detail">Coletivo Real de Teatro</td>
+          <td class="credits-table__extra">Teatro de Bolso Procopio Ferreira</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2025</td>
+          <td class="credits-table__title">Ponciano — De Amores — Furtado</td>
+          <td class="credits-table__detail">Comedia musical &middot; Ator</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2021</td>
+          <td class="credits-table__title">Encontro no bar</td>
+          <td class="credits-table__detail">Leituras Santas &middot; Ator</td>
+          <td class="credits-table__extra">Santa Paciencia Casa Criativa</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2020</td>
+          <td class="credits-table__title">Piquenique no Front</td>
+          <td class="credits-table__detail">Leituras Santas &middot; Ator</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Online (pandemia)</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2019</td>
+          <td class="credits-table__title">Eu me chamo James Holmes</td>
+          <td class="credits-table__detail">Ator</td>
+          <td class="credits-table__extra">Grupo Nos Experimento</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2019</td>
+          <td class="credits-table__title">O Magico de Oz</td>
+          <td class="credits-table__detail">Ator</td>
+          <td class="credits-table__extra">Teatro de Bolso Procopio Ferreira</td>
+        </tr>
+      </table>
 
-      <!-- AUDIOVISUAL ================================================ -->
+      <h2 class="section-label">Teatro — Sonoplastia &amp; Projecoes</h2>
+      <table class="credits-table">
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2025</td>
+          <td class="credits-table__title">Conversas com Chocolate</td>
+          <td class="credits-table__detail">Projecoes cenicas</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2024</td>
+          <td class="credits-table__title">"fernandos" em busca de Pessoa</td>
+          <td class="credits-table__detail">Sonoplastia e Projecoes</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2024</td>
+          <td class="credits-table__title">O Beijo da Mulher Aranha</td>
+          <td class="credits-table__detail">Som e Projecao</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
+        </tr>
+        <tr class="credits-table__row">
+          <td class="credits-table__year">2022</td>
+          <td class="credits-table__title">O Julgamento de Lucifer</td>
+          <td class="credits-table__detail">Sonoplastia</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
+        </tr>
+      </table>
 
-      <!-- Featured: O homem do cachorro — PREMIADO -->
-      <article class="portfolio__card portfolio__card--featured reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="100">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt="O homem do cachorro — Curta premiado no RibaCine 2022" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Cinema</span>
-          <h3 class="portfolio__card-title">O homem do cachorro</h3>
-          <p class="portfolio__card-role">Curta-metragem — Dir. Fernando Rossi — Premiado RibaCine 2022</p>
-          <span class="portfolio__card-year">2022</span>
-        </div>
-      </article>
-
-      <!-- 3 É PAR -->
-      <article class="portfolio__card reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="200">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600" alt="3 É PAR — Websérie" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Websérie</span>
-          <h3 class="portfolio__card-title">3 É PAR</h3>
-          <p class="portfolio__card-role">Websérie — Ator</p>
-          <span class="portfolio__card-year">2019–2023</span>
-        </div>
-      </article>
-
-      <!-- O menino da pipa avoada -->
-      <article class="portfolio__card reveal reveal--up" data-category="audiovisual" data-animate="fade-up" data-delay="300">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600" alt="O menino da pipa avoada — Curta-metragem" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Cinema</span>
-          <h3 class="portfolio__card-title">O menino da pipa avoada</h3>
-          <p class="portfolio__card-role">Curta-metragem — Dir. Fernando Rossi — Ator + Assist. Direção — Premiado no 1o Festival Territorial de Cinema Itinerante (Arcos da Lapa, RJ)</p>
-          <span class="portfolio__card-year">2025</span>
-        </div>
-      </article>
-
-      <!-- TEATRO (ATOR) ============================================== -->
-
-      <!-- Ponciano -->
-      <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="100">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600" alt="Ponciano — De Amores — Furtado" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Teatro</span>
-          <h3 class="portfolio__card-title">Ponciano — De Amores — Furtado</h3>
-          <p class="portfolio__card-role">Comédia musical — Dir. Fernando Rossi — Teatro de Bolso</p>
-          <span class="portfolio__card-year">2025</span>
-        </div>
-      </article>
-
-      <!-- O Mágico de Oz -->
-      <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="200">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" alt="O Mágico de Oz — Teatro de Bolso Procópio Ferreira" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Teatro</span>
-          <h3 class="portfolio__card-title">O Mágico de Oz</h3>
-          <p class="portfolio__card-role">Ator — Teatro de Bolso Procópio Ferreira</p>
-          <span class="portfolio__card-year">2019</span>
-        </div>
-      </article>
-
-      <!-- James Holmes -->
-      <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="300">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600" alt="Eu me chamo James Holmes — Grupo Nós Experimento" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Teatro</span>
-          <h3 class="portfolio__card-title">Eu me chamo James Holmes</h3>
-          <p class="portfolio__card-role">Ator — Grupo Nós Experimento</p>
-          <span class="portfolio__card-year">2019</span>
-        </div>
-      </article>
-
-      <!-- Piquenique no Front -->
-      <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="100">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600" alt="Piquenique no Front — Leituras Santas" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Leitura Dramática</span>
-          <h3 class="portfolio__card-title">Piquenique no Front</h3>
-          <p class="portfolio__card-role">Ator — Leituras Santas — Online durante a pandemia</p>
-          <span class="portfolio__card-year">2020</span>
-        </div>
-      </article>
-
-      <!-- Encontro no bar -->
-      <article class="portfolio__card reveal reveal--up" data-category="teatro" data-animate="fade-up" data-delay="200">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600" alt="Encontro no bar — Leituras Santas" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Leitura Dramática</span>
-          <h3 class="portfolio__card-title">Encontro no bar</h3>
-          <p class="portfolio__card-role">Ator — Leituras Santas — Santa Paciência Casa Criativa</p>
-          <span class="portfolio__card-year">2021</span>
-        </div>
-      </article>
-
-      <!-- BASTIDORES / TÉCNICO ======================================= -->
-
-      <!-- O Beijo da Mulher Aranha -->
-      <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="100">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600" alt="O Beijo da Mulher Aranha — Som e Projeções" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Som &amp; Projeções</span>
-          <h3 class="portfolio__card-title">O Beijo da Mulher Aranha</h3>
-          <p class="portfolio__card-role">Som e Projeção — Dir. Fernando Rossi — Teatro de Bolso</p>
-          <span class="portfolio__card-year">2024</span>
-        </div>
-      </article>
-
-      <!-- fernandos em busca de Pessoa -->
-      <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="200">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600" alt="fernandos em busca de Pessoa — Som e Projeções" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Som &amp; Projeções</span>
-          <h3 class="portfolio__card-title">"fernandos" em busca de Pessoa</h3>
-          <p class="portfolio__card-role">Sonoplastia e Projeções — Dir. Fernando Rossi</p>
-          <span class="portfolio__card-year">2024</span>
-        </div>
-      </article>
-
-      <!-- O Julgamento de Lúcifer -->
-      <article class="portfolio__card reveal reveal--up" data-category="tecnico" data-animate="fade-up" data-delay="300">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600" alt="O Julgamento de Lúcifer — Sonoplastia" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Sonoplastia</span>
-          <h3 class="portfolio__card-title">O Julgamento de Lúcifer</h3>
-          <p class="portfolio__card-role">Sonoplastia — Dir. Fernando Rossi — Teatro de Bolso</p>
-          <span class="portfolio__card-year">2022</span>
-        </div>
-      </article>
-
-      <!-- DUBLAGEM ================================================== -->
-
-      <!-- Reino em Cena -->
-      <article class="portfolio__card reveal reveal--up" data-category="dublagem" data-animate="fade-up" data-delay="100">
-        <div class="portfolio__card-image">
-          <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=600" alt="Reino em Cena — Projeto de Dublagem" loading="lazy">
-        </div>
-        <div class="portfolio__card-info">
-          <span class="portfolio__card-category">Dublagem</span>
-          <h3 class="portfolio__card-title">Reino em Cena</h3>
-          <p class="portfolio__card-role">Dublador — Segunda Igreja Batista de Campos — @reinoemcenaoficial</p>
-          <span class="portfolio__card-year">Em atividade</span>
-        </div>
-      </article>
+      <h2 class="section-label">Dublagem</h2>
+      <table class="credits-table">
+        <tr class="credits-table__row">
+          <td class="credits-table__year">Atual</td>
+          <td class="credits-table__title">Reino em Cena</td>
+          <td class="credits-table__detail">Dublador</td>
+          <td class="credits-table__extra">Segunda Igreja Batista &middot; @reinoemcenaoficial</td>
+        </tr>
+      </table>
 
     </div>
   </section>
 
-  <!-- ========== HABILIDADES ========== -->
-  <section class="section habilidades" id="habilidades" data-section="04">
-    <div class="container">
-      <span class="habilidades__label reveal reveal--up" data-animate="fade-up">004 / Habilidades</span>
-      <h2 class="habilidades__title reveal reveal--up" data-animate="fade-up" data-delay="100">Ferramentas do Ofício</h2>
-
-      <div class="habilidades__credits">
-
-        <div class="habilidades__credit-row reveal reveal--up" data-animate="fade-up" data-delay="100">
-          <div class="habilidades__credit-block">
-            <h3 class="habilidades__credit-heading">Atuação</h3>
-            <ul class="habilidades__credit-list">
-              <li>Drama</li>
-              <li>Comédia</li>
-              <li>Ação</li>
-              <li>Musical</li>
-            </ul>
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <h2 class="section-label">Contato</h2>
+      <div class="contato__grid">
+        <div class="contato__block">
+          <div class="contato__item">
+            <span class="contato__key">Tel</span>
+            <a href="tel:+5522997106833">(22) 99710-6833</a>
           </div>
-          <div class="habilidades__credit-block">
-            <h3 class="habilidades__credit-heading">Voz</h3>
-            <ul class="habilidades__credit-list">
-              <li>Dublagem</li>
-              <li>Narração</li>
-              <li>Locução</li>
-              <li>Sonoplastia</li>
-            </ul>
+          <div class="contato__item">
+            <span class="contato__key">Email</span>
+            <a href="mailto:nathan_nunes92@hotmail.com">nathan_nunes92@hotmail.com</a>
+          </div>
+          <div class="contato__item">
+            <span class="contato__key">Cidade</span>
+            <span>Campos dos Goytacazes, RJ</span>
           </div>
         </div>
-
-        <hr class="habilidades__divider" aria-hidden="true">
-
-        <div class="habilidades__credit-row reveal reveal--up" data-animate="fade-up" data-delay="200">
-          <div class="habilidades__credit-block">
-            <h3 class="habilidades__credit-heading">Idiomas</h3>
-            <ul class="habilidades__credit-list">
-              <li>Português (nativo)</li>
-              <li>Inglês (fluente)</li>
-              <li>Espanhol (intermediário)</li>
-            </ul>
+        <div class="contato__block">
+          <div class="contato__item">
+            <span class="contato__key">Instagram</span>
+            <a href="https://instagram.com/nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
           </div>
-          <div class="habilidades__credit-block">
-            <h3 class="habilidades__credit-heading">Corpo</h3>
-            <ul class="habilidades__credit-list">
-              <li>Dança</li>
-              <li>Luta cênica</li>
-              <li>Acrobacia</li>
-            </ul>
+          <div class="contato__item">
+            <span class="contato__key">YouTube</span>
+            <a href="https://youtube.com/@nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
+          </div>
+          <div class="contato__item">
+            <span class="contato__key">TikTok</span>
+            <a href="https://tiktok.com/@nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
+          </div>
+          <div class="contato__item">
+            <span class="contato__key">Facebook</span>
+            <a href="https://facebook.com/nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
           </div>
         </div>
-
-        <hr class="habilidades__divider" aria-hidden="true">
-
-        <div class="habilidades__credit-row reveal reveal--up" data-animate="fade-up" data-delay="300">
-          <div class="habilidades__credit-block">
-            <h3 class="habilidades__credit-heading">Técnicas</h3>
-            <ul class="habilidades__credit-list">
-              <li>Método Stanislavski</li>
-              <li>Meisner</li>
-              <li>Commedia dell'Arte</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========== GALERIA ========== -->
-  <section class="section galeria" id="galeria" data-section="05">
-    <div class="container">
-      <span class="galeria__label reveal reveal--up" data-animate="fade-up">005 / Galeria</span>
-
-      <div class="galeria__grid galeria__masonry">
-        <div class="galeria__item galeria__item--tall reveal reveal--up" data-animate="fade-up" data-delay="100">
-          <img src="https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=600" alt="Bastidores de filmagem" class="galeria__image" data-gallery-index="0" loading="lazy">
-        </div>
-        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="150">
-          <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?w=600" alt="Ensaio no palco" class="galeria__image" data-gallery-index="1" loading="lazy">
-        </div>
-        <div class="galeria__item galeria__item--wide reveal reveal--up" data-animate="fade-up" data-delay="200">
-          <img src="https://images.unsplash.com/photo-1524712245354-2c4e5e7121c0?w=600" alt="Cena dramática sob holofotes" class="galeria__image" data-gallery-index="2" loading="lazy">
-        </div>
-        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="250">
-          <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600" alt="Sessão de gravação em estúdio" class="galeria__image" data-gallery-index="3" loading="lazy">
-        </div>
-        <div class="galeria__item galeria__item--tall reveal reveal--up" data-animate="fade-up" data-delay="300">
-          <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600" alt="Espetáculo teatral" class="galeria__image" data-gallery-index="4" loading="lazy">
-        </div>
-        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="350">
-          <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600" alt="Preparação nos bastidores" class="galeria__image" data-gallery-index="5" loading="lazy">
-        </div>
-        <div class="galeria__item galeria__item--wide reveal reveal--up" data-animate="fade-up" data-delay="400">
-          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt="Set de filmagem" class="galeria__image" data-gallery-index="6" loading="lazy">
-        </div>
-        <div class="galeria__item reveal reveal--up" data-animate="fade-up" data-delay="450">
-          <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=600" alt="Evento de estreia" class="galeria__image" data-gallery-index="7" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div class="galeria__lightbox" id="galeria-lightbox">
-      <button class="galeria__lightbox-close" aria-label="Fechar galeria">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="8" y1="8" x2="24" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <line x1="24" y1="8" x2="8" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <img src="" alt="Imagem ampliada da galeria" class="galeria__lightbox-image">
-
-      <div class="galeria__lightbox-nav">
-        <button class="galeria__lightbox-prev" aria-label="Imagem anterior">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 8L12 16L20 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <button class="galeria__lightbox-next" aria-label="Próxima imagem">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 8L20 16L12 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTATO ========== -->
-  <section class="section contato" id="contato" data-section="06">
-    <div class="contato__split">
-
-      <!-- Lado esquerdo — tipografia dramática -->
-      <div class="contato__headline reveal reveal--left" data-animate="fade-left" data-delay="200">
-        <span class="contato__label">006 / Contato</span>
-        <h2 class="contato__title">Vamos<br>trabalhar<br>juntos?</h2>
-
-        <div class="contato__details">
-          <div class="contato__detail-item">
-            <span class="contato__detail-key">Tel</span>
-            <span class="contato__detail-value">(22) 99710-6833</span>
-          </div>
-          <div class="contato__detail-item">
-            <span class="contato__detail-key">E-mail</span>
-            <span class="contato__detail-value">nathan_nunes92@hotmail.com</span>
-          </div>
-          <div class="contato__detail-item">
-            <span class="contato__detail-key">Cidade</span>
-            <span class="contato__detail-value">Campos dos Goytacazes, RJ — Brasil</span>
-          </div>
-        </div>
-
-        <!-- Redes Sociais como texto -->
-        <div class="contato__social">
-          <a href="https://www.instagram.com/nsilvan1" class="contato__social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.youtube.com/@nsilvan1" class="contato__social-link" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.tiktok.com/@nsilvan1" class="contato__social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <a href="https://www.facebook.com/nsilvan1" class="contato__social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
-        </div>
-      </div>
-
-      <!-- Lado direito — formulário -->
-      <form class="contato__form reveal reveal--right" data-animate="fade-right" data-delay="200" action="#" method="POST">
-        <div class="contato__field">
-          <input type="text" id="nome" name="nome" class="contato__input" placeholder=" " required>
-          <label for="nome" class="contato__label">Nome completo</label>
-        </div>
-
-        <div class="contato__field">
-          <input type="email" id="email" name="email" class="contato__input" placeholder=" " required>
-          <label for="email" class="contato__label">E-mail</label>
-        </div>
-
-        <div class="contato__field">
-          <select id="assunto" name="assunto" class="contato__input" required>
-            <option value="" disabled selected>Selecione o assunto</option>
-            <option value="casting">Casting / Audição</option>
-            <option value="comercial">Trabalho Comercial</option>
-            <option value="dublagem">Dublagem / Locução</option>
-            <option value="teatro">Teatro</option>
-            <option value="imprensa">Imprensa</option>
-            <option value="outro">Outro</option>
-          </select>
-          <label for="assunto" class="contato__label">Assunto</label>
-        </div>
-
-        <div class="contato__field">
-          <textarea id="mensagem" name="mensagem" class="contato__input" rows="5" placeholder=" " required></textarea>
-          <label for="mensagem" class="contato__label">Mensagem</label>
-        </div>
-
-        <button type="submit" class="contato__submit">
-          <span>Enviar Mensagem</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-      </form>
-
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer__filmstrip" aria-hidden="true"></div>
-    <div class="footer__content container">
-      <span class="footer__name">Nathan Silva</span>
-      <span class="footer__year">&copy; 2026</span>
-      <a href="#hero" class="footer__top" data-scroll-to="hero">Voltar ao topo</a>
+    <div class="wrap">
+      <span>&copy; 2026 Nathan Silva</span>
+      <a href="#hero">Voltar ao topo</a>
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="js/main.js" defer></script>
+  <script>
+    // Minimal JS — smooth scroll + header
+    document.querySelectorAll('[data-scroll-to]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.getElementById(el.dataset.scrollTo);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // close mobile menu
+        document.getElementById('nav-menu').classList.remove('open');
+        document.getElementById('nav-toggle').classList.remove('open');
+      });
+    });
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('open');
+      document.getElementById('nav-toggle').classList.toggle('open');
+    });
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

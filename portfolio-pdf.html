@@ -3,208 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <title>Nathan Silva — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Syne:wght@400;600;700&family=Courier+Prime&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Syne', sans-serif; color: #1a1a18; background: #fff; font-size: 9pt; line-height: 1.5; }
-.page { width: 210mm; min-height: 297mm; padding: 18mm 20mm; position: relative; page-break-after: always; }
-.page:last-child { page-break-after: avoid; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#1a1815;font-size:9pt;line-height:1.5}
+.page{width:210mm;min-height:297mm;padding:16mm 18mm;position:relative}
 
-/* Header bar */
-.topbar { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 10mm; margin-bottom: 8mm; border-bottom: 2px solid #1a1a18; }
-.topbar-name { font-family: 'Bodoni Moda', serif; font-size: 28pt; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
-.topbar-sub { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #666; letter-spacing: .15em; text-transform: uppercase; text-align: right; }
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:6mm;border-bottom:1.5px solid #1a1815;margin-bottom:8mm}
+.name{font-family:'Instrument Serif',serif;font-size:36pt;line-height:1;letter-spacing:-.01em}
+.subtitle{font-size:8pt;color:#666;text-align:right;line-height:1.5}
 
-/* Two column layout */
-.cols { display: grid; grid-template-columns: 58mm 1fr; gap: 8mm; }
-.sidebar { }
-.main { }
+/* Two cols */
+.cols{display:grid;grid-template-columns:48mm 1fr;gap:8mm}
 
-/* Photo placeholder */
-.photo { width: 100%; aspect-ratio: 3/4; background: #e8e4dc; display: flex; align-items: center; justify-content: center; margin-bottom: 5mm; }
-.photo-text { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #999; text-transform: uppercase; letter-spacing: .1em; }
+/* Left */
+.left{}
+.photo{width:100%;aspect-ratio:3/4;background:#f0ece5;margin-bottom:5mm;display:flex;align-items:center;justify-content:center}
+.photo span{font-size:6.5pt;color:#999;text-transform:uppercase;letter-spacing:.1em}
+.label{font-size:6pt;color:#999;text-transform:uppercase;letter-spacing:.12em;margin-bottom:1mm;margin-top:4mm}
+.val{font-size:8pt;color:#444;margin-bottom:1.5mm}
+.val a{color:#444;text-decoration:none}
+.social{margin-top:3mm}
+.social a{display:block;font-size:7.5pt;color:#666;padding:1mm 0;text-decoration:none}
 
-/* Section titles */
-h2 { font-family: 'Bodoni Moda', serif; font-size: 11pt; font-weight: 700; letter-spacing: .02em; margin-bottom: 3mm; padding-bottom: 1.5mm; border-bottom: 1px solid #ccc; text-transform: uppercase; }
-h3 { font-family: 'Syne', sans-serif; font-size: 8pt; font-weight: 700; margin-bottom: 1mm; }
+/* Right */
+.right{}
+.bio{font-size:8.5pt;line-height:1.7;color:#555;margin-bottom:5mm}
+.bio em{color:#1a1815;font-style:italic}
 
-/* Contact sidebar */
-.contact-block { margin-bottom: 5mm; }
-.contact-label { font-family: 'Courier Prime', monospace; font-size: 6pt; color: #888; text-transform: uppercase; letter-spacing: .15em; margin-bottom: .5mm; }
-.contact-value { font-size: 8pt; color: #333; word-break: break-all; }
-.contact-value a { color: #333; text-decoration: none; }
+/* Stats */
+.stats{display:flex;gap:5mm;padding:3mm 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-bottom:6mm}
+.stat-n{font-family:'Instrument Serif',serif;font-size:20pt;color:#1a1815;line-height:1}
+.stat-l{font-size:5.5pt;color:#999;text-transform:uppercase;letter-spacing:.08em;margin-top:1mm}
 
-/* Social links */
-.social { margin-top: 3mm; }
-.social a { display: block; font-family: 'Courier Prime', monospace; font-size: 7pt; color: #666; padding: 1mm 0; text-decoration: none; }
+/* Section */
+h2{font-family:'Instrument Serif',serif;font-size:11pt;font-weight:400;padding-bottom:1.5mm;border-bottom:1px solid #ddd;margin-bottom:2.5mm;margin-top:5mm;color:#1a1815}
+h2:first-of-type{margin-top:0}
 
-/* Skills sidebar */
-.skill-group { margin-bottom: 4mm; }
-.skill-title { font-family: 'Bodoni Moda', serif; font-size: 8pt; font-weight: 700; margin-bottom: 1mm; }
-.skill-list { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #555; }
-
-/* Bio */
-.bio { font-size: 8.5pt; line-height: 1.65; color: #444; margin-bottom: 6mm; }
-.bio em { font-style: italic; color: #222; }
-
-/* Stats row */
-.stats { display: flex; gap: 6mm; margin-bottom: 6mm; padding: 3mm 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
-.stat-num { font-family: 'Bodoni Moda', serif; font-size: 18pt; font-weight: 700; color: #1a1a18; line-height: 1; }
-.stat-label { font-family: 'Courier Prime', monospace; font-size: 6pt; color: #888; text-transform: uppercase; letter-spacing: .1em; margin-top: 1mm; }
-
-/* Credits table */
-.credits-section { margin-bottom: 5mm; }
-.credits-section h3 { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #999; text-transform: uppercase; letter-spacing: .15em; margin-bottom: 2mm; font-weight: 400; }
-table { width: 100%; border-collapse: collapse; }
-tr { border-bottom: 1px solid #f0f0f0; }
-td { padding: 1.8mm 0; vertical-align: top; font-size: 8pt; }
-td:first-child { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #888; width: 14mm; }
-td:nth-child(2) { font-weight: 600; color: #1a1a18; padding-right: 3mm; }
-td:nth-child(3) { color: #555; font-size: 7.5pt; }
-td:nth-child(4) { font-family: 'Courier Prime', monospace; font-size: 6.5pt; color: #aaa; text-align: right; width: 22mm; }
-tr.featured td:nth-child(2) { color: #8a6d30; }
-tr.featured td:nth-child(2)::after { content: ' *'; font-size: 6pt; vertical-align: super; }
-
-/* Award tag */
-.award { display: inline-block; font-family: 'Courier Prime', monospace; font-size: 5.5pt; background: #1a1a18; color: #fff; padding: .5mm 2mm; letter-spacing: .1em; text-transform: uppercase; margin-left: 2mm; vertical-align: middle; }
+/* Table */
+table{width:100%;border-collapse:collapse}
+tr{border-bottom:1px solid #f2f0ec}
+td{padding:1.5mm 0;vertical-align:top;font-size:7.5pt}
+.y{width:12mm;color:#aaa;font-variant-numeric:tabular-nums}
+.t{font-family:'Instrument Serif',serif;font-size:8.5pt;color:#1a1815;padding-right:2mm}
+.d{color:#777;padding-right:2mm}
+.e{color:#aaa;text-align:right;font-size:7pt}
+.hl .t{color:#8b6d3f}
+.badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:5pt;font-weight:500;letter-spacing:.05em;text-transform:uppercase;background:#8b6d3f;color:#fff;padding:.5mm 1.5mm;border-radius:1px;margin-left:1.5mm;vertical-align:1px}
 
 /* Footer */
-.footer { position: absolute; bottom: 10mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-family: 'Courier Prime', monospace; font-size: 6pt; color: #bbb; letter-spacing: .1em; text-transform: uppercase; border-top: 1px solid #eee; padding-top: 2mm; }
-
-/* Page 2 */
-.page2-header { font-family: 'Bodoni Moda', serif; font-size: 18pt; font-weight: 700; margin-bottom: 6mm; padding-bottom: 3mm; border-bottom: 2px solid #1a1a18; }
-.credits-full { margin-bottom: 8mm; }
-.credits-full table td { padding: 2.2mm 0; }
-.note { font-family: 'Courier Prime', monospace; font-size: 7pt; color: #999; margin-top: 4mm; line-height: 1.6; }
-.note strong { color: #666; }
+.foot{position:absolute;bottom:8mm;left:18mm;right:18mm;display:flex;justify-content:space-between;font-size:6pt;color:#ccc;border-top:1px solid #eee;padding-top:2mm}
 </style>
 </head>
 <body>
-
-<!-- ═══════════════ PAGE 1 ═══════════════ -->
 <div class="page">
-  <div class="topbar">
-    <div>
-      <div class="topbar-name">Nathan Silva</div>
-    </div>
-    <div class="topbar-sub">
-      Ator &middot; Dublador &middot; Sonoplasta<br>
-      Campos dos Goytacazes, RJ
-    </div>
+
+  <div class="header">
+    <div class="name">Nathan Silva</div>
+    <div class="subtitle">Ator &middot; Dublador &middot; Sonoplasta<br>Campos dos Goytacazes, RJ &middot; 2026</div>
   </div>
 
   <div class="cols">
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-      <div class="photo"><span class="photo-text">Foto do Artista</span></div>
+    <div class="left">
+      <div class="photo"><span>Foto do artista</span></div>
 
-      <h2>Contato</h2>
-      <div class="contact-block">
-        <div class="contact-label">Telefone</div>
-        <div class="contact-value">(22) 99710-6833</div>
-      </div>
-      <div class="contact-block">
-        <div class="contact-label">E-mail</div>
-        <div class="contact-value"><a href="mailto:nathan_nunes92@hotmail.com">nathan_nunes92@hotmail.com</a></div>
-      </div>
-      <div class="contact-block">
-        <div class="contact-label">Cidade</div>
-        <div class="contact-value">Campos dos Goytacazes, RJ</div>
-      </div>
+      <div class="label">Telefone</div>
+      <div class="val">(22) 99710-6833</div>
+      <div class="label">E-mail</div>
+      <div class="val"><a href="mailto:nathan_nunes92@hotmail.com">nathan_nunes92@hotmail.com</a></div>
+      <div class="label">Cidade</div>
+      <div class="val">Campos dos Goytacazes, RJ</div>
 
       <div class="social">
-        <div class="contact-label">Redes Sociais</div>
-        <a href="https://instagram.com/nsilvan1">Instagram &mdash; @nsilvan1</a>
-        <a href="https://youtube.com/@nsilvan1">YouTube &mdash; @nsilvan1</a>
-        <a href="https://tiktok.com/@nsilvan1">TikTok &mdash; @nsilvan1</a>
-        <a href="https://facebook.com/nsilvan1">Facebook &mdash; @nsilvan1</a>
+        <div class="label">Redes</div>
+        <a>Instagram — @nsilvan1</a>
+        <a>YouTube — @nsilvan1</a>
+        <a>TikTok — @nsilvan1</a>
+        <a>Facebook — @nsilvan1</a>
       </div>
 
-      <div style="margin-top: 6mm;">
-        <h2>Habilidades</h2>
-        <div class="skill-group">
-          <div class="skill-title">Atuacao</div>
-          <div class="skill-list">Drama, Comedia, Musical, Acao</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-title">Voz</div>
-          <div class="skill-list">Dublagem, Narracao, Locucao, Sonoplastia</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-title">Tecnico</div>
-          <div class="skill-list">Projecoes cenicas, Design sonoro, Assistencia de direcao</div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-title">Idiomas</div>
-          <div class="skill-list">Portugues (nativo)</div>
-        </div>
+      <div class="label" style="margin-top:5mm">Habilidades</div>
+      <div class="val" style="font-size:7pt;color:#888;line-height:1.8">
+        Atuacao: Drama, Comedia, Musical<br>
+        Voz: Dublagem, Narracao, Locucao<br>
+        Tecnico: Projecoes, Sonoplastia<br>
+        Idiomas: Portugues (nativo)
       </div>
     </div>
 
-    <!-- MAIN -->
-    <div class="main">
-      <h2>Sobre</h2>
+    <div class="right">
       <div class="bio">
-        <p>Natural e residente de Campos dos Goytacazes, atuo nos palcos e diante das cameras desde 2017. Minha trajetoria passa pelo Teatro de Bolso Procopio Ferreira, pelo Santa Paciencia Casa Criativa e por sets de filmagem.</p>
-        <p style="margin-top:2mm;">Ao lado do diretor Fernando Rossi, participei de producoes que vao do curta premiado <em>O homem do cachorro</em> ao elenco de <em>Ponciano &mdash; De Amores &mdash; Furtado</em>. Nos bastidores, assino sonoplastia e projecoes cenicas em montagens como <em>O Beijo da Mulher Aranha</em> e <em>"fernandos" em busca de Pessoa</em>. No audiovisual, a webserie <em>3 E Par</em> e o curta <em>O menino da pipa avoada</em> completam essa jornada entre palco e tela. Tambem empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>.</p>
+        <p>Atuo nos palcos e diante das cameras desde 2017. Minha trajetoria passa pelo Teatro de Bolso Procopio Ferreira, pelo Santa Paciencia Casa Criativa e por sets de filmagem. Ao lado do diretor Fernando Rossi, construi um percurso que vai de curtas premiados a sonoplastia e projecoes cenicas. Tambem empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>.</p>
       </div>
 
       <div class="stats">
-        <div><div class="stat-num">15+</div><div class="stat-label">Producoes</div></div>
-        <div><div class="stat-num">9</div><div class="stat-label">Anos de carreira</div></div>
-        <div><div class="stat-num">2</div><div class="stat-label">Curtas premiados</div></div>
-        <div><div class="stat-num">2017</div><div class="stat-label">Inicio</div></div>
+        <div><div class="stat-n">15+</div><div class="stat-l">Producoes</div></div>
+        <div><div class="stat-n">9</div><div class="stat-l">Anos</div></div>
+        <div><div class="stat-n">2</div><div class="stat-l">Curtas premiados</div></div>
       </div>
 
-      <div class="credits-section">
-        <h3>Audiovisual</h3>
-        <table>
-          <tr class="featured"><td>2022</td><td>O homem do cachorro<span class="award">Premiado RibaCine 2022</span></td><td>Ator &mdash; Curta-metragem</td><td>Dir. Fernando Rossi</td></tr>
-          <tr class="featured"><td>2025</td><td>O menino da pipa avoada<span class="award">Premiado 1o Fest. Territorial Cinema Itinerante</span></td><td>Ator + Assist. Direcao &mdash; Curta</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2019-23</td><td>3 E PAR</td><td>Ator &mdash; Webserie</td><td></td></tr>
-        </table>
-      </div>
+      <h2>Audiovisual</h2>
+      <table>
+        <tr class="hl"><td class="y">2025</td><td class="t">O menino da pipa avoada <span class="badge">Premiado</span></td><td class="d">Curta &middot; Ator + Assist. Dir.</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr class="hl"><td class="y">2022</td><td class="t">O homem do cachorro <span class="badge">Premiado</span></td><td class="d">Curta &middot; Ator</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2019–23</td><td class="t">3 E PAR</td><td class="d">Webserie &middot; Ator</td><td class="e"></td></tr>
+      </table>
 
-      <div class="credits-section">
-        <h3>Teatro &mdash; Ator</h3>
-        <table>
-          <tr><td>2026</td><td>Uma Promessa pra Sao Salvador</td><td>Ator &mdash; Coletivo Real de Teatro</td><td>Teatro de Bolso</td></tr>
-          <tr><td>2025</td><td>Ponciano &mdash; De Amores &mdash; Furtado</td><td>Ator &mdash; Comedia musical</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2021</td><td>Encontro no bar</td><td>Ator &mdash; Leituras Santas</td><td>Santa Paciencia</td></tr>
-          <tr><td>2020</td><td>Piquenique no Front</td><td>Ator &mdash; Leituras Santas (online)</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2019</td><td>Eu me chamo James Holmes</td><td>Ator</td><td>Grupo Nos Experimento</td></tr>
-          <tr><td>2019</td><td>O Magico de Oz</td><td>Ator</td><td>Teatro de Bolso</td></tr>
-        </table>
-      </div>
+      <h2>Teatro — Ator</h2>
+      <table>
+        <tr><td class="y">2026</td><td class="t">Uma Promessa pra Sao Salvador</td><td class="d">Coletivo Real de Teatro</td><td class="e">Teatro de Bolso</td></tr>
+        <tr><td class="y">2025</td><td class="t">Ponciano — De Amores — Furtado</td><td class="d">Comedia musical</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2021</td><td class="t">Encontro no bar</td><td class="d">Leituras Santas</td><td class="e">Santa Paciencia</td></tr>
+        <tr><td class="y">2020</td><td class="t">Piquenique no Front</td><td class="d">Leituras Santas (online)</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2019</td><td class="t">Eu me chamo James Holmes</td><td class="d">Ator</td><td class="e">Grupo Nos Experimento</td></tr>
+        <tr><td class="y">2019</td><td class="t">O Magico de Oz</td><td class="d">Ator</td><td class="e">Teatro de Bolso</td></tr>
+      </table>
 
-      <div class="credits-section">
-        <h3>Teatro &mdash; Sonoplastia &amp; Projecoes</h3>
-        <table>
-          <tr><td>2025</td><td>Conversas com Chocolate</td><td>Projecoes cenicas</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2024</td><td>"fernandos" em busca de Pessoa</td><td>Sonoplastia e Projecoes</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2024</td><td>O Beijo da Mulher Aranha</td><td>Som e Projecao</td><td>Dir. Fernando Rossi</td></tr>
-          <tr><td>2022</td><td>O Julgamento de Lucifer</td><td>Sonoplastia</td><td>Dir. Fernando Rossi</td></tr>
-        </table>
-      </div>
+      <h2>Teatro — Som &amp; Projecoes</h2>
+      <table>
+        <tr><td class="y">2025</td><td class="t">Conversas com Chocolate</td><td class="d">Projecoes cenicas</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2024</td><td class="t">"fernandos" em busca de Pessoa</td><td class="d">Sonoplastia e Projecoes</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2024</td><td class="t">O Beijo da Mulher Aranha</td><td class="d">Som e Projecao</td><td class="e">Dir. Fernando Rossi</td></tr>
+        <tr><td class="y">2022</td><td class="t">O Julgamento de Lucifer</td><td class="d">Sonoplastia</td><td class="e">Dir. Fernando Rossi</td></tr>
+      </table>
 
-      <div class="credits-section">
-        <h3>Dublagem</h3>
-        <table>
-          <tr><td>Atual</td><td>Reino em Cena</td><td>Dublador &mdash; @reinoemcenaoficial</td><td>2a Igreja Batista</td></tr>
-        </table>
-      </div>
+      <h2>Dublagem</h2>
+      <table>
+        <tr><td class="y">Atual</td><td class="t">Reino em Cena</td><td class="d">Dublador</td><td class="e">@reinoemcenaoficial</td></tr>
+      </table>
     </div>
   </div>
 
-  <div class="footer">
-    <span>Nathan Silva &mdash; Portfolio 2026</span>
-    <span>@nsilvan1</span>
-    <span>1 / 1</span>
+  <div class="foot">
+    <span>Nathan Silva — Portfolio 2026</span>
+    <span>@nsilvan1 &middot; nathan_nunes92@hotmail.com &middot; (22) 99710-6833</span>
   </div>
 </div>
-
 </body>
 </html>
