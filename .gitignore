@@ -1,6 +1,11 @@
 PESQUISA_*.md
 DESCOBERTAS_*.md
 SPEC.md
+ss-*.png
+screenshot-*.png
+FINAL-*.png
+test.html
+site-preview.pdf
 .vercel
 node_modules
 .DS_Store
