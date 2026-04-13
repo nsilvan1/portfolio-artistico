@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.sympla.com.br)",
+      "WebFetch(domain:firjan.com.br)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --screenshot=\"/c/Users/Nathan2/Downloads/nathanator-portfolio/ss-current.png\" --window-size=1280,900 \"file:///C:/Users/Nathan2/Downloads/nathanator-portfolio/index.html\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --screenshot=\"/c/Users/Nathan2/Downloads/nathanator-portfolio/ss-full.png\" --window-size=1280,6500 \"file:///C:/Users/Nathan2/Downloads/nathanator-portfolio/index.html\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf=\"/c/Users/Nathan2/Downloads/nathanator-portfolio/Nathan_Silva_Portfolio.pdf\" \"file:///C:/Users/Nathan2/Downloads/nathanator-portfolio/portfolio-pdf.html\")",
+      "Bash(rm -f /c/Users/Nathan2/Downloads/nathanator-portfolio/.git/index.lock)",
+      "Bash(git add:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

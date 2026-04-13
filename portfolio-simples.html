@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Nathan Silva — Portfólio de Espetáculos</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a1a1a;
+  font-size: 10pt;
+  line-height: 1.55;
+  background: #fff;
+}
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 20mm;
+  position: relative;
+  page-break-after: always;
+}
+.page:last-child { page-break-after: auto; }
+
+/* Capa */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 253mm;
+}
+.cover-top {
+  font-size: 8pt;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888;
+}
+.cover-center { padding-top: 40mm; }
+.cover-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72pt;
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+.cover-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20pt;
+  color: #555;
+  margin-top: 8mm;
+  font-weight: 400;
+}
+.cover-sub {
+  font-size: 9pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 14mm;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 4mm;
+  max-width: 90mm;
+}
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 8pt;
+  color: #666;
+  letter-spacing: 0.08em;
+}
+
+/* Páginas internas */
+.header-mini {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6mm;
+  border-bottom: 1px solid #1a1a1a;
+  margin-bottom: 10mm;
+  font-size: 8pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+}
+.header-mini strong { color: #1a1a1a; font-weight: 500; letter-spacing: 0.15em; }
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32pt;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 3mm;
+}
+.section-kicker {
+  font-size: 8pt;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 10mm;
+}
+
+.bio {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14pt;
+  line-height: 1.5;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 12mm;
+  padding-left: 6mm;
+  border-left: 2px solid #1a1a1a;
+  font-weight: 400;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm 12mm;
+  margin-top: 10mm;
+}
+.info-item .label {
+  font-size: 7pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1.5mm;
+}
+.info-item .value { font-size: 10pt; color: #1a1a1a; }
+
+/* Espetáculos */
+.show {
+  padding: 6mm 0;
+  border-bottom: 1px solid #e5e5e5;
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  gap: 6mm;
+}
+.show:last-child { border-bottom: none; }
+.show-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18pt;
+  color: #999;
+  line-height: 1;
+  padding-top: 1mm;
+  font-variant-numeric: tabular-nums;
+}
+.show-body { }
+.show-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16pt;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin-bottom: 2mm;
+}
+.show-title em { font-style: italic; }
+.show-meta {
+  font-size: 8.5pt;
+  color: #666;
+  line-height: 1.5;
+}
+.show-meta .role {
+  display: inline-block;
+  font-size: 7pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: #f0ebe0;
+  padding: 0.8mm 2mm;
+  margin-right: 2mm;
+  vertical-align: middle;
+}
+.show-meta .role.tec { background: #e8e8e8; color: #444; }
+
+.cat-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14pt;
+  color: #1a1a1a;
+  margin-top: 10mm;
+  margin-bottom: 3mm;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid #1a1a1a;
+  letter-spacing: 0.02em;
+}
+.cat-title:first-child { margin-top: 0; }
+
+.footer {
+  position: absolute;
+  bottom: 12mm;
+  left: 20mm;
+  right: 20mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7pt;
+  color: #aaa;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 3mm;
+}
+
+/* Contato */
+.contact-block {
+  margin-top: 12mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+}
+.contact-card {
+  padding: 8mm;
+  border: 1px solid #1a1a1a;
+}
+.contact-card .label {
+  font-size: 7pt;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 2mm;
+}
+.contact-card .value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16pt;
+  color: #1a1a1a;
+}
+</style>
+</head>
+<body>
+
+<!-- Capa -->
+<div class="page cover">
+  <div class="cover-top">Portfólio · 2026</div>
+  <div class="cover-center">
+    <div class="cover-name">Nathan<br>Silva</div>
+    <div class="cover-role">ator · dos palcos às câmeras</div>
+    <div class="cover-sub">Teatro, audiovisual e dublagem — Campos dos Goytacazes, RJ</div>
+  </div>
+  <div class="cover-bottom">
+    <span>@nsilvan1</span>
+    <span>nathan_nunes92@hotmail.com</span>
+  </div>
+</div>
+
+<!-- Bio -->
+<div class="page">
+  <div class="header-mini">
+    <span><strong>Nathan Silva</strong></span>
+    <span>01 · Sobre</span>
+  </div>
+
+  <div class="section-kicker">Apresentação</div>
+  <h1>Sobre o artista</h1>
+
+  <div class="bio">
+    Ator dos palcos e das câmeras. Nascido em 1992, em Campos dos Goytacazes, atua em peças de teatro desde 2017. Transita entre a cena teatral, o audiovisual e a dublagem, construindo uma trajetória que une formação contínua e pesquisa de linguagem.
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item">
+      <div class="label">Nome</div>
+      <div class="value">Nathan Silva</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Nascimento</div>
+      <div class="value">1992 · 34 anos</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Cidade</div>
+      <div class="value">Campos dos Goytacazes, RJ</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Atuação</div>
+      <div class="value">Teatro · Audiovisual · Dublagem</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Início no teatro</div>
+      <div class="value">2017</div>
+    </div>
+    <div class="info-item">
+      <div class="label">Instagram</div>
+      <div class="value">@nsilvan1</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Nathan Silva · Portfólio</span>
+    <span>02</span>
+  </div>
+</div>
+
+<!-- Espetáculos -->
+<div class="page">
+  <div class="header-mini">
+    <span><strong>Nathan Silva</strong></span>
+    <span>02 · Espetáculos</span>
+  </div>
+
+  <div class="section-kicker">Teatro</div>
+  <h1>Espetáculos</h1>
+  <p style="font-size:9pt;color:#666;margin-top:-1mm;margin-bottom:10mm;max-width:140mm;">Trabalhos em cena como ator e como técnico (sonoplastia e projeções), em produções dirigidas em Campos dos Goytacazes.</p>
+
+  <div class="cat-title">Como ator</div>
+
+  <div class="show">
+    <div class="show-year">2025</div>
+    <div class="show-body">
+      <div class="show-title"><em>Ponciano — De Amores — Furtado</em></div>
+      <div class="show-meta"><span class="role">Ator</span>Direção: Fernando Rossi</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2021</div>
+    <div class="show-body">
+      <div class="show-title"><em>Encontro no bar</em></div>
+      <div class="show-meta"><span class="role">Ator</span>Leituras Santas · Santa Paciência Casa Criativa</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2021</div>
+    <div class="show-body">
+      <div class="show-title"><em>Piquenique no Front</em></div>
+      <div class="show-meta"><span class="role">Ator</span>Leituras Santas · Santa Paciência Casa Criativa</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2019</div>
+    <div class="show-body">
+      <div class="show-title"><em>Eu me chamo James Holmes</em></div>
+      <div class="show-meta"><span class="role">Ator</span>Grupo Nós Experimento</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2019</div>
+    <div class="show-body">
+      <div class="show-title"><em>O Mágico de Oz</em></div>
+      <div class="show-meta"><span class="role">Ator</span>Teatro de Bolso Procópio Ferreira</div>
+    </div>
+  </div>
+
+  <div class="cat-title">Como técnico — sonoplastia e projeções</div>
+
+  <div class="show">
+    <div class="show-year">2025</div>
+    <div class="show-body">
+      <div class="show-title"><em>Conversas com Chocolate</em></div>
+      <div class="show-meta"><span class="role tec">Projeções</span>Direção: Fernando Rossi</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2024</div>
+    <div class="show-body">
+      <div class="show-title"><em>"fernandos" em busca de Pessoa</em></div>
+      <div class="show-meta"><span class="role tec">Som / Projeções</span>Direção: Fernando Rossi</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2024</div>
+    <div class="show-body">
+      <div class="show-title"><em>O Beijo da Mulher Aranha</em></div>
+      <div class="show-meta"><span class="role tec">Som / Projeções</span>Direção: Fernando Rossi</div>
+    </div>
+  </div>
+
+  <div class="show">
+    <div class="show-year">2022</div>
+    <div class="show-body">
+      <div class="show-title"><em>O Julgamento de Lúcifer</em></div>
+      <div class="show-meta"><span class="role tec">Sonoplastia</span>Direção: Fernando Rossi</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Nathan Silva · Portfólio</span>
+    <span>03</span>
+  </div>
+</div>
+
+<!-- Audiovisual + Dublagem + Contato -->
+<div class="page">
+  <div class="header-mini">
+    <span><strong>Nathan Silva</strong></span>
+    <span>03 · Audiovisual & Contato</span>
+  </div>
+
+  <div class="section-kicker">Câmera e voz</div>
+  <h1>Audiovisual</h1>
+
+  <div style="margin-top:8mm;">
+
+    <div class="show">
+      <div class="show-year">2023</div>
+      <div class="show-body">
+        <div class="show-title"><em>3 É Par</em></div>
+        <div class="show-meta"><span class="role">Ator</span>Websérie · 2019 – 2023 · @webserie3epar</div>
+      </div>
+    </div>
+
+    <div class="show">
+      <div class="show-year">2022</div>
+      <div class="show-body">
+        <div class="show-title"><em>O homem do cachorro</em></div>
+        <div class="show-meta"><span class="role">Ator</span>Curta-metragem · Direção: Fernando Rossi · <strong>Premiado RibaCine 2022</strong></div>
+      </div>
+    </div>
+
+    <div class="show">
+      <div class="show-year">—</div>
+      <div class="show-body">
+        <div class="show-title"><em>O menino da pipa avoada</em></div>
+        <div class="show-meta"><span class="role">Ator</span>Curta-metragem</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cat-title" style="margin-top:12mm;">Dublagem</div>
+  <div class="show">
+    <div class="show-year">—</div>
+    <div class="show-body">
+      <div class="show-title">Reino em Cena</div>
+      <div class="show-meta"><span class="role">Dublagem</span>@reinoemcenaoficial · Segunda Igreja Batista · Campos dos Goytacazes</div>
+    </div>
+  </div>
+
+  <div class="section-kicker" style="margin-top:18mm;">Para contato</div>
+  <h1 style="font-size:24pt;">Fale com Nathan</h1>
+
+  <div class="contact-block">
+    <div class="contact-card">
+      <div class="label">E-mail</div>
+      <div class="value">nathan_nunes92<br>@hotmail.com</div>
+    </div>
+    <div class="contact-card">
+      <div class="label">Telefone</div>
+      <div class="value">(22) 99710-6833</div>
+    </div>
+    <div class="contact-card">
+      <div class="label">Instagram</div>
+      <div class="value">@nsilvan1</div>
+    </div>
+    <div class="contact-card">
+      <div class="label">YouTube</div>
+      <div class="value">@webserie3epar</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Nathan Silva · Portfólio · Campos dos Goytacazes, RJ</span>
+    <span>04</span>
+  </div>
+</div>
+
+</body>
+</html>
