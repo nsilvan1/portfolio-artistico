@@ -22,7 +22,8 @@
     <nav class="nav">
       <a href="#" class="nav__logo">Nathan Silva</a>
       <ul class="nav__menu" id="nav-menu">
-        <li><a href="#reel" class="nav__link" data-scroll-to="reel">Reel</a></li>
+        <li><a href="#curtas" class="nav__link" data-scroll-to="curtas">Curtas</a></li>
+        <li><a href="#destaques" class="nav__link" data-scroll-to="destaques">Destaques</a></li>
         <li><a href="#creditos" class="nav__link" data-scroll-to="creditos">Creditos</a></li>
         <li><a href="#contato" class="nav__link" data-scroll-to="contato">Contato</a></li>
       </ul>
@@ -34,46 +35,529 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__inner">
       <p class="hero__eyebrow">Ator &middot; Dublador &middot; Sonoplasta</p>
-      <h1 class="hero__name">Nathan<br>Silva</h1>
-      <p class="hero__location">Campos dos Goytacazes, RJ</p>
-      <div class="hero__stats">
-        <span>24+ producoes</span>
-        <span>2 curtas premiados</span>
-        <span>Desde 2012</span>
+      <h1 class="hero__name">Nathan Silva</h1>
+      <p class="hero__bio" id="sobre">
+        Estreei em 2012 na <em>Paixao de Cristo</em> da Praca Sao Salvador. Integrei o <em>Grupo Tubo de Ensaio</em> e o <em>Nucleo de Artes ORI</em>, transitando entre musicais infantis e Shakespeare em palcos como o Teatro de Bolso Procopio Ferreira e o Santa Paciencia Casa Criativa. Em 2022, a parceria com o diretor <em>Fernando Rossi</em> abriu um novo capitulo: estreei no cinema com dois curtas premiados em festivais regionais e passei a assinar tambem sonoplastia e projecoes cenicas em espetaculos teatrais.
+      </p>
+      <div class="hero__meta">
+        <p class="hero__location">Campos dos Goytacazes, RJ</p>
+        <dl class="hero__facts">
+          <div>
+            <dt>Trajetoria</dt>
+            <dd>Palcos desde 2012 &middot; sets desde 2022</dd>
+          </div>
+          <div>
+            <dt>Premiacoes</dt>
+            <dd>2 curtas premiados com <em>Fernando Rossi</em></dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- BIO -->
-  <section class="bio" id="sobre">
+  <!-- CURTAS -->
+  <section class="curtas" id="curtas">
     <div class="wrap">
-      <p>Natural e residente de Campos dos Goytacazes, estou nos palcos desde 2012 — quando estreei na <em>Paixao de Cristo</em> da Praca Sao Salvador. Desde entao, minha trajetoria passa pelo Teatro de Bolso Procopio Ferreira, pelo Santa Paciencia Casa Criativa, pelo Grupo Tubo de Ensaio e por sets de filmagem. Ao lado do diretor Fernando Rossi, construi um percurso que vai de curtas premiados a sonoplastia e projecoes cenicas. Atualmente integro o Nucleo de Artes ORI e a CIA in Cena, alem de emprestar minha voz ao projeto de dublagem <em>Reino em Cena</em>.</p>
-    </div>
-  </section>
+      <h2 class="section-label">Curtas premiados</h2>
+      <p class="curtas__intro">Dirigidos por <em>Fernando Rossi</em>. Reconhecidos em festivais regionais de cinema.</p>
+      <div class="curtas__grid">
 
-  <!-- REEL -->
-  <section class="reel" id="reel">
-    <div class="wrap">
-      <h2 class="section-label">Showreel</h2>
-      <div class="reel__frame">
-        <iframe src="https://www.youtube.com/embed/AfaojNQX7nI" title="Showreel — Nathan Silva" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        <article class="curtas__item">
+          <button type="button" class="curtas__frame" data-video="AfaojNQX7nI" data-title="O homem do cachorro — Fernando Rossi (2022)" aria-label="Reproduzir: O homem do cachorro">
+            <img class="curtas__thumb" src="https://i.ytimg.com/vi/AfaojNQX7nI/hqdefault.jpg" alt="" loading="lazy" onload="if(this.naturalWidth>120){const b=new Image();b.onload=()=>{if(b.naturalWidth>=1280)this.src=b.src};b.src='https://i.ytimg.com/vi/AfaojNQX7nI/maxresdefault.jpg';}">
+            <span class="curtas__play" aria-hidden="true">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path class="curtas__play-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+            </span>
+          </button>
+          <div class="curtas__info">
+            <span class="curtas__year">2022 <span class="badge badge--small">Premiado</span></span>
+            <h3 class="curtas__title">O homem do cachorro</h3>
+            <p class="curtas__tagline">Melhor Filme (Juri Popular) + Melhor Roteiro Adaptado — RibaCine 2022</p>
+            <p class="curtas__synopsis">Um homem em situacao de rua tem no seu cachorro a unica companhia — ate o encontro com o homem do carro preto. Retrato sobre afetividade, desejo e solidao, premiado na categoria LGBT+ do RibaCine. Adaptacao livre de conto de Adriano Moura.</p>
+            <p class="curtas__meta">Direcao: Fernando Rossi &middot; Roteiro: Rodri Mendes &middot; Nathan no elenco &middot; 11 minutos</p>
+          </div>
+        </article>
+
+        <article class="curtas__item">
+          <button type="button" class="curtas__frame" data-video="CuZQeJSKTEY" data-start="4" data-title="O menino da pipa avoada — Fernando Rossi (2025)" aria-label="Reproduzir: O menino da pipa avoada">
+            <img class="curtas__thumb" src="https://i.ytimg.com/vi/CuZQeJSKTEY/hqdefault.jpg" alt="" loading="lazy" onload="if(this.naturalWidth>120){const b=new Image();b.onload=()=>{if(b.naturalWidth>=1280)this.src=b.src};b.src='https://i.ytimg.com/vi/CuZQeJSKTEY/maxresdefault.jpg';}">
+            <span class="curtas__play" aria-hidden="true">
+              <svg viewBox="0 0 68 48" width="68" height="48"><path class="curtas__play-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+            </span>
+          </button>
+          <div class="curtas__info">
+            <span class="curtas__year">2025 <span class="badge badge--small">Premiado</span></span>
+            <h3 class="curtas__title">O menino da pipa avoada</h3>
+            <p class="curtas__tagline">Premio do Juri Popular — 1o Festival Territorial de Cinema Itinerante, Lapa RJ</p>
+            <p class="curtas__synopsis">Nas paisagens rurais de Campos dos Goytacazes, uma trabalhadora encontra uma pipa caida e a leva para o filho pequeno, que vive as margens de uma rodovia. Uma historia sobre infancia, afeto e o direito ao brincar — inspirada no conto "Pipa Avoada" de Adriano Moura.</p>
+            <p class="curtas__meta">Direcao: Fernando Rossi &middot; Roteiro: Rodri Mendes &middot; Nathan como Ator + Assist. Direcao</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- CREDITOS -->
+  <!-- DESTAQUES -->
+  <section class="destaques" id="destaques">
+    <div class="wrap">
+      <h2 class="section-label">Trabalhos em destaque</h2>
+      <p class="destaques__intro">Clique em um card para ver os detalhes. <em>Fotos ilustrativas — em breve substituidas pelos registros originais.</em></p>
+      <div class="destaques__grid">
+
+        <button type="button" class="destaques__card" data-work="menino-pipa" aria-label="Abrir detalhes: O menino da pipa avoada">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/menino-pipa-avoada/600/900')">
+            <span class="destaques__badge"><span class="badge badge--small">Premiado</span></span>
+            <div class="destaques__info">
+              <span class="destaques__year">2025 &middot; Curta</span>
+              <h3 class="destaques__title">O menino da pipa avoada</h3>
+              <p class="destaques__meta">Ator + Assist. Direcao &middot; Dir. Fernando Rossi</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="homem-cachorro" aria-label="Abrir detalhes: O homem do cachorro">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/homem-cachorro-rossi/600/900')">
+            <span class="destaques__badge"><span class="badge badge--small">Premiado</span></span>
+            <div class="destaques__info">
+              <span class="destaques__year">2022 &middot; Curta</span>
+              <h3 class="destaques__title">O homem do cachorro</h3>
+              <p class="destaques__meta">Ator &middot; Dir. Fernando Rossi</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="3-e-par" aria-label="Abrir detalhes: 3 e Par">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/3epar-webserie/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2019–23 &middot; Webserie</span>
+              <h3 class="destaques__title">3 e Par</h3>
+              <p class="destaques__meta">Ator &middot; Dir. Karol Cerqueira</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="ponciano" aria-label="Abrir detalhes: Ponciano — De Amores — Furtado">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/ponciano-amores/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2025 &middot; Teatro</span>
+              <h3 class="destaques__title">Ponciano — De Amores — Furtado</h3>
+              <p class="destaques__meta">Comedia musical &middot; Dir. Fernando Rossi</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="james-holmes" aria-label="Abrir detalhes: Eu me chamo James Holmes">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/james-holmes-nos/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2019 &middot; Teatro</span>
+              <h3 class="destaques__title">Eu me chamo James Holmes</h3>
+              <p class="destaques__meta">Grupo Nos Experimento &middot; Macae</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="magico-oz" aria-label="Abrir detalhes: O Magico de Oz">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/magico-de-oz-bolso/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2019 &middot; Teatro infantil</span>
+              <h3 class="destaques__title">O Magico de Oz</h3>
+              <p class="destaques__meta">Teatro de Bolso Procopio Ferreira</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="saltimbancos" aria-label="Abrir detalhes: Os Saltimbancos">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/saltimbancos-ori/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2018 &middot; Teatro musical</span>
+              <h3 class="destaques__title">Os Saltimbancos</h3>
+              <p class="destaques__meta">Gato &middot; Dir. Luciano de Paula</p>
+            </div>
+          </div>
+        </button>
+
+        <button type="button" class="destaques__card" data-work="sonhos-verao" aria-label="Abrir detalhes: Sonhos de uma noite de verao">
+          <div class="destaques__photo" style="background-image:url('https://picsum.photos/seed/sonhos-noite-verao/600/900')">
+            <div class="destaques__info">
+              <span class="destaques__year">2017 &middot; Shakespeare</span>
+              <h3 class="destaques__title">Sonhos de uma noite de verao</h3>
+              <p class="destaques__meta">Oberon, Rei dos Elfos</p>
+            </div>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL — detalhes do espetaculo -->
+  <dialog class="modal" id="work-modal" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" aria-label="Fechar">&times;</button>
+    <div class="modal__hero" id="modal-hero">
+      <div class="modal__hero-info">
+        <span class="modal__year" id="modal-year"></span>
+        <h3 class="modal__title" id="modal-title"></h3>
+        <p class="modal__tagline" id="modal-tagline"></p>
+      </div>
+    </div>
+    <div class="modal__body">
+      <p class="modal__synopsis" id="modal-synopsis"></p>
+      <div class="modal__grid">
+        <div class="modal__main">
+          <dl class="modal__credits" id="modal-credits"></dl>
+        </div>
+        <aside class="modal__aside">
+          <div class="modal__awards" id="modal-awards" hidden>
+            <h4>Premiacoes</h4>
+            <ul id="modal-awards-list"></ul>
+          </div>
+          <div class="modal__links" id="modal-links" hidden>
+            <h4>Links</h4>
+            <ul id="modal-links-list"></ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- CREDITOS — timeline com filtros -->
   <section class="creditos" id="creditos">
     <div class="wrap">
+      <h2 class="section-label">Ficha completa</h2>
 
+      <div class="creditos__filters" role="tablist">
+        <button type="button" class="creditos__filter is-active" data-filter="all">Tudo <span>25</span></button>
+        <button type="button" class="creditos__filter" data-filter="audiovisual">Audiovisual <span>3</span></button>
+        <button type="button" class="creditos__filter" data-filter="teatro">Teatro <span>15</span></button>
+        <button type="button" class="creditos__filter" data-filter="sonoplastia">Sonoplastia <span>5</span></button>
+        <button type="button" class="creditos__filter" data-filter="dublagem">Dublagem <span>1</span></button>
+        <button type="button" class="creditos__filter" data-filter="formacao">Formacao <span>1</span></button>
+      </div>
+
+      <ol class="timeline">
+
+        <li class="timeline__item" data-type="dublagem">
+          <span class="timeline__year">Atual</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Reino em Cena</h3>
+            <p class="timeline__meta">Dublagem &middot; Dublador</p>
+            <p class="timeline__extra">Segunda Igreja Batista &middot; @reinoemcenaoficial</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.instagram.com/reinoemcenaoficial/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="formacao">
+          <span class="timeline__year">Atual</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Curso Livre de Teatro</h3>
+            <p class="timeline__meta">Formacao</p>
+            <p class="timeline__extra">Campos dos Goytacazes, RJ</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2026</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Uma Promessa pra Sao Salvador</h3>
+            <p class="timeline__meta">Teatro &middot; Coletivo Real de Teatro</p>
+            <p class="timeline__extra">Teatro de Bolso Procopio Ferreira</p>
+          </div>
+        </li>
+
+        <li class="timeline__item timeline__item--premiado" data-type="audiovisual">
+          <span class="timeline__year">2025</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O menino da pipa avoada <span class="badge">Premiado</span></h3>
+            <p class="timeline__meta">Curta-metragem &middot; Ator + Assist. Direcao</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Premio do Juri Popular — 1o Fest. Territorial Cinema Itinerante, Lapa RJ</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.youtube.com/watch?v=CuZQeJSKTEY" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="https://www.instagram.com/p/DSOkwJsDfXH/" target="_blank" rel="noopener">Premiacao @outrar.producoes</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2025</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Ponciano — De Amores — Furtado</h3>
+            <p class="timeline__meta">Teatro &middot; Comedia musical &middot; Ator</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Teatro de Bolso &middot; Lei Paulo Gustavo</p>
+            <ul class="timeline__sources">
+              <li><a href="https://capitalfmradio.com.br/espetaculo-ponciano-de-amores-furtado-estreia-em-campos/" target="_blank" rel="noopener">Capital FM</a></li>
+              <li><a href="https://www.portalozk.com/vaf/noticias/entretenimento/teatro-de-bolso-recebe-ponciano-de-amores-furtado-neste-final-de-semana/44063/" target="_blank" rel="noopener">Portal OZK</a></li>
+              <li><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=98773" target="_blank" rel="noopener">Prefeitura</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="sonoplastia">
+          <span class="timeline__year">2025</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Conversas com Chocolate</h3>
+            <p class="timeline__meta">Sonoplastia &middot; Projecoes cenicas</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</p>
+            <ul class="timeline__sources">
+              <li><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=97681" target="_blank" rel="noopener">Prefeitura</a></li>
+              <li><a href="https://j3news.com/2025/07/05/peca-conversas-com-chocolate-em-cartaz-neste-fim-de-semana-no-teatro-de-bolso/" target="_blank" rel="noopener">J3News</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="sonoplastia">
+          <span class="timeline__year">2024</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">"fernandos" em busca de Pessoa</h3>
+            <p class="timeline__meta">Sonoplastia &middot; Sonoplastia e Projecoes</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</p>
+            <ul class="timeline__sources">
+              <li><a href="https://j3news.com/2024/10/24/espetaculo-no-teatro-de-bolso-retrata-o-poeta-portugues-fernando-pessoa/" target="_blank" rel="noopener">J3News</a></li>
+              <li><a href="https://www.folha1.com.br/cultura_e_lazer/2024/10/1303305-espetaculo-fernandos-em-busca-de-pessoa-chega-ao-teatro-de-bolso-procopio-ferreira-em-campos.html" target="_blank" rel="noopener">Folha1</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="sonoplastia">
+          <span class="timeline__year">2024</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O Beijo da Mulher Aranha</h3>
+            <p class="timeline__meta">Sonoplastia &middot; Som e Projecao</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=91979" target="_blank" rel="noopener">Prefeitura</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="audiovisual">
+          <span class="timeline__year">2019–23</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">3 e Par</h3>
+            <p class="timeline__meta">Webserie &middot; Ator</p>
+            <p class="timeline__extra">Dir. Karol Cerqueira</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.youtube.com/@webserie3epar" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="https://www.instagram.com/webserie3epar/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item timeline__item--premiado" data-type="audiovisual">
+          <span class="timeline__year">2022</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O homem do cachorro <span class="badge">Premiado</span></h3>
+            <p class="timeline__meta">Curta-metragem &middot; Ator</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Melhor Filme + Melhor Roteiro — RibaCine 2022 (LGBT+)</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.youtube.com/watch?v=AfaojNQX7nI" target="_blank" rel="noopener">YouTube</a></li>
+              <li><a href="https://www.folha1.com.br/blogs/blogdomatheusberriel/2022/10/1285689-filme-de-fernando-rossi-e-rodri-mendes-leva-dois-premios-no-festival-de-cinema-de-rio-bonito.html" target="_blank" rel="noopener">Folha1</a></li>
+              <li><a href="https://uenf.br/portal/noticias/cine-darcy-da-uenf-exibiu-producoes-audiovisuais-campistas-faroeste-cabrunco-e-o-homem-do-cachorro/" target="_blank" rel="noopener">UENF</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="sonoplastia">
+          <span class="timeline__year">2022</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O Julgamento de Lucifer</h3>
+            <p class="timeline__meta">Sonoplastia</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.folha1.com.br/cultura_e_lazer/2022/11/1286040-espetaculo-o-julgamento-de-lucifer-no-teatro-de-bolso-de-sexta-a-domingo.html" target="_blank" rel="noopener">Folha1</a></li>
+              <li><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=76813" target="_blank" rel="noopener">Prefeitura</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="sonoplastia">
+          <span class="timeline__year">2022</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Anti-Amor</h3>
+            <p class="timeline__meta">Sonoplastia</p>
+            <p class="timeline__extra">Dir. Rodri Mendes &middot; Texto: Lucas Machado e Rodri Mendes &middot; Campos/RJ</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2021</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Encontro no bar</h3>
+            <p class="timeline__meta">Teatro &middot; Leituras Santas &middot; Ator</p>
+            <p class="timeline__extra">Santa Paciencia Casa Criativa</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2020</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Piquenique no Front</h3>
+            <p class="timeline__meta">Teatro &middot; Leituras Santas &middot; Ator</p>
+            <p class="timeline__extra">Dir. Fernando Rossi &middot; Online (pandemia)</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2019</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Eu me chamo James Holmes</h3>
+            <p class="timeline__meta">Teatro &middot; Ator</p>
+            <p class="timeline__extra">Grupo Nos Experimento &middot; Rinha das Artes, Macae</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.instagram.com/nosexperimento/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2019</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O Magico de Oz</h3>
+            <p class="timeline__meta">Teatro &middot; Ator</p>
+            <p class="timeline__extra">Teatro de Bolso Procopio Ferreira</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.facebook.com/tbprocopioferreira/videos/m%C3%A1gico-de-oz-sess%C3%A3o-extra-domingo-20102019-%C3%A0s-1830/2562838530474286/" target="_blank" rel="noopener">Facebook Teatro de Bolso</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2018</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Os Saltimbancos</h3>
+            <p class="timeline__meta">Teatro musical &middot; Gato &middot; Ator</p>
+            <p class="timeline__extra">Nucleo de Artes ORI &middot; Dir. Luciano de Paula &middot; Bienal do Livro &middot; Teatro de Bolso &middot; Projeto 1001 Espetaculos</p>
+            <ul class="timeline__sources">
+              <li><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=49272" target="_blank" rel="noopener">Prefeitura</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">~2018</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O palhaco Pacoca no mundo magico das Historias</h3>
+            <p class="timeline__meta">Teatro &middot; Ator</p>
+            <p class="timeline__extra">Nucleo de Artes ORI &middot; Teatro de Bolso Procopio Ferreira</p>
+            <ul class="timeline__sources">
+              <li><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=48944" target="_blank" rel="noopener">Prefeitura</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2018</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O Pagador de Promessas</h3>
+            <p class="timeline__meta">Teatro &middot; Dias Gomes &middot; Ator</p>
+            <p class="timeline__extra">Teatro de Bolso Procopio Ferreira</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2018</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Esquetes: Calabar, Eles nao usam Black Tie, Opera do Malandro, Vestido de Noiva</h3>
+            <p class="timeline__meta">Teatro &middot; Ator</p>
+            <p class="timeline__extra">Curso Livre de Teatro</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2018</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">O Tango dos Assassinos</h3>
+            <p class="timeline__meta">Teatro &middot; Esquete &middot; Ator</p>
+            <p class="timeline__extra">Festival de Esquetes de Campos</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2017–18</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Coisas da Gente</h3>
+            <p class="timeline__meta">Teatro &middot; Grupo Tubo de Ensaio &middot; Ator</p>
+            <p class="timeline__extra">Festival Doces Palavras 2017 &middot; Temporada Teatro de Bolso 2018 (Projeto 1001 Espetaculos)</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.instagram.com/tubodeensaiocampos/" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2017</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Sonhos de uma noite de verao</h3>
+            <p class="timeline__meta">Teatro &middot; Shakespeare &middot; Oberon (Rei dos Elfos)</p>
+            <p class="timeline__extra">Teatro de Bolso &middot; Curso Livre de Teatro</p>
+            <ul class="timeline__sources">
+              <li><a href="https://www.facebook.com/tbprocopioferreira/photos/pb.100063542264382.-2207520000/1428153123949247/?type=3" target="_blank" rel="noopener">Facebook Teatro de Bolso</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2017</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Exercicio Cenico — Musical</h3>
+            <p class="timeline__meta">Teatro &middot; Dancarino &middot; Grease + Valerie (Glee)</p>
+            <p class="timeline__extra">Curso Livre de Teatro</p>
+          </div>
+        </li>
+
+        <li class="timeline__item" data-type="teatro">
+          <span class="timeline__year">2012–18</span>
+          <span class="timeline__dot" aria-hidden="true"></span>
+          <div class="timeline__content">
+            <h3 class="timeline__title">Paixao de Cristo</h3>
+            <p class="timeline__meta">Teatro &middot; Apostolo Tiago (2013) &middot; Pedro (2014) &middot; Joao (2017) &middot; Judas (2018)</p>
+            <p class="timeline__extra">Dir. Pedro Carneiro &middot; Praca Sao Salvador &middot; Grupo Teatro Sacro Dom Carlos Alberto Navarro</p>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- BLOCO_ANTIGO_DESATIVADO — mantido abaixo comentado historicamente
+       foi substituido pela timeline acima -->
+  <template id="creditos-legado">
       <h2 class="section-label">Audiovisual</h2>
       <table class="credits-table">
         <tr class="credits-table__row credits-table__row--highlight">
           <td class="credits-table__year">2025</td>
           <td class="credits-table__title">O menino da pipa avoada <span class="badge">Premiado</span></td>
           <td class="credits-table__detail">Curta-metragem &middot; Ator + Assist. Direcao</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; 1o Fest. Territorial Cinema Itinerante, Arcos da Lapa RJ</td>
+          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Premio do Juri Popular — 1o Fest. Territorial Cinema Itinerante, Lapa RJ</td>
         </tr>
         <tr class="credits-table__row credits-table__row--highlight">
           <td class="credits-table__year">2022</td>
@@ -241,44 +725,22 @@
 
     </div>
   </section>
+  </template>
 
   <!-- CONTATO -->
   <section class="contato" id="contato">
     <div class="wrap">
       <h2 class="section-label">Contato</h2>
-      <div class="contato__grid">
-        <div class="contato__block">
-          <div class="contato__item">
-            <span class="contato__key">Tel</span>
-            <a href="tel:+5522997106833">(22) 99710-6833</a>
-          </div>
-          <div class="contato__item">
-            <span class="contato__key">Email</span>
-            <a href="mailto:nathan_nunes92@hotmail.com">nathan_nunes92@hotmail.com</a>
-          </div>
-          <div class="contato__item">
-            <span class="contato__key">Cidade</span>
-            <span>Campos dos Goytacazes, RJ</span>
-          </div>
-        </div>
-        <div class="contato__block">
-          <div class="contato__item">
-            <span class="contato__key">Instagram</span>
-            <a href="https://instagram.com/nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
-          </div>
-          <div class="contato__item">
-            <span class="contato__key">YouTube</span>
-            <a href="https://youtube.com/@nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
-          </div>
-          <div class="contato__item">
-            <span class="contato__key">TikTok</span>
-            <a href="https://tiktok.com/@nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
-          </div>
-          <div class="contato__item">
-            <span class="contato__key">Facebook</span>
-            <a href="https://facebook.com/nsilvan1" target="_blank" rel="noopener">@nsilvan1</a>
-          </div>
-        </div>
+      <div class="contato__cta">
+        <p class="contato__lead">Disponivel para teatro, cinema, dublagem e sonoplastia.</p>
+        <a class="contato__primary" href="mailto:nathan_nunes92@hotmail.com">
+          nathan_nunes92@hotmail.com
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="contato__secondary" href="tel:+5522997106833">(22) 99710-6833</a>
+      </div>
+      <div class="contato__social">
+        <a href="https://instagram.com/nsilvan1" target="_blank" rel="noopener"><span>Instagram</span><em>@nsilvan1</em></a>
       </div>
     </div>
   </section>
@@ -310,6 +772,257 @@
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+
+    // Creditos — filtros da timeline
+    document.querySelectorAll('.creditos__filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.creditos__filter').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.timeline__item').forEach(item => {
+          item.hidden = filter !== 'all' && item.dataset.type !== filter;
+        });
+      });
+    });
+
+    // Timeline — reveal on scroll via IntersectionObserver
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // stagger pequeno entre entradas quase simultaneas
+          entry.target.style.transitionDelay = (i * 0.05) + 's';
+          entry.target.classList.add('is-visible');
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.timeline__item').forEach(el => timelineObserver.observe(el));
+
+    // Curtas — facade do YouTube: carrega iframe so ao clicar
+    document.querySelectorAll('.curtas__frame[data-video]').forEach(frame => {
+      frame.addEventListener('click', () => {
+        const id = frame.dataset.video;
+        const start = frame.dataset.start ? `&start=${frame.dataset.start}` : '';
+        const title = frame.dataset.title || '';
+        const container = document.createElement('div');
+        container.className = 'curtas__frame curtas__frame--playing';
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1${start}`;
+        iframe.title = title;
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        container.appendChild(iframe);
+        frame.replaceWith(container);
+      });
+    });
+
+    // Modal — detalhes dos espetaculos
+    const works = {
+      'menino-pipa': {
+        title: 'O menino da pipa avoada',
+        year: '2025',
+        tagline: 'Curta-metragem — Premio do Juri Popular',
+        photo: 'https://picsum.photos/seed/menino-pipa-avoada/1600/900',
+        synopsis: 'Inspirado no conto "Pipa Avoada", do livro Invisiveis de Adriano Moura. Em meio as paisagens rurais de Campos dos Goytacazes, uma trabalhadora encontra uma pipa caida e decide leva-la para o filho pequeno, que vive as margens de uma rodovia. A partir desse gesto simples, se desenrola uma historia sensivel sobre infancia, afeto e o direito ao brincar — em um contexto de vulnerabilidade e resistencia. O filme reflete sobre a infancia invisibilizada, a forca das maes e a importancia do ludico como forma de liberdade.',
+        credits: [
+          ['Direcao', 'Luiz Fernando Crespo Rossi'],
+          ['Roteiro', 'Rodri Mendes'],
+          ['Direcao de Fotografia', 'Robson Maia Producoes Artisticas'],
+          ['Trilha sonora', 'Matheus Nicolau'],
+          ['Funcao (Nathan)', 'Ator + Assistente de Direcao'],
+          ['Festival', '1o Festival Territorial de Cinema Itinerante — Lapa, Rio de Janeiro'],
+          ['Acessibilidade', 'Legendas e versao com interprete de Libras'],
+          ['Fomento', 'Lei Paulo Gustavo — Ministerio da Cultura']
+        ],
+        awards: ['Premio do Juri Popular (R$ 2.000) — 1o Festival Territorial de Cinema Itinerante (2025)'],
+        links: [
+          { label: 'Assistir no YouTube', url: 'https://www.youtube.com/watch?v=CuZQeJSKTEY' },
+          { label: 'Publicacao da premiacao (Instagram @outrar.producoes)', url: 'https://www.instagram.com/p/DSOkwJsDfXH/' }
+        ]
+      },
+      'homem-cachorro': {
+        title: 'O homem do cachorro',
+        year: '2022',
+        tagline: 'Curta-metragem — Duplamente premiado no RibaCine 2022',
+        photo: 'https://picsum.photos/seed/homem-cachorro-rossi/1600/900',
+        synopsis: 'Um homem em situacao de rua tem no seu cachorro a unica companhia — ate o encontro com o homem do carro preto. O curta adapta um conto de Adriano Moura e constroi um retrato sobre afetividade, desejo e solidao, premiado na categoria LGBT+ do Festival de Cinema de Rio Bonito. Producao independente de Campos dos Goytacazes que levou um ano para ficar pronta.',
+        credits: [
+          ['Direcao', 'Fernando Rossi'],
+          ['Roteiro', 'Rodri Mendes (adaptado de conto de Adriano Moura)'],
+          ['Protagonista', 'Arnaldo Zeus Neto'],
+          ['Funcao (Nathan)', 'Ator'],
+          ['Elenco', 'Arnaldo Zeus Neto, Rodri Mendes, Whiverson Reis, Nathan Silva, Artur Velasco Florencio, Mayco Maehika, Clara Abreu'],
+          ['Duracao', '11 minutos'],
+          ['Categoria', 'LGBT+'],
+          ['Exibicoes', 'Cineclube Goitaca (28/09/2022) — Cine Darcy UENF (27/10/2022)']
+        ],
+        awards: [
+          'Melhor Filme — Juri Popular (RibaCine 2022, categoria LGBT+)',
+          'Melhor Roteiro Adaptado — Rodri Mendes (RibaCine 2022)'
+        ],
+        links: [
+          { label: 'Assistir no YouTube', url: 'https://www.youtube.com/watch?v=AfaojNQX7nI' },
+          { label: 'Cobertura Folha1 — Premiacao', url: 'https://www.folha1.com.br/blogs/blogdomatheusberriel/2022/10/1285689-filme-de-fernando-rossi-e-rodri-mendes-leva-dois-premios-no-festival-de-cinema-de-rio-bonito.html' },
+          { label: 'UENF — Cine Darcy', url: 'https://uenf.br/portal/noticias/cine-darcy-da-uenf-exibiu-producoes-audiovisuais-campistas-faroeste-cabrunco-e-o-homem-do-cachorro/' }
+        ]
+      },
+      '3-e-par': {
+        title: '3 e Par',
+        year: '2019 – 2023',
+        tagline: 'Webserie independente',
+        photo: 'https://picsum.photos/seed/3epar-webserie/1600/900',
+        synopsis: 'Webserie dirigida por Karol Cerqueira, com divulgacao exclusiva via redes sociais. Nathan integra o elenco fixo ao longo de toda a producao, realizada entre 2019 e 2023.',
+        credits: [
+          ['Direcao', 'Karol Cerqueira'],
+          ['Funcao', 'Ator'],
+          ['Formato', 'Webserie'],
+          ['Periodo', '2019 – 2023']
+        ],
+        links: [
+          { label: 'Canal no YouTube', url: 'https://www.youtube.com/@webserie3epar' },
+          { label: 'Instagram @webserie3epar', url: 'https://www.instagram.com/webserie3epar/' }
+        ]
+      },
+      'ponciano': {
+        title: 'Ponciano — De Amores — Furtado',
+        year: '2025',
+        tagline: 'Comedia musical — Lei Paulo Gustavo',
+        photo: 'https://picsum.photos/seed/ponciano-amores/1600/900',
+        synopsis: 'Adaptacao de "O Coronel e o Lobisomem", de Jose Candido de Carvalho, celebrando os 111 anos do autor. Explora dimensoes politicas, culturais e sociais de Campos dos Goytacazes. Dramaturgia de Arlete Sendra, direcao de Fernando Rossi.',
+        credits: [
+          ['Direcao', 'Fernando Rossi'],
+          ['Dramaturgia', 'Arlete Sendra'],
+          ['Funcao', 'Ator'],
+          ['Local', 'Teatro de Bolso Procopio Ferreira, Campos dos Goytacazes'],
+          ['Datas', '29–31 de agosto e 5–7 de setembro de 2025, as 21h'],
+          ['Elenco', 'Pedro Fagundes, Katiana Rodrigues, Liana Velasco, Joao Velasco, Nathan Silva, Valdiney Mendes, Luciana Rossi, Almir Junior, Geovane Crisostomo'],
+          ['Fomento', 'Lei Paulo Gustavo']
+        ],
+        links: [
+          { label: 'Materia Capital FM (estreia)', url: 'https://capitalfmradio.com.br/espetaculo-ponciano-de-amores-furtado-estreia-em-campos/' },
+          { label: 'Portal OZK', url: 'https://www.portalozk.com/vaf/noticias/entretenimento/teatro-de-bolso-recebe-ponciano-de-amores-furtado-neste-final-de-semana/44063/' },
+          { label: 'Prefeitura de Campos', url: 'https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=98773' }
+        ]
+      },
+      'james-holmes': {
+        title: 'Eu me chamo James Holmes',
+        year: '2019',
+        tagline: 'Teatro — Grupo Nos Experimento',
+        photo: 'https://picsum.photos/seed/james-holmes-nos/1600/900',
+        synopsis: 'Montagem do Grupo Nos Experimento, apresentada no espaco Rinha das Artes, em Macae. Marca a primeira atuacao fora do circuito de Campos dos Goytacazes.',
+        credits: [
+          ['Grupo', 'Nos Experimento'],
+          ['Funcao', 'Ator'],
+          ['Local', 'Rinha das Artes, Macae / RJ']
+        ],
+        links: [
+          { label: 'Instagram @nosexperimento', url: 'https://www.instagram.com/nosexperimento/' }
+        ]
+      },
+      'magico-oz': {
+        title: 'O Magico de Oz',
+        year: '2019',
+        tagline: 'Teatro infantil — Teatro de Bolso',
+        photo: 'https://picsum.photos/seed/magico-de-oz-bolso/1600/900',
+        synopsis: 'Montagem do classico de L. Frank Baum apresentada no Teatro de Bolso Procopio Ferreira, em Campos dos Goytacazes. Sessao extra realizada em outubro de 2019.',
+        credits: [
+          ['Local', 'Teatro de Bolso Procopio Ferreira, Campos dos Goytacazes'],
+          ['Funcao', 'Ator'],
+          ['Temporada', '2019']
+        ]
+      },
+      'saltimbancos': {
+        title: 'Os Saltimbancos',
+        year: '2018',
+        tagline: 'Teatro infantil — Nucleo de Artes ORI',
+        photo: 'https://picsum.photos/seed/saltimbancos-ori/1600/900',
+        synopsis: 'Montagem do classico musical infantil, com direcao de Luciano de Paula. Nathan interpretou o Gato. Apresentacoes em diferentes espacos de Campos incluindo a Bienal do Livro e o Teatro de Bolso, pelo Projeto 1001 Espetaculos.',
+        credits: [
+          ['Personagem', 'Gato'],
+          ['Direcao', 'Luciano de Paula'],
+          ['Grupo', 'Nucleo de Artes ORI'],
+          ['Temporadas', 'Bienal de Campos 2018 — Teatro de Bolso — Projeto 1001 Espetaculos']
+        ]
+      },
+      'sonhos-verao': {
+        title: 'Sonhos de uma noite de verao',
+        year: '2017',
+        tagline: 'Shakespeare — Curso Livre de Teatro',
+        photo: 'https://picsum.photos/seed/sonhos-noite-verao/1600/900',
+        synopsis: 'Primeira montagem de Nathan no Curso Livre de Teatro do Teatro de Bolso Procopio Ferreira. Interpretou Oberon, o Rei dos Elfos, no classico de William Shakespeare.',
+        credits: [
+          ['Personagem', 'Oberon (Rei dos Elfos)'],
+          ['Autor', 'William Shakespeare'],
+          ['Local', 'Teatro de Bolso Procopio Ferreira'],
+          ['Formacao', 'Curso Livre de Teatro']
+        ]
+      }
+    };
+
+    const modal = document.getElementById('work-modal');
+    const modalHero = document.getElementById('modal-hero');
+    const modalYear = document.getElementById('modal-year');
+    const modalTitle = document.getElementById('modal-title');
+    const modalTagline = document.getElementById('modal-tagline');
+    const modalSynopsis = document.getElementById('modal-synopsis');
+    const modalCredits = document.getElementById('modal-credits');
+    const modalAwardsWrap = document.getElementById('modal-awards');
+    const modalAwardsList = document.getElementById('modal-awards-list');
+    const modalLinksWrap = document.getElementById('modal-links');
+    const modalLinksList = document.getElementById('modal-links-list');
+
+    function openWork(slug) {
+      const w = works[slug];
+      if (!w) return;
+      // Usa foto do card quando disponivel (sincroniza modal com card)
+      const card = document.querySelector(`.destaques__card[data-work="${slug}"] .destaques__photo`);
+      const cardBg = card ? card.style.backgroundImage : '';
+      modalHero.style.backgroundImage = cardBg || `url('${w.photo}')`;
+      modalYear.textContent = w.year;
+      modalTitle.textContent = w.title;
+      modalTagline.textContent = w.tagline || '';
+      modalSynopsis.textContent = w.synopsis || '';
+
+      modalCredits.innerHTML = (w.credits || []).map(([k, v]) =>
+        `<dt>${k}</dt><dd>${v}</dd>`
+      ).join('');
+
+      if (w.awards && w.awards.length) {
+        modalAwardsList.innerHTML = w.awards.map(a => `<li>${a}</li>`).join('');
+        modalAwardsWrap.hidden = false;
+      } else {
+        modalAwardsWrap.hidden = true;
+      }
+
+      if (w.links && w.links.length) {
+        modalLinksList.innerHTML = w.links.map(l =>
+          `<li><a href="${l.url}" target="_blank" rel="noopener">${l.label} &rarr;</a></li>`
+        ).join('');
+        modalLinksWrap.hidden = false;
+      } else {
+        modalLinksWrap.hidden = true;
+      }
+
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      } else {
+        modal.setAttribute('open', '');
+      }
+      document.body.classList.add('modal-open');
+    }
+
+    function closeWork() {
+      if (modal.open) modal.close();
+      document.body.classList.remove('modal-open');
+    }
+
+    document.querySelectorAll('.destaques__card').forEach(card => {
+      card.addEventListener('click', () => openWork(card.dataset.work));
+    });
+    document.querySelector('.modal__close').addEventListener('click', closeWork);
+    // backdrop click
+    modal.addEventListener('click', e => { if (e.target === modal) closeWork(); });
+    modal.addEventListener('close', () => document.body.classList.remove('modal-open'));
   </script>
 </body>
 </html>
