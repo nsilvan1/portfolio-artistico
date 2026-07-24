@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Nathan Silva — Portfólio de Espetáculos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 @page { size: A4; margin: 0; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #1a1a1a;
-  font-size: 10pt;
-  line-height: 1.55;
+  color: #0a0a0a;
+  font-size: 12pt;
+  line-height: 1.6;
   background: #fff;
+  font-weight: 400;
 }
 .page {
   width: 210mm;
   min-height: 297mm;
-  padding: 22mm 20mm;
+  padding: 20mm 20mm;
   position: relative;
   page-break-after: always;
 }
@@ -28,201 +29,289 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 253mm;
+  min-height: 257mm;
 }
 .cover-top {
-  font-size: 8pt;
+  font-size: 10pt;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #888;
+  color: #333;
+  font-weight: 500;
 }
 .cover-center { padding-top: 40mm; }
 .cover-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 72pt;
-  font-weight: 500;
+  font-size: 88pt;
+  font-weight: 600;
   line-height: 0.95;
   letter-spacing: -0.02em;
-  color: #1a1a1a;
+  color: #0a0a0a;
 }
 .cover-role {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 20pt;
-  color: #555;
-  margin-top: 8mm;
-  font-weight: 400;
+  font-size: 26pt;
+  color: #2a2a2a;
+  margin-top: 10mm;
+  font-weight: 500;
 }
 .cover-sub {
-  font-size: 9pt;
-  letter-spacing: 0.18em;
+  font-size: 11pt;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #888;
-  margin-top: 14mm;
-  border-top: 1px solid #1a1a1a;
-  padding-top: 4mm;
-  max-width: 90mm;
+  color: #333;
+  margin-top: 16mm;
+  border-top: 2px solid #0a0a0a;
+  padding-top: 5mm;
+  max-width: 115mm;
+  font-weight: 500;
 }
 .cover-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 8pt;
-  color: #666;
-  letter-spacing: 0.08em;
+  font-size: 11pt;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 /* Páginas internas */
 .header-mini {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 6mm;
-  border-bottom: 1px solid #1a1a1a;
-  margin-bottom: 10mm;
-  font-size: 8pt;
-  letter-spacing: 0.2em;
+  padding-bottom: 5mm;
+  border-bottom: 1.5px solid #0a0a0a;
+  margin-bottom: 8mm;
+  font-size: 10pt;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #888;
+  color: #333;
+  font-weight: 500;
 }
-.header-mini strong { color: #1a1a1a; font-weight: 500; letter-spacing: 0.15em; }
+.header-mini strong { color: #0a0a0a; font-weight: 600; letter-spacing: 0.12em; }
 
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32pt;
-  font-weight: 500;
+  font-size: 38pt;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.01em;
   margin-bottom: 3mm;
+  color: #0a0a0a;
 }
 .section-kicker {
-  font-size: 8pt;
-  letter-spacing: 0.25em;
+  font-size: 10pt;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #888;
-  margin-bottom: 10mm;
+  color: #333;
+  margin-bottom: 8mm;
+  font-weight: 600;
+}
+.intro {
+  font-size: 11.5pt;
+  color: #2a2a2a;
+  margin-top: -1mm;
+  margin-bottom: 8mm;
+  max-width: 150mm;
+  line-height: 1.55;
 }
 
 .bio {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14pt;
-  line-height: 1.5;
-  color: #333;
+  font-size: 17pt;
+  line-height: 1.55;
+  color: #1a1a1a;
   font-style: italic;
-  margin-bottom: 12mm;
-  padding-left: 6mm;
-  border-left: 2px solid #1a1a1a;
-  font-weight: 400;
+  margin-bottom: 14mm;
+  padding-left: 7mm;
+  border-left: 3px solid #0a0a0a;
+  font-weight: 500;
 }
 
 .info-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8mm 12mm;
-  margin-top: 10mm;
+  gap: 7mm 12mm;
+  margin-top: 8mm;
 }
 .info-item .label {
-  font-size: 7pt;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #999;
-  margin-bottom: 1.5mm;
-}
-.info-item .value { font-size: 10pt; color: #1a1a1a; }
-
-/* Espetáculos */
-.show {
-  padding: 6mm 0;
-  border-bottom: 1px solid #e5e5e5;
-  display: grid;
-  grid-template-columns: 18mm 1fr;
-  gap: 6mm;
-}
-.show:last-child { border-bottom: none; }
-.show-year {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18pt;
-  color: #999;
-  line-height: 1;
-  padding-top: 1mm;
-  font-variant-numeric: tabular-nums;
-}
-.show-body { }
-.show-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16pt;
-  font-weight: 500;
-  color: #1a1a1a;
-  line-height: 1.15;
-  margin-bottom: 2mm;
-}
-.show-title em { font-style: italic; }
-.show-meta {
-  font-size: 8.5pt;
-  color: #666;
-  line-height: 1.5;
-}
-.show-meta .role {
-  display: inline-block;
-  font-size: 7pt;
+  font-size: 9pt;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #1a1a1a;
-  background: #f0ebe0;
-  padding: 0.8mm 2mm;
-  margin-right: 2mm;
-  vertical-align: middle;
+  color: #555;
+  margin-bottom: 2mm;
+  font-weight: 600;
 }
-.show-meta .role.tec { background: #e8e8e8; color: #444; }
+.info-item .value { font-size: 13pt; color: #0a0a0a; font-weight: 500; }
 
+/* Categoria */
 .cat-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14pt;
-  color: #1a1a1a;
-  margin-top: 10mm;
+  font-size: 20pt;
+  color: #0a0a0a;
+  margin-top: 8mm;
   margin-bottom: 3mm;
   padding-bottom: 2mm;
-  border-bottom: 1px solid #1a1a1a;
-  letter-spacing: 0.02em;
+  border-bottom: 2px solid #0a0a0a;
+  letter-spacing: 0.01em;
+  font-weight: 600;
 }
-.cat-title:first-child { margin-top: 0; }
+.cat-title:first-of-type { margin-top: 0; }
+
+/* Tabela de espetáculos compacta */
+.works {
+  width: 100%;
+  border-collapse: collapse;
+}
+.works tr {
+  border-bottom: 1px solid #d5d5d5;
+  page-break-inside: avoid;
+}
+.works td {
+  padding: 3.5mm 2mm;
+  vertical-align: top;
+}
+.works .year {
+  width: 24mm;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15pt;
+  color: #444;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.works .title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15pt;
+  color: #0a0a0a;
+  font-weight: 600;
+  line-height: 1.2;
+  padding-right: 4mm;
+}
+.works .title em { font-style: italic; }
+.works .title a, .works .detail a {
+  color: #0a0a0a;
+  text-decoration: none;
+  border-bottom: 1px solid #9db5d8;
+}
+.works .detail a { color: #0047ab; }
+.works .detail {
+  font-size: 10pt;
+  color: #333;
+  line-height: 1.45;
+  width: 75mm;
+}
+.works .badge {
+  display: inline-block;
+  font-size: 7.5pt;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: #e8dfc8;
+  padding: 0.8mm 2mm;
+  margin-left: 2mm;
+  vertical-align: middle;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
 
 .footer {
   position: absolute;
-  bottom: 12mm;
+  bottom: 10mm;
   left: 20mm;
   right: 20mm;
   display: flex;
   justify-content: space-between;
-  font-size: 7pt;
-  color: #aaa;
-  letter-spacing: 0.15em;
+  font-size: 9pt;
+  color: #555;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #c0c0c0;
   padding-top: 3mm;
+  font-weight: 500;
 }
 
 /* Contato */
 .contact-block {
-  margin-top: 12mm;
+  margin-top: 10mm;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6mm;
+  gap: 5mm;
 }
 .contact-card {
-  padding: 8mm;
-  border: 1px solid #1a1a1a;
+  padding: 7mm;
+  border: 1.5px solid #0a0a0a;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 .contact-card .label {
-  font-size: 7pt;
-  letter-spacing: 0.25em;
+  font-size: 9pt;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #888;
+  color: #333;
   margin-bottom: 2mm;
+  font-weight: 600;
 }
 .contact-card .value {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 16pt;
+  font-size: 18pt;
+  color: #0a0a0a;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Fontes */
+.sources {
+  margin-top: 6mm;
+}
+.source-group {
+  margin-bottom: 6mm;
+  page-break-inside: avoid;
+}
+.source-group h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13pt;
+  color: #0a0a0a;
+  font-weight: 600;
+  margin-bottom: 1.5mm;
+  padding-bottom: 1mm;
+  border-bottom: 1px solid #0a0a0a;
+}
+.source-group ul { list-style: none; }
+.source-group li {
+  font-size: 9.5pt;
+  line-height: 1.55;
   color: #1a1a1a;
+  padding: 0.8mm 0;
+  border-bottom: 1px dotted #d5d5d5;
+  word-break: break-all;
+}
+.source-group li:last-child { border-bottom: none; }
+.source-group li strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: #0a0a0a;
+  font-size: 11pt;
+  display: block;
+  margin-bottom: 0.5mm;
+  word-break: normal;
+}
+.source-group li a {
+  color: #0047ab;
+  text-decoration: underline;
+  font-size: 8.5pt;
+  display: block;
+  font-family: 'Inter', sans-serif;
+  word-break: break-all;
+}
+a { color: inherit; }
+.contact-card a { text-decoration: none; color: inherit; }
+.source-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 8mm;
 }
 </style>
 </head>
@@ -234,11 +323,11 @@ h1 {
   <div class="cover-center">
     <div class="cover-name">Nathan<br>Silva</div>
     <div class="cover-role">ator · dos palcos às câmeras</div>
-    <div class="cover-sub">Teatro, audiovisual e dublagem — Campos dos Goytacazes, RJ</div>
+    <div class="cover-sub">Teatro, audiovisual e dublagem desde 2012 — Campos dos Goytacazes, RJ</div>
   </div>
   <div class="cover-bottom">
-    <span>@nsilvan1</span>
-    <span>nathan_nunes92@hotmail.com</span>
+    <a href="https://instagram.com/nsilvan1" style="color:inherit;text-decoration:none;">@nsilvan1</a>
+    <a href="mailto:nathan_nunes92@hotmail.com" style="color:inherit;text-decoration:none;">nathan_nunes92@hotmail.com</a>
   </div>
 </div>
 
@@ -253,7 +342,7 @@ h1 {
   <h1>Sobre o artista</h1>
 
   <div class="bio">
-    Ator dos palcos e das câmeras. Nascido em 1992, em Campos dos Goytacazes, atua em peças de teatro desde 2017. Transita entre a cena teatral, o audiovisual e a dublagem, construindo uma trajetória que une formação contínua e pesquisa de linguagem.
+    Ator dos palcos e das câmeras. Nascido em setembro de 1992, em Campos dos Goytacazes, atua no teatro desde 2012, quando iniciou sua trajetória pela Paixão de Cristo com o Grupo Teatro Sacro Dom Carlos Alberto Navarro. Transita entre a cena teatral, o audiovisual e a dublagem — com trabalhos também em sonoplastia e projeções cênicas.
   </div>
 
   <div class="info-grid">
@@ -263,7 +352,7 @@ h1 {
     </div>
     <div class="info-item">
       <div class="label">Nascimento</div>
-      <div class="value">1992 · 34 anos</div>
+      <div class="value">Setembro de 1992 · 33 anos</div>
     </div>
     <div class="info-item">
       <div class="label">Cidade</div>
@@ -275,7 +364,7 @@ h1 {
     </div>
     <div class="info-item">
       <div class="label">Início no teatro</div>
-      <div class="value">2017</div>
+      <div class="value">2012 · Paixão de Cristo</div>
     </div>
     <div class="info-item">
       <div class="label">Instagram</div>
@@ -289,92 +378,74 @@ h1 {
   </div>
 </div>
 
-<!-- Espetáculos -->
+<!-- Espetáculos — Teatro como Ator -->
 <div class="page">
   <div class="header-mini">
     <span><strong>Nathan Silva</strong></span>
-    <span>02 · Espetáculos</span>
+    <span>02 · Espetáculos · Ator</span>
   </div>
 
-  <div class="section-kicker">Teatro</div>
+  <div class="section-kicker">Teatro — como ator</div>
   <h1>Espetáculos</h1>
-  <p style="font-size:9pt;color:#666;margin-top:-1mm;margin-bottom:10mm;max-width:140mm;">Trabalhos em cena como ator e como técnico (sonoplastia e projeções), em produções dirigidas em Campos dos Goytacazes.</p>
+  <p class="intro">Trabalhos em cena em Campos dos Goytacazes e interior do RJ, de 2012 até hoje.</p>
 
-  <div class="cat-title">Como ator</div>
-
-  <div class="show">
-    <div class="show-year">2025</div>
-    <div class="show-body">
-      <div class="show-title"><em>Ponciano — De Amores — Furtado</em></div>
-      <div class="show-meta"><span class="role">Ator</span>Direção: Fernando Rossi</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2021</div>
-    <div class="show-body">
-      <div class="show-title"><em>Encontro no bar</em></div>
-      <div class="show-meta"><span class="role">Ator</span>Leituras Santas · Santa Paciência Casa Criativa</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2021</div>
-    <div class="show-body">
-      <div class="show-title"><em>Piquenique no Front</em></div>
-      <div class="show-meta"><span class="role">Ator</span>Leituras Santas · Santa Paciência Casa Criativa</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2019</div>
-    <div class="show-body">
-      <div class="show-title"><em>Eu me chamo James Holmes</em></div>
-      <div class="show-meta"><span class="role">Ator</span>Grupo Nós Experimento</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2019</div>
-    <div class="show-body">
-      <div class="show-title"><em>O Mágico de Oz</em></div>
-      <div class="show-meta"><span class="role">Ator</span>Teatro de Bolso Procópio Ferreira</div>
-    </div>
-  </div>
-
-  <div class="cat-title">Como técnico — sonoplastia e projeções</div>
-
-  <div class="show">
-    <div class="show-year">2025</div>
-    <div class="show-body">
-      <div class="show-title"><em>Conversas com Chocolate</em></div>
-      <div class="show-meta"><span class="role tec">Projeções</span>Direção: Fernando Rossi</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2024</div>
-    <div class="show-body">
-      <div class="show-title"><em>"fernandos" em busca de Pessoa</em></div>
-      <div class="show-meta"><span class="role tec">Som / Projeções</span>Direção: Fernando Rossi</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2024</div>
-    <div class="show-body">
-      <div class="show-title"><em>O Beijo da Mulher Aranha</em></div>
-      <div class="show-meta"><span class="role tec">Som / Projeções</span>Direção: Fernando Rossi</div>
-    </div>
-  </div>
-
-  <div class="show">
-    <div class="show-year">2022</div>
-    <div class="show-body">
-      <div class="show-title"><em>O Julgamento de Lúcifer</em></div>
-      <div class="show-meta"><span class="role tec">Sonoplastia</span>Direção: Fernando Rossi</div>
-    </div>
-  </div>
+  <table class="works">
+    <tr>
+      <td class="year">2026</td>
+      <td class="title"><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=103259"><em>Uma Promessa pra São Salvador</em></a></td>
+      <td class="detail">Coletivo Real de Teatro · Releitura da lenda do Ururau da Lapa · Elenco: Wesley Barreto, Quelen Fesansi, Nathan Silva, Naay Angelo · Estreia 28–29 mar. 2026, Teatro de Bolso · Política Nacional Aldir Blanc · <a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=103259">[Prefeitura]</a> · <a href="https://capitalfmradio.com.br/releitura-da-lenda-do-ururau-da-lapa-estreia-no-aniversario-de-campos/">[Capital FM]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2025</td>
+      <td class="title"><a href="https://capitalfmradio.com.br/espetaculo-ponciano-de-amores-furtado-estreia-em-campos/"><em>Ponciano — De Amores — Furtado</em></a></td>
+      <td class="detail">Comédia musical · Dir. Fernando Rossi · Teatro de Bolso · <a href="https://www.portalozk.com/vaf/noticias/entretenimento/teatro-de-bolso-recebe-ponciano-de-amores-furtado-neste-final-de-semana/44063/">[matéria]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2019</td>
+      <td class="title"><a href="https://www.instagram.com/nosexperimento/"><em>Eu me chamo James Holmes</em></a></td>
+      <td class="detail">Grupo Nós Experimento · Rinha das Artes, Macaé · <a href="https://www.instagram.com/nosexperimento/">@nosexperimento</a></td>
+    </tr>
+    <tr>
+      <td class="year">2018</td>
+      <td class="title"><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=49272"><em>Os Saltimbancos</em></a> — Gato</td>
+      <td class="detail">Núcleo de Artes ORI · Dir. Luciano de Paula · Bienal do Livro · Projeto 1001 Espetáculos · <a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=49272">[Prefeitura]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2018</td>
+      <td class="title"><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=48944"><em>O palhaço Paçoca no mundo mágico das Histórias</em></a></td>
+      <td class="detail">Núcleo de Artes ORI · Teatro de Bolso Procópio Ferreira · <a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=48944">[Prefeitura]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2017–18</td>
+      <td class="title"><a href="https://www.instagram.com/tubodeensaiocampos/"><em>Coisas da Gente</em></a></td>
+      <td class="detail">Companhia Tubo de Ensaio · Festival Doces Palavras · Projeto 1001 Espetáculos · <a href="https://www.instagram.com/tubodeensaiocampos/">@tubodeensaiocampos</a></td>
+    </tr>
+    <tr>
+      <td class="year">2017</td>
+      <td class="title"><a href="https://www.facebook.com/tbprocopioferreira/photos/1428153123949247/"><em>Sonhos de uma noite de verão</em></a> — Oberon</td>
+      <td class="detail">Shakespeare · Rei dos Elfos · Curso Livre de Teatro · Teatro de Bolso · <a href="https://www.facebook.com/tbprocopioferreira/photos/1428153123949247/">[registro]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2013</td>
+      <td class="title"><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=17798"><em>Paixão de Cristo</em></a> — Apóstolo Tiago</td>
+      <td class="detail">Grupo Teatro Sacro Dom Carlos Alberto Navarro · Dir. Pedro Carneiro · Praça do Santíssimo Salvador · 31ª edição · <a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=17798">[Prefeitura]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2014</td>
+      <td class="title"><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=24702"><em>Paixão de Cristo</em></a> — Pedro</td>
+      <td class="detail">Grupo Teatro Sacro Dom Carlos Alberto Navarro · Dir. Pedro Carneiro · Praça do Santíssimo Salvador · 32ª edição · <a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=24702">[Prefeitura]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2017</td>
+      <td class="title"><a href="https://j3news.com/2019/04/21/um-ator-de-milagres-e-paixoes/"><em>Paixão de Cristo</em></a> — João</td>
+      <td class="detail">Grupo Teatro Sacro Dom Carlos Alberto Navarro · Dir. Pedro Carneiro · <a href="https://j3news.com/2019/04/21/um-ator-de-milagres-e-paixoes/">[J3 News — perfil do diretor]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2018</td>
+      <td class="title"><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=43792"><em>Paixão de Cristo</em></a> — Judas</td>
+      <td class="detail">Grupo Teatro Sacro Dom Carlos Alberto Navarro · Dir. Pedro Carneiro · Teatro Municipal Trianon · 37ª edição "A Paixão foi por você" · Patrimônio Cultural Imaterial do Município · <a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=43792">[Prefeitura]</a></td>
+    </tr>
+  </table>
 
   <div class="footer">
     <span>Nathan Silva · Portfólio</span>
@@ -382,78 +453,296 @@ h1 {
   </div>
 </div>
 
-<!-- Audiovisual + Dublagem + Contato -->
+<!-- Técnico + Audiovisual + Dublagem -->
 <div class="page">
   <div class="header-mini">
     <span><strong>Nathan Silva</strong></span>
-    <span>03 · Audiovisual & Contato</span>
+    <span>03 · Sonoplastia · Audiovisual · Dublagem</span>
   </div>
 
-  <div class="section-kicker">Câmera e voz</div>
-  <h1>Audiovisual</h1>
+  <div class="section-kicker">Teatro — como técnico</div>
+  <h1>Sonoplastia & Projeções</h1>
+  <p class="intro">Criação sonora e projeções cênicas para montagens em Campos dos Goytacazes.</p>
 
-  <div style="margin-top:8mm;">
+  <table class="works">
+    <tr>
+      <td class="year">2025</td>
+      <td class="title"><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=97681"><em>Conversas com Chocolate</em></a></td>
+      <td class="detail">Projeções cênicas · Dir. Fernando Rossi · Teatro de Bolso · <a href="https://j3news.com/2025/07/05/peca-conversas-com-chocolate-em-cartaz-neste-fim-de-semana-no-teatro-de-bolso/">[J3 News]</a> · <a href="https://www.instagram.com/p/DKZl9n2uGCs/">[Instagram]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2024</td>
+      <td class="title"><a href="https://j3news.com/2024/10/24/espetaculo-no-teatro-de-bolso-retrata-o-poeta-portugues-fernando-pessoa/"><em>"fernandos" em busca de Pessoa</em></a></td>
+      <td class="detail">Sonoplastia e Projeções · Dir. Fernando Rossi · Teatro de Bolso · <a href="https://www.folha1.com.br/cultura_e_lazer/2024/10/1303305-espetaculo-fernandos-em-busca-de-pessoa-chega-ao-teatro-de-bolso-procopio-ferreira-em-campos.html">[Folha 1]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2024</td>
+      <td class="title"><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=91979"><em>O Beijo da Mulher Aranha</em></a></td>
+      <td class="detail">Som e Projeção · Dir. Fernando Rossi · Texto adapt. Edeilson Fernandes · Temporada 4–6 jul. 2024 · Teatro de Bolso · Apoio FCJOL · <a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=91979">[Prefeitura]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2022</td>
+      <td class="title"><a href="https://www.folha1.com.br/cultura_e_lazer/2022/11/1286040-espetaculo-o-julgamento-de-lucifer-no-teatro-de-bolso-de-sexta-a-domingo.html"><em>O Julgamento de Lúcifer</em></a></td>
+      <td class="detail">Sonoplastia · Dir. Fernando Rossi · Teatro de Bolso · <a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=76813">[Prefeitura]</a></td>
+    </tr>
+  </table>
 
-    <div class="show">
-      <div class="show-year">2023</div>
-      <div class="show-body">
-        <div class="show-title"><em>3 É Par</em></div>
-        <div class="show-meta"><span class="role">Ator</span>Websérie · 2019 – 2023 · @webserie3epar</div>
-      </div>
-    </div>
+  <h2 class="cat-title" style="margin-top:10mm;">Audiovisual</h2>
 
-    <div class="show">
-      <div class="show-year">2022</div>
-      <div class="show-body">
-        <div class="show-title"><em>O homem do cachorro</em></div>
-        <div class="show-meta"><span class="role">Ator</span>Curta-metragem · Direção: Fernando Rossi · <strong>Premiado RibaCine 2022</strong></div>
-      </div>
-    </div>
+  <table class="works">
+    <tr>
+      <td class="year">2025</td>
+      <td class="title"><a href="https://www.folha1.com.br/cultura_e_lazer/2025/05/1307692-o-menino-da-pipa-avoada-e-conexao-com-campos-em-curta-metragem.html"><em>O menino da pipa avoada</em></a></td>
+      <td class="detail">Curta-metragem · Ator + Assist. Direção · Dir. Fernando Rossi · <a href="https://www.folha1.com.br/cultura_e_lazer/2025/05/1307692-o-menino-da-pipa-avoada-e-conexao-com-campos-em-curta-metragem.html">[Folha 1]</a> · <a href="https://www.instagram.com/p/DO6KGlXDUpT/">[Instagram]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2022</td>
+      <td class="title"><a href="https://www.folha1.com.br/blogs/blogdomatheusberriel/2022/10/1285689-filme-de-fernando-rossi-e-rodri-mendes-leva-dois-premios-no-festival-de-cinema-de-rio-bonito.html"><em>O homem do cachorro</em></a> <span class="badge">Premiado</span></td>
+      <td class="detail">Curta-metragem · Ator · Dir. Fernando Rossi · Melhor Filme + Melhor Roteiro, RibaCine 2022 · <a href="https://uenf.br/portal/noticias/cine-darcy-da-uenf-exibiu-producoes-audiovisuais-campistas-faroeste-cabrunco-e-o-homem-do-cachorro/">[UENF]</a></td>
+    </tr>
+    <tr>
+      <td class="year">2019–23</td>
+      <td class="title"><a href="https://youtube.com/@webserie3epar"><em>3 é Par</em></a></td>
+      <td class="detail">Websérie · Ator · Dir. Karol Cerqueira · <a href="https://youtube.com/@webserie3epar">YouTube</a> / <a href="https://instagram.com/webserie3epar">Instagram</a> @webserie3epar</td>
+    </tr>
+  </table>
 
-    <div class="show">
-      <div class="show-year">—</div>
-      <div class="show-body">
-        <div class="show-title"><em>O menino da pipa avoada</em></div>
-        <div class="show-meta"><span class="role">Ator</span>Curta-metragem</div>
-      </div>
-    </div>
+  <h2 class="cat-title" style="margin-top:8mm;">Dublagem</h2>
 
+  <table class="works">
+    <tr>
+      <td class="year">Atual</td>
+      <td class="title"><a href="https://youtube.com/@reinoemcenaoficial">Reino em Cena</a></td>
+      <td class="detail">Dublador · Segunda Igreja Batista · <a href="https://youtube.com/@reinoemcenaoficial">YouTube</a> / <a href="https://instagram.com/reinoemcenaoficial">Instagram</a> @reinoemcenaoficial</td>
+    </tr>
+  </table>
+
+  <div class="footer">
+    <span>Nathan Silva · Portfólio</span>
+    <span>04</span>
+  </div>
+</div>
+
+<!-- Contato -->
+<div class="page">
+  <div class="header-mini">
+    <span><strong>Nathan Silva</strong></span>
+    <span>04 · Contato</span>
   </div>
 
-  <div class="cat-title" style="margin-top:12mm;">Dublagem</div>
-  <div class="show">
-    <div class="show-year">—</div>
-    <div class="show-body">
-      <div class="show-title">Reino em Cena</div>
-      <div class="show-meta"><span class="role">Dublagem</span>@reinoemcenaoficial · Segunda Igreja Batista · Campos dos Goytacazes</div>
-    </div>
-  </div>
-
-  <div class="section-kicker" style="margin-top:18mm;">Para contato</div>
-  <h1 style="font-size:24pt;">Fale com Nathan</h1>
+  <div class="section-kicker">Para contato</div>
+  <h1>Fale com Nathan</h1>
+  <p class="intro">Disponível para convites, trabalhos e parcerias em teatro, audiovisual e dublagem. Showreel em vídeo: <a href="https://www.youtube.com/watch?v=AfaojNQX7nI" style="color:#0047ab;">youtube.com/watch?v=AfaojNQX7nI</a></p>
 
   <div class="contact-block">
-    <div class="contact-card">
+    <a class="contact-card" href="mailto:nathan_nunes92@hotmail.com">
       <div class="label">E-mail</div>
       <div class="value">nathan_nunes92<br>@hotmail.com</div>
-    </div>
-    <div class="contact-card">
+    </a>
+    <a class="contact-card" href="tel:+5522997106833">
       <div class="label">Telefone</div>
       <div class="value">(22) 99710-6833</div>
-    </div>
-    <div class="contact-card">
+    </a>
+    <a class="contact-card" href="https://instagram.com/nsilvan1">
       <div class="label">Instagram</div>
       <div class="value">@nsilvan1</div>
-    </div>
-    <div class="contact-card">
+    </a>
+    <a class="contact-card" href="https://youtube.com/@nsilvan1">
       <div class="label">YouTube</div>
-      <div class="value">@webserie3epar</div>
+      <div class="value">@nsilvan1</div>
+    </a>
+    <a class="contact-card" href="https://tiktok.com/@nsilvan1">
+      <div class="label">TikTok</div>
+      <div class="value">@nsilvan1</div>
+    </a>
+    <div class="contact-card">
+      <div class="label">Cidade</div>
+      <div class="value">Campos dos<br>Goytacazes, RJ</div>
     </div>
   </div>
 
   <div class="footer">
     <span>Nathan Silva · Portfólio · Campos dos Goytacazes, RJ</span>
-    <span>04</span>
+    <span>05</span>
+  </div>
+</div>
+
+<!-- Fontes de comprovação -->
+<div class="page">
+  <div class="header-mini">
+    <span><strong>Nathan Silva</strong></span>
+    <span>05 · Fontes & Comprovação</span>
+  </div>
+
+  <div class="section-kicker">Referências públicas</div>
+  <h1>Fontes</h1>
+  <p class="intro">Matérias, perfis oficiais e registros públicos que comprovam os trabalhos listados neste portfólio.</p>
+
+  <div class="sources">
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Perfis oficiais</h3>
+        <ul>
+          <li><strong>Nathan Silva — Instagram</strong><a href="https://instagram.com/nsilvan1">instagram.com/nsilvan1</a></li>
+          <li><strong>Nathan Silva — YouTube</strong><a href="https://youtube.com/@nsilvan1">youtube.com/@nsilvan1</a></li>
+          <li><strong>Websérie 3 é Par — Instagram</strong><a href="https://instagram.com/webserie3epar">instagram.com/webserie3epar</a></li>
+          <li><strong>Websérie 3 é Par — YouTube</strong><a href="https://youtube.com/@webserie3epar">youtube.com/@webserie3epar</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Curta "O homem do cachorro" — 2022</h3>
+        <ul>
+          <li><strong>UENF / Cine Darcy</strong><a href="https://uenf.br/portal/noticias/cine-darcy-da-uenf-exibiu-producoes-audiovisuais-campistas-faroeste-cabrunco-e-o-homem-do-cachorro/">uenf.br — Cine Darcy exibiu "O homem do cachorro"</a></li>
+          <li><strong>Folha 1 — premiação RibaCine</strong><a href="https://www.folha1.com.br/blogs/blogdomatheusberriel/2022/10/1285689-filme-de-fernando-rossi-e-rodri-mendes-leva-dois-premios-no-festival-de-cinema-de-rio-bonito.html">folha1.com.br — dois prêmios no Festival de Cinema de Rio Bonito</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-group">
+      <h3>Curta "O menino da pipa avoada" — 2025</h3>
+      <ul>
+        <li><strong>Folha 1 — curta-metragem em Campos</strong><a href="https://www.folha1.com.br/cultura_e_lazer/2025/05/1307692-o-menino-da-pipa-avoada-e-conexao-com-campos-em-curta-metragem.html">folha1.com.br — O menino da pipa avoada, conexão com Campos</a></li>
+        <li><strong>Instagram — registro do curta</strong><a href="https://www.instagram.com/p/DO6KGlXDUpT/">instagram.com/p/DO6KGlXDUpT</a></li>
+      </ul>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Uma Promessa pra São Salvador (2026)</h3>
+        <ul>
+          <li><strong>Prefeitura de Campos — estreia Teatro de Bolso</strong><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=103259">campos.rj.gov.br — id_noticia=103259</a></li>
+          <li><strong>Capital FM — releitura do Ururau da Lapa</strong><a href="https://capitalfmradio.com.br/releitura-da-lenda-do-ururau-da-lapa-estreia-no-aniversario-de-campos/">capitalfmradio.com.br — releitura do Ururau no aniversário de Campos</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Ponciano — De Amores — Furtado (2025)</h3>
+        <ul>
+          <li><strong>Capital FM — estreia em Campos</strong><a href="https://capitalfmradio.com.br/espetaculo-ponciano-de-amores-furtado-estreia-em-campos/">capitalfmradio.com.br/espetaculo-ponciano-de-amores-furtado-estreia-em-campos</a></li>
+          <li><strong>Portal OZK — Teatro de Bolso</strong><a href="https://www.portalozk.com/vaf/noticias/entretenimento/teatro-de-bolso-recebe-ponciano-de-amores-furtado-neste-final-de-semana/44063/">portalozk.com — Teatro de Bolso recebe Ponciano</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>"fernandos" em busca de Pessoa (2024)</h3>
+        <ul>
+          <li><strong>J3 News</strong><a href="https://j3news.com/2024/10/24/espetaculo-no-teatro-de-bolso-retrata-o-poeta-portugues-fernando-pessoa/">j3news.com — Espetáculo sobre Fernando Pessoa</a></li>
+          <li><strong>Folha 1</strong><a href="https://www.folha1.com.br/cultura_e_lazer/2024/10/1303305-espetaculo-fernandos-em-busca-de-pessoa-chega-ao-teatro-de-bolso-procopio-ferreira-em-campos.html">folha1.com.br — "fernandos" chega ao Teatro de Bolso</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>O Julgamento de Lúcifer (2022)</h3>
+        <ul>
+          <li><strong>Folha 1</strong><a href="https://www.folha1.com.br/cultura_e_lazer/2022/11/1286040-espetaculo-o-julgamento-de-lucifer-no-teatro-de-bolso-de-sexta-a-domingo.html">folha1.com.br — O Julgamento de Lúcifer no Teatro de Bolso</a></li>
+          <li><strong>Prefeitura de Campos</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=76813">campos.rj.gov.br — id_noticia=76813</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>O Beijo da Mulher Aranha (2024)</h3>
+        <ul>
+          <li><strong>Prefeitura de Campos</strong><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=91979">campos.rj.gov.br — id_noticia=91979</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Conversas com Chocolate (2025)</h3>
+        <ul>
+          <li><strong>Prefeitura de Campos</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=97681">campos.rj.gov.br — id_noticia=97681</a></li>
+          <li><strong>J3 News</strong><a href="https://j3news.com/2025/07/05/peca-conversas-com-chocolate-em-cartaz-neste-fim-de-semana-no-teatro-de-bolso/">j3news.com — Conversas com Chocolate em cartaz</a></li>
+          <li><strong>Instagram — registro do espetáculo</strong><a href="https://www.instagram.com/p/DKZl9n2uGCs/">instagram.com/p/DKZl9n2uGCs</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Fernando Rossi (diretor)</h3>
+        <ul>
+          <li><strong>Academia Campista de Letras</strong><a href="https://www.academiacampista.org.br/post/luiz-fernando-crespo-rossi">academiacampista.org.br — Luiz Fernando Crespo Rossi</a></li>
+          <li><strong>J3 News — entrevista</strong><a href="https://j3news.com/2024/01/31/diretor-teatral-fernando-rossi-e-o-convidado-do-programa-tres-contra-um/">j3news.com — Fernando Rossi no Três Contra Um</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Paixão de Cristo Campos</h3>
+        <ul>
+          <li><strong>31ª edição (2013) — Prefeitura</strong><a href="https://www.campos.rj.gov.br/exibirNoticia.php?id_noticia=17798">campos.rj.gov.br — id_noticia=17798</a></li>
+          <li><strong>32ª edição (2014) — Prefeitura</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=24702">campos.rj.gov.br — id_noticia=24702</a></li>
+          <li><strong>37ª edição (2018) — Trianon</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=43792">campos.rj.gov.br — id_noticia=43792</a></li>
+          <li><strong>Pedro Carneiro (diretor) — perfil J3 News</strong><a href="https://j3news.com/2019/04/21/um-ator-de-milagres-e-paixoes/">j3news.com — Um ator de milagres e paixões</a></li>
+          <li><strong>Diocese — gravação TV Câmara</strong><a href="https://diocesedecampos.org.br/tradicional-paixao-de-cristo-sera-exibida-pela-tv-camara/">diocesedecampos.org.br — exibição TV Câmara</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Teatro de Bolso Procópio Ferreira</h3>
+        <ul>
+          <li><strong>Instagram oficial</strong><a href="https://instagram.com/teatrodebolso_camposrj">instagram.com/teatrodebolso_camposrj</a></li>
+          <li><strong>Facebook oficial</strong><a href="https://facebook.com/tbprocopioferreira">facebook.com/tbprocopioferreira</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Santa Paciência Casa Criativa</h3>
+        <ul>
+          <li><strong>Site oficial</strong><a href="https://santa-paciencia-casa-criativa.ueniweb.com/">santa-paciencia-casa-criativa.ueniweb.com</a></li>
+          <li><strong>Instagram</strong><a href="https://instagram.com/santapaciencia_cc">instagram.com/santapaciencia_cc</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Dublagem — Reino em Cena</h3>
+        <ul>
+          <li><strong>YouTube oficial</strong><a href="https://youtube.com/@reinoemcenaoficial">youtube.com/@reinoemcenaoficial</a></li>
+          <li><strong>Instagram oficial</strong><a href="https://instagram.com/reinoemcenaoficial">instagram.com/reinoemcenaoficial</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Showreel</h3>
+        <ul>
+          <li><strong>Vídeo de apresentação — YouTube</strong><a href="https://www.youtube.com/watch?v=AfaojNQX7nI">youtube.com/watch?v=AfaojNQX7nI</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="source-two">
+      <div class="source-group">
+        <h3>Trabalhos em cena — registros extras</h3>
+        <ul>
+          <li><strong>Os Saltimbancos — Prefeitura de Campos</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=49272">campos.rj.gov.br — id_noticia=49272</a></li>
+          <li><strong>O palhaço Paçoca — Prefeitura</strong><a href="https://campos.rj.gov.br/exibirNoticia.php?id_noticia=48944">campos.rj.gov.br — id_noticia=48944</a></li>
+          <li><strong>O Mágico de Oz — vídeo da sessão</strong><a href="https://www.facebook.com/tbprocopioferreira/videos/2562838530474286/">facebook.com/tbprocopioferreira — Mágico de Oz</a></li>
+          <li><strong>Sonhos de uma noite de verão — registro</strong><a href="https://www.facebook.com/tbprocopioferreira/photos/1428153123949247/">facebook.com/tbprocopioferreira — Sonhos</a></li>
+        </ul>
+      </div>
+
+      <div class="source-group">
+        <h3>Grupos parceiros</h3>
+        <ul>
+          <li><strong>Companhia Tubo de Ensaio</strong><a href="https://www.instagram.com/tubodeensaiocampos/">instagram.com/tubodeensaiocampos</a></li>
+          <li><strong>Grupo Nós Experimento</strong><a href="https://www.instagram.com/nosexperimento/">instagram.com/nosexperimento</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Nathan Silva · Portfólio · Fontes verificadas em abril/2026</span>
+    <span>06</span>
   </div>
 </div>
 
