@@ -1380,3 +1380,63 @@ body.modal-open { overflow: hidden; }
   .modal__credits dd { padding-bottom: 8px; }
   .modal__close { top: 12px; right: 12px; width: 36px; height: 36px; }
 }
+
+/* ── MELHORIAS 2026-07 ── */
+
+/* Scrollspy — link ativo na nav */
+.nav__link.is-active { color: var(--accent); }
+
+/* Cards tipográficos (sem foto de divulgação ainda) */
+.destaques__photo--tipo {
+  background:
+    radial-gradient(ellipse 90% 70% at 30% 20%, rgba(212,169,100,.10), transparent 60%),
+    linear-gradient(160deg, #221c15 0%, #171310 55%, #0e0c0a 100%);
+  filter: none;
+}
+.destaques__photo--tipo::after {
+  content: attr(data-letter);
+  position: absolute;
+  top: 8%;
+  right: 6%;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(110px, 13vw, 180px);
+  line-height: 1;
+  color: rgba(212,169,100,.22);
+  z-index: 2;
+  pointer-events: none;
+}
+.destaques__card:hover .destaques__photo--tipo,
+.destaques__card:focus-visible .destaques__photo--tipo { filter: none; }
+
+/* Modal sem foto — mesmo tratamento tipográfico */
+.modal__hero--tipo {
+  background:
+    radial-gradient(ellipse 90% 70% at 30% 20%, rgba(212,169,100,.10), transparent 60%),
+    linear-gradient(160deg, #221c15 0%, #171310 55%, #0e0c0a 100%) !important;
+}
+
+/* Hero bio — "ler mais" só no mobile */
+.hero__bio-more { display: none; }
+@media (max-width: 640px) {
+  .hero__bio {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hero__bio.is-expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+  .hero__bio-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(212,169,100,.35);
+    padding-bottom: 2px;
+  }
+}
+
+/* Contraste — tons apagados um pouco mais legíveis */
+.work__extra, .curtas__meta { color: #8f8474; }
