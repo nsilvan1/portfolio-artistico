@@ -14,6 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0e0c0a">
   <link rel="canonical" href="https://portfolio-artistico.vercel.app/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230e0c0a'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-style='italic' fill='%23d4a964' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
   <title>Nathan Silva — Ator</title>
@@ -130,7 +131,7 @@
       <p class="destaques__intro">Clique em um card para ver os detalhes.</p>
       <div class="destaques__grid">
 
-        <button type="button" class="destaques__card" data-work="menino-pipa" aria-label="Abrir detalhes: O menino da pipa avoada">
+        <button type="button" class="destaques__card destaques__card--photo" data-work="menino-pipa" aria-label="Abrir detalhes: O menino da pipa avoada">
           <div class="destaques__photo" style="background-image:url('https://i.ytimg.com/vi/CuZQeJSKTEY/maxresdefault.jpg')">
             <span class="destaques__badge"><span class="badge badge--small">Premiado</span></span>
             <div class="destaques__info">
@@ -141,8 +142,8 @@
           </div>
         </button>
 
-        <button type="button" class="destaques__card" data-work="homem-cachorro" aria-label="Abrir detalhes: O homem do cachorro">
-          <div class="destaques__photo" style="background-image:url('https://i.ytimg.com/vi/AfaojNQX7nI/maxresdefault.jpg')">
+        <button type="button" class="destaques__card destaques__card--photo" data-work="homem-cachorro" aria-label="Abrir detalhes: O homem do cachorro">
+          <div class="destaques__photo" style="background-image:url('https://i.ytimg.com/vi/AfaojNQX7nI/hqdefault.jpg')">
             <span class="destaques__badge"><span class="badge badge--small">Premiado</span></span>
             <div class="destaques__info">
               <span class="destaques__year">2022 &middot; Curta</span>
@@ -152,64 +153,46 @@
           </div>
         </button>
 
-        <button type="button" class="destaques__card" data-work="3-e-par" aria-label="Abrir detalhes: 3 e Par">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="3">
-            <div class="destaques__info">
-              <span class="destaques__year">2019–23 &middot; Websérie</span>
-              <h3 class="destaques__title">3 e Par</h3>
-              <p class="destaques__meta">Ator &middot; Dir. Karol Cerqueira</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="ponciano" aria-label="Abrir detalhes: Ponciano — De Amores — Furtado">
+          <span class="destaques__year">2025 &middot; Teatro</span>
+          <h3 class="destaques__title">Ponciano — De Amores — Furtado</h3>
+          <p class="destaques__meta">Comédia musical &middot; Dir. Fernando Rossi</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        <button type="button" class="destaques__card" data-work="ponciano" aria-label="Abrir detalhes: Ponciano — De Amores — Furtado">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="P">
-            <div class="destaques__info">
-              <span class="destaques__year">2025 &middot; Teatro</span>
-              <h3 class="destaques__title">Ponciano — De Amores — Furtado</h3>
-              <p class="destaques__meta">Comédia musical &middot; Dir. Fernando Rossi</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="3-e-par" aria-label="Abrir detalhes: 3 e Par">
+          <span class="destaques__year">2019–23 &middot; Websérie</span>
+          <h3 class="destaques__title">3 e Par</h3>
+          <p class="destaques__meta">Ator &middot; Dir. Karol Cerqueira</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        <button type="button" class="destaques__card" data-work="james-holmes" aria-label="Abrir detalhes: Eu me chamo James Holmes">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="J">
-            <div class="destaques__info">
-              <span class="destaques__year">2019 &middot; Teatro</span>
-              <h3 class="destaques__title">Eu me chamo James Holmes</h3>
-              <p class="destaques__meta">Grupo Nós Experimento &middot; Macaé</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="james-holmes" aria-label="Abrir detalhes: Eu me chamo James Holmes">
+          <span class="destaques__year">2019 &middot; Teatro</span>
+          <h3 class="destaques__title">Eu me chamo James Holmes</h3>
+          <p class="destaques__meta">Grupo Nós Experimento &middot; Macaé</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        <button type="button" class="destaques__card" data-work="mágico-oz" aria-label="Abrir detalhes: O Mágico de Oz">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="Oz">
-            <div class="destaques__info">
-              <span class="destaques__year">2019 &middot; Teatro infantil</span>
-              <h3 class="destaques__title">O Mágico de Oz</h3>
-              <p class="destaques__meta">Teatro de Bolso Procópio Ferreira</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="mágico-oz" aria-label="Abrir detalhes: O Mágico de Oz">
+          <span class="destaques__year">2019 &middot; Teatro infantil</span>
+          <h3 class="destaques__title">O Mágico de Oz</h3>
+          <p class="destaques__meta">Teatro de Bolso Procópio Ferreira</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        <button type="button" class="destaques__card" data-work="saltimbancos" aria-label="Abrir detalhes: Os Saltimbancos">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="S">
-            <div class="destaques__info">
-              <span class="destaques__year">2018 &middot; Teatro musical</span>
-              <h3 class="destaques__title">Os Saltimbancos</h3>
-              <p class="destaques__meta">Gato &middot; Dir. Luciano de Paula</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="saltimbancos" aria-label="Abrir detalhes: Os Saltimbancos">
+          <span class="destaques__year">2018 &middot; Teatro musical</span>
+          <h3 class="destaques__title">Os Saltimbancos</h3>
+          <p class="destaques__meta">Gato &middot; Dir. Luciano de Paula</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
-        <button type="button" class="destaques__card" data-work="sonhos-verão" aria-label="Abrir detalhes: Sonhos de uma noite de verão">
-          <div class="destaques__photo destaques__photo--tipo" data-letter="W">
-            <div class="destaques__info">
-              <span class="destaques__year">2017 &middot; Shakespeare</span>
-              <h3 class="destaques__title">Sonhos de uma noite de verão</h3>
-              <p class="destaques__meta">Oberon, Rei dos Elfos</p>
-            </div>
-          </div>
+        <button type="button" class="destaques__card destaques__card--index" data-work="sonhos-verão" aria-label="Abrir detalhes: Sonhos de uma noite de verão">
+          <span class="destaques__year">2017 &middot; Shakespeare</span>
+          <h3 class="destaques__title">Sonhos de uma noite de verão</h3>
+          <p class="destaques__meta">Oberon, Rei dos Elfos</p>
+          <span class="destaques__arrow" aria-hidden="true">&rarr;</span>
         </button>
 
       </div>
@@ -252,15 +235,15 @@
       <h2 class="section-label">Ficha completa</h2>
 
       <div class="creditos__filters" role="tablist">
-        <button type="button" class="creditos__filter is-active" data-filter="all">Tudo <span>25</span></button>
-        <button type="button" class="creditos__filter" data-filter="audiovisual">Audiovisual <span>3</span></button>
-        <button type="button" class="creditos__filter" data-filter="teatro">Teatro <span>15</span></button>
-        <button type="button" class="creditos__filter" data-filter="sonoplastia">Sonoplastia <span>5</span></button>
-        <button type="button" class="creditos__filter" data-filter="dublagem">Dublagem <span>1</span></button>
-        <button type="button" class="creditos__filter" data-filter="formacao">Formação <span>1</span></button>
+        <button type="button" class="creditos__filter is-active" data-filter="all">Tudo <span></span></button>
+        <button type="button" class="creditos__filter" data-filter="audiovisual">Audiovisual <span></span></button>
+        <button type="button" class="creditos__filter" data-filter="teatro">Teatro <span></span></button>
+        <button type="button" class="creditos__filter" data-filter="sonoplastia">Sonoplastia <span></span></button>
+        <button type="button" class="creditos__filter" data-filter="dublagem">Dublagem <span></span></button>
+        <button type="button" class="creditos__filter" data-filter="formacao">Formação <span></span></button>
       </div>
 
-      <div class="chapters">
+      <div class="chapters is-collapsed" id="chapters">
 
         <section class="chapter" data-year="atual">
           <header class="chapter__header">
@@ -285,9 +268,24 @@
           <header class="chapter__header">
             <h3 class="chapter__year">2026</h3>
             <span class="chapter__line" aria-hidden="true"></span>
-            <span class="chapter__count">1</span>
+            <span class="chapter__count">3</span>
           </header>
           <ul class="chapter__items">
+            <li class="work" data-type="teatro">
+              <h4 class="work__title">Cinzas</h4><span class="work__meta">Teatro &middot; Sonoplastia</span>
+              <p class="work__extra">Coletivo Teatral Àkàrà &middot; Teatro de Bolso Procópio Ferreira (jul–ago) &middot; Sessões com visita sensorial acessível</p>
+              <ul class="work__sources">
+                <li><a href="https://www.instagram.com/espetaculocinzas/" target="_blank" rel="noopener">Instagram</a></li>
+              </ul>
+            </li>
+            <li class="work" data-type="teatro">
+              <h4 class="work__title">Hamlet não. Horácio!</h4><span class="work__meta">Teatro &middot; Sonoplastia e projeção</span>
+              <p class="work__extra">Ruptura Cia de Arte &middot; Dir. Fernando Rossi &middot; Dramaturgia de Lucas Machado &middot; Teatro de Bolso Procópio Ferreira (jun–jul)</p>
+              <ul class="work__sources">
+                <li><a href="https://capitalfmradio.com.br/hamlet-nao-horacio-estreia-no-teatro-de-bolso-com-releitura-do-classico-de-shakespeare/" target="_blank" rel="noopener">Rádio Capital FM</a></li>
+                <li><a href="https://campos24horas.com.br/noticia/hamlet-nao-horacio-leva-humor-e-metalinguagem-ao-palco-do-teatro-de-bolso" target="_blank" rel="noopener">Campos 24 Horas</a></li>
+              </ul>
+            </li>
             <li class="work" data-type="teatro">
               <h4 class="work__title">Uma Promessa pra São Salvador</h4><span class="work__meta">Teatro &middot; Coletivo Real de Teatro</span>
               <p class="work__extra">Teatro de Bolso Procópio Ferreira</p>
@@ -402,7 +400,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2021">
+        <section class="chapter chapter--old" data-year="2021">
           <header class="chapter__header">
             <h3 class="chapter__year">2021</h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -416,7 +414,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2020">
+        <section class="chapter chapter--old" data-year="2020">
           <header class="chapter__header">
             <h3 class="chapter__year">2020</h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -430,7 +428,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2019">
+        <section class="chapter chapter--old" data-year="2019">
           <header class="chapter__header">
             <h3 class="chapter__year">2019</h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -450,7 +448,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2018">
+        <section class="chapter chapter--old" data-year="2018">
           <header class="chapter__header">
             <h3 class="chapter__year">2018</h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -482,7 +480,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2017-18">
+        <section class="chapter chapter--old" data-year="2017-18">
           <header class="chapter__header">
             <h3 class="chapter__year">2017 <span class="chapter__range">— 2018</span></h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -497,7 +495,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2017">
+        <section class="chapter chapter--old" data-year="2017">
           <header class="chapter__header">
             <h3 class="chapter__year">2017</h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -516,7 +514,7 @@
           </ul>
         </section>
 
-        <section class="chapter" data-year="2012-18">
+        <section class="chapter chapter--old" data-year="2012-18">
           <header class="chapter__header">
             <h3 class="chapter__year">2012 <span class="chapter__range">— 2018</span></h3>
             <span class="chapter__line" aria-hidden="true"></span>
@@ -531,187 +529,11 @@
         </section>
 
       </div>
+
+      <button type="button" class="chapters__more" id="chapters-more" aria-expanded="false">Ver trajetória completa &middot; 2012–2021</button>
     </div>
   </section>
 
-  <!-- BLOCO_ANTIGO_DESATIVADO — mantido abaixo comentado historicamente
-       foi substituido pela timeline acima -->
-  <template id="creditos-legado">
-      <h2 class="section-label">Audiovisual</h2>
-      <table class="credits-table">
-        <tr class="credits-table__row credits-table__row--highlight">
-          <td class="credits-table__year">2025</td>
-          <td class="credits-table__title">O menino da pipa avoada <span class="badge">Premiado</span></td>
-          <td class="credits-table__detail">Curta-metragem &middot; Ator + Assist. Direção</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Prêmio do Júri Popular — 1º Fest. Territorial Cinema Itinerante, Lapa RJ</td>
-        </tr>
-        <tr class="credits-table__row credits-table__row--highlight">
-          <td class="credits-table__year">2022</td>
-          <td class="credits-table__title">O homem do cachorro <span class="badge">Premiado</span></td>
-          <td class="credits-table__detail">Curta-metragem &middot; Ator</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Melhor Filme + Melhor Roteiro, RibaCine 2022</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2019–23</td>
-          <td class="credits-table__title">3 E PAR</td>
-          <td class="credits-table__detail">Websérie &middot; Ator</td>
-          <td class="credits-table__extra"></td>
-        </tr>
-      </table>
-
-      <h2 class="section-label">Teatro — Ator</h2>
-      <table class="credits-table">
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2026</td>
-          <td class="credits-table__title">Uma Promessa pra São Salvador</td>
-          <td class="credits-table__detail">Coletivo Real de Teatro</td>
-          <td class="credits-table__extra">Teatro de Bolso Procópio Ferreira</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2025</td>
-          <td class="credits-table__title">Ponciano — De Amores — Furtado</td>
-          <td class="credits-table__detail">Comédia musical &middot; Ator</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2021</td>
-          <td class="credits-table__title">Encontro no bar</td>
-          <td class="credits-table__detail">Leituras Santas &middot; Ator</td>
-          <td class="credits-table__extra">Santa Paciência Casa Criativa</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2020</td>
-          <td class="credits-table__title">Piquenique no Front</td>
-          <td class="credits-table__detail">Leituras Santas &middot; Ator</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Online (pandemia)</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2019</td>
-          <td class="credits-table__title">Eu me chamo James Holmes</td>
-          <td class="credits-table__detail">Ator</td>
-          <td class="credits-table__extra">Grupo Nós Experimento</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2019</td>
-          <td class="credits-table__title">O Mágico de Oz</td>
-          <td class="credits-table__detail">Ator</td>
-          <td class="credits-table__extra">Teatro de Bolso Procópio Ferreira</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2018</td>
-          <td class="credits-table__title">Os Saltimbancos</td>
-          <td class="credits-table__detail">Gato &middot; Ator</td>
-          <td class="credits-table__extra">Núcleo de Artes ORI &middot; Dir. Luciano de Paula &middot; Bienal do Livro &middot; Teatro de Bolso &middot; Projeto 1001 Espetáculos</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">~2018</td>
-          <td class="credits-table__title">O palhaço Paçoca no mundo mágico das Histórias</td>
-          <td class="credits-table__detail">Ator</td>
-          <td class="credits-table__extra">Núcleo de Artes ORI &middot; Teatro de Bolso Procópio Ferreira</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2018</td>
-          <td class="credits-table__title">O Pagador de Promessas</td>
-          <td class="credits-table__detail">Dias Gomes &middot; Ator</td>
-          <td class="credits-table__extra">Teatro de Bolso Procópio Ferreira</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2018</td>
-          <td class="credits-table__title">Esquetes: Calabar, Eles não usam Black Tie, Ópera do Malandro, Vestido de Noiva</td>
-          <td class="credits-table__detail">Ator</td>
-          <td class="credits-table__extra">Curso Livre de Teatro</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2018</td>
-          <td class="credits-table__title">O Tango dos Assassinos</td>
-          <td class="credits-table__detail">Esquete &middot; Ator</td>
-          <td class="credits-table__extra">Festival de Esquetes de Campos</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2017–18</td>
-          <td class="credits-table__title">Coisas da Gente</td>
-          <td class="credits-table__detail">Grupo Tubo de Ensaio &middot; Ator</td>
-          <td class="credits-table__extra">Festival Doces Palavras 2017 &middot; Temporada Teatro de Bolso 2018 (Projeto 1001 Espetáculos)</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2017</td>
-          <td class="credits-table__title">Sonhos de uma noite de verão</td>
-          <td class="credits-table__detail">Shakespeare &middot; Oberon (Rei dos Elfos)</td>
-          <td class="credits-table__extra">Exercício cênico</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2017</td>
-          <td class="credits-table__title">Exercício Cênico — Musical</td>
-          <td class="credits-table__detail">Dançarino &middot; Grease + Valerie (Glee)</td>
-          <td class="credits-table__extra">Curso Livre de Teatro</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2012–18</td>
-          <td class="credits-table__title">Paixão de Cristo</td>
-          <td class="credits-table__detail">Apóstolo Tiago (2013), Pedro (2014), João (2017), Judas (2018)</td>
-          <td class="credits-table__extra">Dir. Pedro Carneiro &middot; Praça São Salvador &middot; Grupo Teatro Sacro Dom Carlos Alberto Navarro</td>
-        </tr>
-      </table>
-
-      <!-- Saltimbancos, Paçoca e Brincantes integrados na tabela Teatro acima -->
-
-      <h2 class="section-label">Teatro — Sonoplastia &amp; Projeções</h2>
-      <table class="credits-table">
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2025</td>
-          <td class="credits-table__title">Conversas com Chocolate</td>
-          <td class="credits-table__detail">Projeções cênicas</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2024</td>
-          <td class="credits-table__title">"fernandos" em busca de Pessoa</td>
-          <td class="credits-table__detail">Sonoplastia e Projeções</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2024</td>
-          <td class="credits-table__title">O Beijo da Mulher Aranha</td>
-          <td class="credits-table__detail">Som e Projeção</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2022</td>
-          <td class="credits-table__title">O Julgamento de Lucifer</td>
-          <td class="credits-table__detail">Sonoplastia</td>
-          <td class="credits-table__extra">Dir. Fernando Rossi &middot; Teatro de Bolso</td>
-        </tr>
-        <tr class="credits-table__row">
-          <td class="credits-table__year">2022</td>
-          <td class="credits-table__title">Anti-Amor</td>
-          <td class="credits-table__detail">Sonoplastia</td>
-          <td class="credits-table__extra">Dir. Rodri Mendes &middot; Texto: Lucas Machado e Rodri Mendes &middot; Campos/RJ</td>
-        </tr>
-      </table>
-
-      <h2 class="section-label">Dublagem</h2>
-      <table class="credits-table">
-        <tr class="credits-table__row">
-          <td class="credits-table__year">Atual</td>
-          <td class="credits-table__title">Reino em Cena</td>
-          <td class="credits-table__detail">Dublador</td>
-          <td class="credits-table__extra">Segunda Igreja Batista &middot; @reinoemcenaoficial</td>
-        </tr>
-      </table>
-
-      <h2 class="section-label">Formação</h2>
-      <table class="credits-table">
-        <tr class="credits-table__row">
-          <td class="credits-table__year">Atual</td>
-          <td class="credits-table__title">Curso Livre de Teatro</td>
-          <td class="credits-table__detail">Campos dos Goytacazes, RJ</td>
-          <td class="credits-table__extra"></td>
-        </tr>
-      </table>
-
-    </div>
-  </section>
-  </template>
 
   <!-- CONTATO -->
   <section class="contato" id="contato">
@@ -724,7 +546,6 @@
           <span aria-hidden="true">&rarr;</span>
         </a>
         <a class="contato__secondary" href="https://wa.me/5522997106833?text=Ol%C3%A1%20Nathan%2C%20vi%20seu%20portf%C3%B3lio" target="_blank" rel="noopener">WhatsApp — (22) 99710-6833</a>
-        <a class="contato__secondary" href="Nathan_Silva_Portfolio_Espetaculos.pdf" download>Baixar portfólio em PDF</a>
       </div>
       <div class="contato__social">
         <a href="https://instagram.com/nsilvan1" target="_blank" rel="noopener"><span>Instagram</span><em>@nsilvan1</em></a>
@@ -736,6 +557,8 @@
   <footer class="footer">
     <div class="wrap">
       <span>&copy; 2026 Nathan Silva</span>
+      <a href="portfolio-pdf.html?print" target="_blank" rel="noopener" title="Currículo em texto — escolha 'Salvar como PDF'">Exportar PDF</a>
+      <a href="portfolio-pdf-fotos.html?print" target="_blank" rel="noopener" title="Versão visual com fotos — escolha 'Salvar como PDF'">PDF com fotos</a>
       <a href="#hero">Voltar ao topo</a>
     </div>
   </footer>
@@ -781,12 +604,35 @@
       bioBtn.textContent = bio.classList.contains('is-expanded') ? 'Ler menos' : 'Ler mais';
     });
 
+    // Créditos — contadores calculados automaticamente a partir do HTML
+    const allWorks = document.querySelectorAll('.chapter .work');
+    document.querySelectorAll('.creditos__filter').forEach(btn => {
+      const f = btn.dataset.filter;
+      const n = f === 'all' ? allWorks.length
+        : document.querySelectorAll(`.chapter .work[data-type="${f}"]`).length;
+      const span = btn.querySelector('span');
+      if (span) span.textContent = n;
+    });
+
+    // Créditos — "ver trajetória completa" (anos antigos ficam recolhidos)
+    const chaptersWrap = document.getElementById('chapters');
+    const chaptersMore = document.getElementById('chapters-more');
+    function expandChapters() {
+      chaptersWrap.classList.remove('is-collapsed');
+      chaptersMore.hidden = true;
+      chaptersMore.setAttribute('aria-expanded', 'true');
+      // dispara o reveal dos capítulos que estavam escondidos
+      chaptersWrap.querySelectorAll('.chapter--old').forEach(el => el.classList.add('is-visible'));
+    }
+    chaptersMore.addEventListener('click', expandChapters);
+
     // Créditos — filtros por categoria (chapter layout)
     document.querySelectorAll('.creditos__filter').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.creditos__filter').forEach(b => b.classList.remove('is-active'));
         btn.classList.add('is-active');
         const filter = btn.dataset.filter;
+        if (filter !== 'all' && chaptersWrap.classList.contains('is-collapsed')) expandChapters();
         // filtra itens .work e recalcula count por capítulo
         document.querySelectorAll('.chapter').forEach(chap => {
           const works = chap.querySelectorAll('.work');
@@ -849,20 +695,20 @@
           ['Trilha sonora', 'Matheus Nicolau'],
           ['Função (Nathan)', 'Ator + Assistente de Direção'],
           ['Festival', '1º Festival Territorial de Cinema Itinerante — Lapa, Rio de Janeiro'],
-          ['Acessibilidade', 'Legendas e versao com intérprete de Libras'],
+          ['Acessibilidade', 'Legendas e versão com intérprete de Libras'],
           ['Fomento', 'Lei Paulo Gustavo — Ministério da Cultura']
         ],
         awards: ['Prêmio do Júri Popular (R$ 2.000) — 1º Festival Territorial de Cinema Itinerante (2025)'],
         links: [
           { label: 'Assistir no YouTube', url: 'https://www.youtube.com/watch?v=CuZQeJSKTEY' },
-          { label: 'Publicacao da premiação (Instagram @outrar.producoes)', url: 'https://www.instagram.com/p/DSOkwJsDfXH/' }
+          { label: 'Publicação da premiação (Instagram @outrar.producoes)', url: 'https://www.instagram.com/p/DSOkwJsDfXH/' }
         ]
       },
       'homem-cachorro': {
         title: 'O homem do cachorro',
         year: '2022',
         tagline: 'Curta-metragem — Duplamente premiado no RibaCine 2022',
-        photo: 'https://i.ytimg.com/vi/AfaojNQX7nI/maxresdefault.jpg',
+        photo: 'https://i.ytimg.com/vi/AfaojNQX7nI/hqdefault.jpg',
         synopsis: 'Um homem em situação de rua tem no seu cachorro a única companhia — até o encontro com o homem do carro preto. O curta adapta um conto de Adriano Moura e constrói um retrato sobre afetividade, desejo e solidão, premiado na categoria LGBT+ do Festival de Cinema de Rio Bonito. Produção independente de Campos dos Goytacazes que levou um ano para ficar pronta.',
         credits: [
           ['Direção', 'Fernando Rossi'],
@@ -938,7 +784,7 @@
         title: 'O Mágico de Oz',
         year: '2019',
         tagline: 'Teatro infantil — Teatro de Bolso',
-        synopsis: 'Montagem do clássico de L. Frank Baum apresentada no Teatro de Bolso Procópio Ferreira, em Campos dos Goytacazes. Sessao extra realizada em outubro de 2019.',
+        synopsis: 'Montagem do clássico de L. Frank Baum apresentada no Teatro de Bolso Procópio Ferreira, em Campos dos Goytacazes. Sessão extra realizada em outubro de 2019.',
         credits: [
           ['Local', 'Teatro de Bolso Procópio Ferreira, Campos dos Goytacazes'],
           ['Função', 'Ator'],

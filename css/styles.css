@@ -244,20 +244,51 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
 }
 .destaques__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 28px 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
 }
 .destaques__card {
   /* reset button */
   appearance: none; background: none; border: 0; padding: 0;
   margin: 0; font: inherit; color: inherit; text-align: left;
   cursor: pointer;
-  /* layout: poster 2:3 */
   position: relative;
   display: block;
-  aspect-ratio: 2 / 3;
   overflow: hidden;
-  transition: transform .4s;
+}
+/* Featured — fotos reais em 16:9 nativo, sem crop forçado */
+.destaques__card--photo {
+  grid-column: span 3;
+  aspect-ratio: 16 / 9;
+}
+/* Índice — cards tipográficos honestos, sem pôster falso */
+.destaques__card--index {
+  grid-column: span 2;
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 22px 20px 20px;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  transition: border-color .3s, background .3s, transform .3s;
+}
+.destaques__card--index:hover,
+.destaques__card--index:focus-visible {
+  border-color: rgba(212,169,100,.35);
+  background: var(--bg3);
+  transform: translateY(-2px);
+}
+.destaques__card--index .destaques__title { text-shadow: none; }
+.destaques__card--index .destaques__meta { text-shadow: none; margin-top: auto; padding-top: 10px; }
+.destaques__arrow {
+  position: absolute;
+  top: 18px; right: 18px;
+  font-size: 14px;
+  color: var(--ink3);
+  transition: color .3s, transform .3s;
+}
+.destaques__card--index:hover .destaques__arrow,
+.destaques__card--index:focus-visible .destaques__arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 .destaques__card:focus-visible {
   outline: 1px solid var(--accent);
@@ -289,7 +320,7 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
   filter: brightness(.92) contrast(1.08) saturate(1);
   transform: scale(1.04);
 }
-.destaques__card::after {
+.destaques__card--photo::after {
   /* linha dourada na base, aparece no hover */
   content: '';
   position: absolute;
@@ -301,8 +332,8 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
   transition: transform .5s ease;
   z-index: 3;
 }
-.destaques__card:hover::after,
-.destaques__card:focus-visible::after {
+.destaques__card--photo:hover::after,
+.destaques__card--photo:focus-visible::after {
   transform: scaleX(1);
 }
 
@@ -551,7 +582,24 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
 /* CHAPTERS — layout editorial por ano */
 .chapters {
   display: flex; flex-direction: column;
-  gap: 56px;
+  gap: 36px;
+}
+.chapters.is-collapsed .chapter--old { display: none; }
+.chapters__more {
+  display: block;
+  margin: 28px auto 0;
+  padding: 12px 24px;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  border: 1px solid var(--line2);
+  background: none;
+  transition: color .25s, border-color .25s;
+}
+.chapters__more:hover {
+  color: var(--accent);
+  border-color: rgba(212,169,100,.4);
 }
 .chapter {
   opacity: 0;
@@ -567,7 +615,7 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
 
 .chapter__header {
   display: flex; align-items: baseline; gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .chapter__year {
   font-family: var(--serif);
@@ -615,80 +663,62 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
 
 .chapter__items {
   list-style: none;
-  padding: 0 0 0 24px;
+  padding: 0;
   margin: 0;
-  border-left: 1px solid var(--line);
-  display: flex; flex-direction: column;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
 }
 
 .work {
   position: relative;
-  padding-left: 8px;
+  padding: 12px 0 14px;
+  border-top: 1px solid var(--line);
+  transition: border-color .25s;
 }
-.work::before {
-  content: '';
-  position: absolute;
-  left: -29px; top: 8px;
-  width: 9px; height: 9px;
-  border-radius: 50%;
-  background: var(--bg2);
-  border: 1px solid var(--ink3);
-  transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
-}
-.work:hover::before {
-  background: var(--accent2);
-  border-color: var(--accent);
-  transform: scale(1.15);
-}
-.work--premiado::before {
-  background: var(--accent);
-  border-color: var(--accent);
-  animation: dot-pulse 2.6s ease-out infinite .6s;
-}
+.work:hover { border-top-color: rgba(212,169,100,.35); }
 .work--premiado .work__title { color: var(--accent); }
 
 .work__title {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.25;
   letter-spacing: -.005em;
   color: var(--ink);
   margin: 0;
-  display: inline;
+  display: block;
 }
 .work__meta {
-  display: inline;
-  font-size: 12px;
+  display: block;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--ink2);
-  line-height: 1.5;
-}
-.work__meta::before {
-  content: ' — ';
-  color: var(--ink3);
-  margin-right: 2px;
+  line-height: 1.6;
+  margin-top: 3px;
 }
 .work__extra {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--ink3);
-  line-height: 1.5;
-  margin: 3px 0 0;
+  line-height: 1.55;
+  margin: 4px 0 0;
+  max-width: 62ch;
 }
 .work__sources {
   list-style: none;
   padding: 0;
-  margin: 6px 0 0;
+  margin: 7px 0 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 2px 10px;
+  gap: 3px 14px;
 }
 .work__sources li { padding: 0; }
 .work__sources a {
   position: relative;
-  padding-left: 11px;
-  font-size: 9px;
-  letter-spacing: .14em;
+  padding-left: 13px;
+  font-size: 10px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   transition: color .2s;
@@ -697,7 +727,7 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
   content: '↗';
   position: absolute;
   left: 0; top: 0;
-  font-size: 9px;
+  font-size: 10px;
   opacity: .6;
 }
 .work__sources a:hover { color: var(--accent); }
@@ -709,7 +739,10 @@ button { cursor: pointer; border: 0; background: 0; font: inherit; color: inheri
     transform: none !important;
     transition: none !important;
   }
-  .work--premiado::before { animation: none !important; }
+}
+
+@media (max-width: 720px) {
+  .chapter__items { grid-template-columns: 1fr; }
 }
 
 /* LEGADO — timeline zig-zag (mantida caso volte) */
@@ -1343,7 +1376,9 @@ body.modal-open { overflow: hidden; }
   .footer .wrap { flex-direction: column; gap: 10px; text-align: center; }
 
   .destaques { padding: 56px 24px 64px; }
-  .destaques__grid { grid-template-columns: 1fr; gap: 32px; }
+  .destaques__grid { grid-template-columns: 1fr; gap: 16px; }
+  .destaques__card--photo,
+  .destaques__card--index { grid-column: 1 / -1; }
   .destaques::before { top: 32px; width: 60px; }
   .destaques::after  { bottom: 24px; width: 60px; }
 
@@ -1385,29 +1420,6 @@ body.modal-open { overflow: hidden; }
 
 /* Scrollspy — link ativo na nav */
 .nav__link.is-active { color: var(--accent); }
-
-/* Cards tipográficos (sem foto de divulgação ainda) */
-.destaques__photo--tipo {
-  background:
-    radial-gradient(ellipse 90% 70% at 30% 20%, rgba(212,169,100,.10), transparent 60%),
-    linear-gradient(160deg, #221c15 0%, #171310 55%, #0e0c0a 100%);
-  filter: none;
-}
-.destaques__photo--tipo::after {
-  content: attr(data-letter);
-  position: absolute;
-  top: 8%;
-  right: 6%;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(110px, 13vw, 180px);
-  line-height: 1;
-  color: rgba(212,169,100,.22);
-  z-index: 2;
-  pointer-events: none;
-}
-.destaques__card:hover .destaques__photo--tipo,
-.destaques__card:focus-visible .destaques__photo--tipo { filter: none; }
 
 /* Modal sem foto — mesmo tratamento tipográfico */
 .modal__hero--tipo {

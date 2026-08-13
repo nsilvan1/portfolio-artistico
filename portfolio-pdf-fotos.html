@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Nathan Silva — Portfólio Visual (PDF)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1a1a1a;
+  font-size: 9pt;
+  line-height: 1.55;
+  background: #e8e5e0;
+}
+.page {
+  width: 210mm;
+  height: 297mm;
+  background: #fdfcfa;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+}
+.page:last-child { page-break-after: auto; }
+@media screen {
+  .page { margin: 24px auto; box-shadow: 0 8px 40px rgba(0,0,0,.18); }
+}
+@media print {
+  body { background: #fff; }
+  .page { margin: 0; box-shadow: none; }
+  .toolbar { display: none !important; }
+}
+
+/* Barra de ação (só na tela) */
+.toolbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 18px; background: #1a1a1a; color: #eee;
+  font-size: 13px;
+}
+.toolbar button {
+  font: 600 13px 'Inter', sans-serif; cursor: pointer;
+  background: #fff; color: #1a1a1a; border: 0; border-radius: 4px;
+  padding: 8px 18px;
+}
+.toolbar span em { color: #bbb; font-style: normal; }
+@media screen { body { padding-top: 44px; } }
+
+/* ── PÁGINA 1 — CAPA VISUAL ── */
+.cover-img {
+  height: 148mm;
+  background: url('assets/fotos/hero-bg.jpg') center 30% / cover no-repeat, #1a1a1a;
+  position: relative;
+}
+.cover-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,16,12,.15) 0%, rgba(20,16,12,0) 40%, rgba(20,16,12,.82) 100%);
+}
+.cover-id {
+  position: absolute; left: 18mm; bottom: 12mm; z-index: 2; color: #fdfcfa;
+}
+.cover-id h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44pt; font-weight: 600; line-height: .95; letter-spacing: -.01em;
+}
+.cover-id p {
+  font-size: 8.5pt; letter-spacing: .24em; text-transform: uppercase;
+  margin-top: 3mm; color: rgba(253,252,250,.85);
+}
+.cover-contact {
+  position: absolute; right: 18mm; bottom: 12mm; z-index: 2;
+  text-align: right; font-size: 8pt; line-height: 1.8; color: rgba(253,252,250,.9);
+}
+
+.cover-body { padding: 12mm 18mm 0; }
+.cover-lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13.5pt; font-style: italic; line-height: 1.5; color: #333;
+  max-width: 150mm;
+}
+.cover-stats { display: flex; gap: 14mm; margin-top: 8mm; }
+.cover-stats b {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600;
+  font-size: 20pt; line-height: 1; display: block;
+}
+.cover-stats small {
+  font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; color: #888;
+}
+
+/* ── PÁGINAS INTERNAS ── */
+.inner { padding: 14mm 18mm 20mm; }
+.mini-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1.5px solid #1a1a1a; padding-bottom: 2.5mm; margin-bottom: 7mm;
+}
+.mini-head b { font-family: 'Cormorant Garamond', serif; font-size: 13pt; font-weight: 600; }
+.mini-head span { font-size: 7pt; letter-spacing: .18em; text-transform: uppercase; color: #999; }
+
+h2 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 14pt;
+  margin: 0 0 4mm; break-after: avoid;
+}
+h2 small { font-family: 'Inter', sans-serif; font-size: 7pt; color: #999; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; margin-left: 2mm; }
+
+/* Filmes — cartões com imagem */
+.film { display: grid; grid-template-columns: 78mm 1fr; gap: 6mm; margin-bottom: 8mm; break-inside: avoid; }
+.film-img {
+  aspect-ratio: 16 / 9; background: #ddd center / cover no-repeat;
+  outline: 1px solid rgba(0,0,0,.08);
+}
+.film-body { align-self: center; }
+.film-year { font-size: 7pt; letter-spacing: .16em; text-transform: uppercase; color: #8b6d3f; font-weight: 600; }
+.film-title { font-family: 'Cormorant Garamond', serif; font-size: 15pt; font-weight: 600; line-height: 1.1; margin: 1mm 0; }
+.film-award { font-size: 7.5pt; color: #8b6d3f; font-weight: 600; margin-bottom: 1.5mm; }
+.film-syn { font-size: 8pt; color: #555; line-height: 1.6; }
+.film-meta { font-size: 7pt; color: #999; margin-top: 1.5mm; }
+
+/* Destaques de palco — grade tipográfica */
+.stage-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 8mm; }
+.stage {
+  border: 1px solid #e3ded6; padding: 4mm 4mm 3.5mm; background: #faf8f5;
+  break-inside: avoid;
+}
+.stage-year { font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; color: #8b6d3f; font-weight: 600; }
+.stage-title { font-family: 'Cormorant Garamond', serif; font-size: 11pt; font-weight: 600; line-height: 1.15; margin: 1mm 0 .5mm; }
+.stage-meta { font-size: 7pt; color: #777; line-height: 1.5; }
+
+/* Ficha condensada */
+table { width: 100%; border-collapse: collapse; }
+tr { border-bottom: 1px solid #f0ede8; break-inside: avoid; }
+td { padding: 1.4mm 0; vertical-align: top; font-size: 7.5pt; }
+.y { width: 13mm; color: #999; font-variant-numeric: tabular-nums; font-weight: 500; }
+.t { font-weight: 600; color: #1a1a1a; padding-right: 3mm; }
+.d { color: #666; padding-right: 3mm; }
+.e { color: #999; text-align: right; font-size: 7pt; width: 40mm; }
+
+.foot {
+  position: absolute; bottom: 8mm; left: 18mm; right: 18mm;
+  display: flex; justify-content: space-between;
+  font-size: 6.5pt; color: #aaa; border-top: 1px solid #eee; padding-top: 2mm;
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span>Pré-visualização do PDF visual — <em>na janela de impressão escolha “Salvar como PDF”</em></span>
+  <button type="button" onclick="window.print()">Gerar PDF</button>
+</div>
+
+<!-- PÁGINA 1 — CAPA -->
+<div class="page">
+  <div class="cover-img">
+    <div class="cover-id">
+      <h1>Nathan Silva</h1>
+      <p>Ator &middot; Dublador &middot; Sonoplasta</p>
+    </div>
+    <div class="cover-contact">
+      nathan_nunes92@hotmail.com<br>
+      (22) 99710-6833 &middot; @nsilvan1<br>
+      Campos dos Goytacazes, RJ
+    </div>
+  </div>
+  <div class="cover-body">
+    <p class="cover-lead">
+      Nos palcos desde 2012 e nos sets desde 2022 — do Shakespeare do Teatro de Bolso
+      Procópio Ferreira aos curtas premiados dirigidos por Fernando Rossi, passando pela
+      sonoplastia, pelas projeções cênicas e pela dublagem.
+    </p>
+    <div class="cover-stats">
+      <div><b>27</b><small>Produções</small></div>
+      <div><b>14</b><small>Anos de trajetória</small></div>
+      <div><b>2</b><small>Curtas premiados</small></div>
+      <div><b>7</b><small>Espetáculos com som &amp; projeção</small></div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Nathan Silva — Portfólio 2026</span>
+    <span>1 / 2</span>
+  </div>
+</div>
+
+<!-- PÁGINA 2 — CINEMA + PALCO -->
+<div class="page">
+  <div class="inner">
+    <div class="mini-head">
+      <b>Nathan Silva</b>
+      <span>Trabalhos em destaque</span>
+    </div>
+
+    <h2>Cinema <small>Curtas premiados</small></h2>
+
+    <div class="film">
+      <div class="film-img" style="background-image:url('https://i.ytimg.com/vi/CuZQeJSKTEY/maxresdefault.jpg')"></div>
+      <div class="film-body">
+        <div class="film-year">2025 &middot; Curta-metragem</div>
+        <div class="film-title">O menino da pipa avoada</div>
+        <div class="film-award">★ Prêmio do Júri Popular — 1º Festival Territorial de Cinema Itinerante, Lapa RJ</div>
+        <p class="film-syn">Nas paisagens rurais de Campos dos Goytacazes, uma trabalhadora encontra uma pipa caída e a leva ao filho, que vive às margens de uma rodovia. Uma história sobre infância, afeto e o direito ao brincar.</p>
+        <div class="film-meta">Dir. Fernando Rossi &middot; Ator + Assistente de Direção</div>
+      </div>
+    </div>
+
+    <div class="film">
+      <div class="film-img" style="background-image:url('https://i.ytimg.com/vi/AfaojNQX7nI/hqdefault.jpg')"></div>
+      <div class="film-body">
+        <div class="film-year">2022 &middot; Curta-metragem</div>
+        <div class="film-title">O homem do cachorro</div>
+        <div class="film-award">★ Melhor Filme (Júri Popular) + Melhor Roteiro Adaptado — RibaCine 2022</div>
+        <p class="film-syn">Um homem em situação de rua tem no cachorro a única companhia — até o encontro com o homem do carro preto. Retrato sobre afetividade, desejo e solidão, premiado na categoria LGBT+.</p>
+        <div class="film-meta">Dir. Fernando Rossi &middot; Ator &middot; 11 minutos</div>
+      </div>
+    </div>
+
+    <h2>Palco <small>Seleção</small></h2>
+    <div class="stage-grid">
+      <div class="stage">
+        <div class="stage-year">2026 &middot; Sonoplastia</div>
+        <div class="stage-title">Hamlet não. Horácio!</div>
+        <div class="stage-meta">Ruptura Cia de Arte &middot; Dir. Fernando Rossi &middot; Teatro de Bolso</div>
+      </div>
+      <div class="stage">
+        <div class="stage-year">2026 &middot; Sonoplastia</div>
+        <div class="stage-title">Cinzas</div>
+        <div class="stage-meta">Coletivo Teatral Àkàrà &middot; Teatro de Bolso</div>
+      </div>
+      <div class="stage">
+        <div class="stage-year">2025 &middot; Ator</div>
+        <div class="stage-title">Ponciano — De Amores — Furtado</div>
+        <div class="stage-meta">Comédia musical &middot; Dir. Fernando Rossi</div>
+      </div>
+      <div class="stage">
+        <div class="stage-year">2024 &middot; Som &amp; Projeção</div>
+        <div class="stage-title">"fernandos" em busca de Pessoa</div>
+        <div class="stage-meta">Dir. Fernando Rossi &middot; Teatro de Bolso</div>
+      </div>
+      <div class="stage">
+        <div class="stage-year">2018 &middot; Ator</div>
+        <div class="stage-title">Os Saltimbancos</div>
+        <div class="stage-meta">Gato &middot; Núcleo ORI &middot; Dir. Luciano de Paula</div>
+      </div>
+      <div class="stage">
+        <div class="stage-year">2017 &middot; Ator</div>
+        <div class="stage-title">Sonhos de uma noite de verão</div>
+        <div class="stage-meta">Oberon &middot; Shakespeare &middot; Teatro de Bolso</div>
+      </div>
+    </div>
+
+    <h2>Dublagem &amp; Atual</h2>
+    <table>
+      <tr><td class="y">Atual</td><td class="t">Reino em Cena</td><td class="d">Dublador</td><td class="e">@reinoemcenaoficial</td></tr>
+      <tr><td class="y">2026</td><td class="t">Uma Promessa pra São Salvador</td><td class="d">Teatro &middot; Coletivo Real de Teatro</td><td class="e">Teatro de Bolso</td></tr>
+      <tr><td class="y">2019–23</td><td class="t">3 e Par</td><td class="d">Websérie &middot; Ator</td><td class="e">Dir. Karol Cerqueira</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">
+    <span>★ trabalho premiado &middot; ficha completa em portfolio-artistico.vercel.app</span>
+    <span>2 / 2</span>
+  </div>
+</div>
+
+<script>
+  // ?print → abre a janela de impressão após fontes e imagens carregarem
+  if (new URLSearchParams(location.search).has('print')) {
+    Promise.all([
+      document.fonts ? document.fonts.ready : Promise.resolve(),
+      new Promise(r => window.addEventListener('load', r, { once: true }))
+    ]).then(() => setTimeout(() => window.print(), 400));
+  }
+</script>
+</body>
+</html>
