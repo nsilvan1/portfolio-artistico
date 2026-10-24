@@ -3,214 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>Nathan Silva — Portfólio (PDF)</title>
+<title>Nathan Silva — Currículo artístico (PDF)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-@page { size: A4; margin: 0; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #1a1a1a;
-  font-size: 9pt;
-  line-height: 1.55;
-  background: #e8e5e0;
-}
-.page {
-  width: 210mm;
-  min-height: 297mm;
-  padding: 16mm 18mm 20mm;
-  background: #fdfcfa;
-  margin: 0 auto;
-  position: relative;
-}
-@media screen {
-  .page { margin: 24px auto; box-shadow: 0 8px 40px rgba(0,0,0,.18); }
-}
-@media print {
-  body { background: #fff; }
-  .page { margin: 0; box-shadow: none; }
-  .toolbar { display: none !important; }
-}
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root {
+    --paper: #f6f1e8; --ink: #14110e; --ink2: #4a433b; --ink3: #857a6d;
+    --gold: #a8803d; --gold2: #d4a964; --dark: #0e0c0a; --line: rgba(20,17,14,.12);
+    --serif: 'Instrument Serif', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  body { font-family: var(--sans); color: var(--ink); background: #d8d2c7; font-size: 9pt; line-height: 1.5; }
+  .page { width: 210mm; height: 297mm; margin: 0 auto; position: relative; overflow: hidden; background: var(--paper); page-break-after: always; padding: 16mm 16mm 18mm; }
+  .page:last-child { page-break-after: auto; }
+  @media screen { .page { margin: 24px auto; box-shadow: 0 10px 50px rgba(0,0,0,.25); } body { padding-top: 44px; } }
+  @media print { body { background: #fff; } .page { margin: 0; box-shadow: none; } .toolbar { display: none !important; } }
+  .toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 10px 18px; background: var(--dark); color: #eee; font-size: 13px; }
+  .toolbar button { font: 600 13px var(--sans); cursor: pointer; background: var(--gold2); color: var(--dark); border: 0; border-radius: 4px; padding: 8px 18px; }
 
-/* Barra de ação (só na tela) */
-.toolbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 10px 18px; background: #1a1a1a; color: #eee;
-  font-size: 13px;
-}
-.toolbar button {
-  font: 600 13px 'Inter', sans-serif; cursor: pointer;
-  background: #fff; color: #1a1a1a; border: 0; border-radius: 4px;
-  padding: 8px 18px;
-}
-.toolbar span em { color: #bbb; font-style: normal; }
-@media screen { body { padding-top: 44px; } }
+  /* cabeçalho página 1 */
+  .masthead { display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: end; padding-bottom: 6mm; border-bottom: 2px solid var(--ink); }
+  .masthead h1 { font-family: var(--serif); font-weight: 400; font-size: 46pt; line-height: .9; letter-spacing: -.02em; }
+  .masthead h1 em { color: var(--gold); font-style: italic; }
+  .masthead .roles { margin-top: 3.5mm; font-size: 7.5pt; letter-spacing: .24em; text-transform: uppercase; color: var(--ink3); }
+  .masthead .contact { text-align: right; font-size: 8pt; line-height: 1.75; color: var(--ink2); }
+  .masthead .contact b { font-weight: 500; color: var(--ink); }
 
-/* Cabeçalho */
-.head {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  border-bottom: 2px solid #1a1a1a; padding-bottom: 5mm; margin-bottom: 7mm;
-}
-.head-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 34pt; font-weight: 600; line-height: 1; letter-spacing: -0.01em;
-}
-.head-role {
-  font-size: 8pt; letter-spacing: .22em; text-transform: uppercase;
-  color: #666; margin-top: 2mm;
-}
-.head-contact { text-align: right; font-size: 8pt; color: #444; line-height: 1.7; }
-.head-contact strong { color: #1a1a1a; font-weight: 600; }
+  .intro { display: grid; grid-template-columns: 1fr 52mm; gap: 8mm; margin: 7mm 0 8mm; }
+  .intro p { font-size: 9.2pt; line-height: 1.7; color: var(--ink2); }
+  .intro p em { font-family: var(--serif); font-style: italic; font-size: 10.5pt; color: var(--ink); }
+  .stats { border-left: 1px solid var(--line); padding-left: 6mm; display: grid; gap: 3mm; align-self: center; }
+  .stats b { font-family: var(--serif); font-weight: 400; font-size: 22pt; line-height: 1; display: block; }
+  .stats small { font-size: 6.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink3); }
 
-/* Resumo + números */
-.summary { display: grid; grid-template-columns: 1fr 46mm; gap: 8mm; margin-bottom: 7mm; }
-.summary p { font-size: 9pt; color: #333; line-height: 1.7; }
-.summary p em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 10pt; }
-.numbers { border-left: 1px solid #ddd; padding-left: 6mm; align-self: center; }
-.numbers div { margin-bottom: 3mm; }
-.numbers b {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600;
-  font-size: 17pt; line-height: 1; display: block;
-}
-.numbers small {
-  font-size: 6.5pt; letter-spacing: .12em; text-transform: uppercase; color: #888;
-}
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 18pt; line-height: 1; margin: 5mm 0 2.5mm; display: flex; align-items: baseline; gap: 3mm; break-after: avoid; }
+  h2 small { font-family: var(--sans); font-size: 6.8pt; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+  h2::after { content: ''; flex: 1; height: 1px; background: var(--line); transform: translateY(-3px); }
 
-/* Seções */
-h2 {
-  font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 13pt;
-  margin: 6mm 0 2.5mm; padding-bottom: 1mm; border-bottom: 1px solid #ccc;
-  break-after: avoid;
-}
-h2 span { font-family: 'Inter', sans-serif; font-size: 7pt; color: #999; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; }
+  table { width: 100%; border-collapse: collapse; }
+  tr { border-bottom: 1px solid var(--line); break-inside: avoid; }
+  tr:last-child { border-bottom: 0; }
+  td { padding: 1.5mm 0; vertical-align: top; font-size: 8pt; line-height: 1.4; }
+  .y { width: 15mm; color: var(--ink3); font-variant-numeric: tabular-nums; font-size: 7.5pt; padding-top: 2mm; }
+  .t { font-weight: 500; color: var(--ink); padding-right: 4mm; width: 58mm; }
+  .t s { text-decoration: none; color: var(--gold); }
+  .d { color: var(--ink2); padding-right: 4mm; }
+  .e { color: var(--ink3); text-align: right; font-size: 7.2pt; width: 46mm; }
 
-table { width: 100%; border-collapse: collapse; }
-tr { border-bottom: 1px solid #f0ede8; break-inside: avoid; }
-td { padding: 1.6mm 0; vertical-align: top; font-size: 8pt; }
-.y { width: 14mm; color: #999; font-variant-numeric: tabular-nums; font-weight: 500; }
-.t { font-weight: 600; color: #1a1a1a; padding-right: 3mm; width: 52mm; }
-.d { color: #555; padding-right: 3mm; }
-.e { color: #999; text-align: right; font-size: 7.5pt; width: 44mm; }
-.premio { color: #8b6d3f; font-weight: 600; }
-.star { color: #8b6d3f; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; } .two .t { width: 32mm; } .two .d { padding-right: 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 1.6mm; margin-top: 1mm; }
+  .skills span { font-size: 7.2pt; border: 1px solid var(--ink); border-radius: 20mm; padding: 1mm 3.2mm; color: var(--ink2); }
+  .skills span.g { border-color: var(--gold); color: var(--gold); }
 
-/* Habilidades em linha */
-.skills { display: flex; flex-wrap: wrap; gap: 1.5mm 2mm; margin-top: 1mm; }
-.skills span {
-  border: 1px solid #ddd; border-radius: 10mm; padding: .8mm 3mm;
-  font-size: 7pt; color: #555;
-}
+  .runhead { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 3mm; border-bottom: 1px solid var(--ink); }
+  .runhead b { font-family: var(--serif); font-weight: 400; font-size: 14pt; }
+  .runhead b em { color: var(--gold); }
+  .runhead span { font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink3); }
 
-/* Rodapé */
-.foot {
-  position: absolute; bottom: 8mm; left: 18mm; right: 18mm;
-  display: flex; justify-content: space-between;
-  font-size: 6.5pt; color: #aaa; border-top: 1px solid #eee; padding-top: 2mm;
-}
+  .foot { position: absolute; bottom: 9mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .08em; color: var(--ink3); border-top: 1px solid var(--line); padding-top: 2mm; }
+  .foot b { color: var(--ink); font-weight: 500; }
 </style>
 </head>
 <body>
 
 <div class="toolbar">
-  <span>Pré-visualização do PDF — <em>na janela de impressão escolha “Salvar como PDF”</em></span>
+  <span>Pré-visualização — <em>na janela de impressão escolha "Salvar como PDF", A4, sem margens, com gráficos de fundo</em></span>
   <button type="button" onclick="window.print()">Gerar PDF</button>
 </div>
 
+<!-- PÁGINA 1 -->
 <div class="page">
-
-  <header class="head">
+  <div class="masthead">
     <div>
-      <div class="head-name">Nathan Silva</div>
-      <div class="head-role">Ator &middot; Dublador &middot; Sonoplasta</div>
+      <h1>Nathan <em>Silva</em></h1>
+      <p class="roles">Ator · Diretor · Dublador · Sonoplasta</p>
     </div>
-    <div class="head-contact">
-      <strong>nathan_nunes92@hotmail.com</strong><br>
-      (22) 99710-6833 &middot; @nsilvan1<br>
-      Campos dos Goytacazes, RJ
+    <div class="contact">
+      <b>nathan_nunes92@hotmail.com</b><br>
+      <b>(22) 99710-6833</b> · @nsilvan1<br>
+      Campos dos Goytacazes, RJ<br>
+      portfolio-artistico.vercel.app
     </div>
-  </header>
+  </div>
 
-  <div class="summary">
+  <div class="intro">
     <p>
-      Nos palcos desde 2012, quando estreei na <em>Paixão de Cristo</em> da Praça São Salvador.
-      Minha trajetória passa pelo Teatro de Bolso Procópio Ferreira, pelo Santa Paciência Casa Criativa,
-      pelo Núcleo de Artes ORI e pelo Grupo Tubo de Ensaio. Ao lado do diretor <em>Fernando Rossi</em>,
-      construí um percurso que vai de curtas premiados em festivais à sonoplastia e às projeções cênicas
-      de espetáculos teatrais. Também empresto minha voz ao projeto de dublagem <em>Reino em Cena</em>.
+      <em>Nos palcos desde 2012</em>, quando estreei na Paixão de Cristo da Praça São Salvador. Minha trajetória passa pelo Teatro de Bolso Procópio Ferreira, pelo Santa Paciência Casa Criativa, pelo Núcleo de Artes ORI e pelo Grupo Tubo de Ensaio. Ao lado do diretor Fernando Rossi, construí um percurso que vai de curtas premiados em festivais à sonoplastia e às projeções cênicas de espetáculos teatrais. Em 2026, assinei roteiro e direção do musical infantil <em>Reino em Cena — A Biblioteca Secreta</em>, projeto ao qual também empresto a voz como dublador.
     </p>
-    <div class="numbers">
-      <div><b>27</b><small>Produções</small></div>
+    <div class="stats">
+      <div><b>29</b><small>Produções</small></div>
       <div><b>14</b><small>Anos de trajetória</small></div>
       <div><b>2</b><small>Curtas premiados</small></div>
     </div>
   </div>
 
-  <h2>Audiovisual</h2>
+  <h2>Audiovisual <small>Cinema e websérie</small></h2>
   <table>
-    <tr><td class="y">2025</td><td class="t">O menino da pipa avoada <span class="star">★</span></td><td class="d">Curta &middot; Ator + Assist. de Direção</td><td class="e premio">Prêmio do Júri Popular — Fest. Territorial, Lapa RJ</td></tr>
-    <tr><td class="y">2022</td><td class="t">O homem do cachorro <span class="star">★</span></td><td class="d">Curta &middot; Ator</td><td class="e premio">Melhor Filme + Melhor Roteiro — RibaCine 2022</td></tr>
-    <tr><td class="y">2019–23</td><td class="t">3 e Par</td><td class="d">Websérie &middot; Ator</td><td class="e">Dir. Karol Cerqueira</td></tr>
+    <tr><td class="y">2025</td><td class="t"><s>★</s> O menino da pipa avoada</td><td class="d">Curta · Ator e assistente de direção · Dir. Fernando Rossi</td><td class="e">Júri Popular, Fest. Territorial (Lapa RJ) · Seleção II Festival Goitacá 2026</td></tr>
+    <tr><td class="y">2022</td><td class="t"><s>★</s> O homem do cachorro</td><td class="d">Curta · Ator · Dir. Fernando Rossi</td><td class="e">Melhor Filme e Melhor Roteiro — RibaCine 2022</td></tr>
+    <tr><td class="y">2019–23</td><td class="t">3 e Par</td><td class="d">Websérie · Ator</td><td class="e">Dir. Karol Cerqueira</td></tr>
   </table>
 
-  <h2>Teatro <span>— Ator</span></h2>
+  <h2>Direção e roteiro</h2>
   <table>
+    <tr><td class="y">2026</td><td class="t">Musical Reino em Cena — A Biblioteca Secreta</td><td class="d">Musical infantil · Roteiro e direção · Apresentação em 3 de outubro, com transmissão ao vivo</td><td class="e">Movimento Igreja / Segunda Igreja Batista de Campos</td></tr>
+  </table>
+
+  <h2>Teatro <small>Ator</small></h2>
+  <table>
+    <tr><td class="y">2026</td><td class="t">O Sol Feriu a Terra e a Chaga se Alastrou</td><td class="d">Vital Santos · Fantasia mágica musical · Grupo Teatral da Escola de Dança RV</td><td class="e">Dir. Fernando Rossi · Academia Campista de Letras e Casarão Centro Cultural</td></tr>
     <tr><td class="y">2026</td><td class="t">Uma Promessa pra São Salvador</td><td class="d">Coletivo Real de Teatro</td><td class="e">Teatro de Bolso</td></tr>
-    <tr><td class="y">2025</td><td class="t">Ponciano — De Amores — Furtado</td><td class="d">Comédia musical</td><td class="e">Dir. Fernando Rossi &middot; Teatro de Bolso</td></tr>
+    <tr><td class="y">2025</td><td class="t">Ponciano — De Amores — Furtado</td><td class="d">Comédia musical · Dramaturgia de Arlete Sendra</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
     <tr><td class="y">2021</td><td class="t">Encontro no bar</td><td class="d">Leituras Santas</td><td class="e">Santa Paciência Casa Criativa</td></tr>
     <tr><td class="y">2020</td><td class="t">Piquenique no Front</td><td class="d">Leituras Santas (online)</td><td class="e">Dir. Fernando Rossi</td></tr>
-    <tr><td class="y">2019</td><td class="t">Eu me chamo James Holmes</td><td class="d">Ator</td><td class="e">Grupo Nós Experimento &middot; Macaé</td></tr>
+    <tr><td class="y">2019</td><td class="t">Eu me chamo James Holmes</td><td class="d">Grupo Nós Experimento</td><td class="e">Rinha das Artes · Macaé</td></tr>
     <tr><td class="y">2019</td><td class="t">O Mágico de Oz</td><td class="d">Teatro infantil</td><td class="e">Teatro de Bolso</td></tr>
-    <tr><td class="y">2018</td><td class="t">Os Saltimbancos</td><td class="d">Gato &middot; Teatro musical</td><td class="e">Núcleo ORI &middot; Dir. Luciano de Paula</td></tr>
-    <tr><td class="y">2018</td><td class="t">O palhaço Paçoca no mundo mágico das Histórias</td><td class="d">Ator</td><td class="e">Núcleo ORI &middot; Teatro de Bolso</td></tr>
+    <tr><td class="y">2018</td><td class="t">Os Saltimbancos</td><td class="d">Gato · Teatro musical · Núcleo de Artes ORI</td><td class="e">Dir. Luciano de Paula</td></tr>
+    <tr><td class="y">2018</td><td class="t">O palhaço Paçoca no mundo mágico das Histórias</td><td class="d">Núcleo de Artes ORI</td><td class="e">Teatro de Bolso</td></tr>
+  </table>
+
+  <div class="foot"><span><b>Nathan Silva</b> · Currículo artístico · outubro de 2026</span><span>★ trabalho premiado</span><span>1 / 2</span></div>
+</div>
+
+<!-- PÁGINA 2 -->
+<div class="page">
+  <div class="runhead"><b>Nathan <em>Silva</em></b><span>Continuação da ficha</span></div>
+
+  <h2>Teatro <small>Ator · 2012 – 2018</small></h2>
+  <table>
     <tr><td class="y">2018</td><td class="t">O Pagador de Promessas</td><td class="d">Dias Gomes</td><td class="e">Teatro de Bolso</td></tr>
-    <tr><td class="y">2018</td><td class="t">Esquetes: Calabar, Black Tie, Ópera do Malandro, Vestido de Noiva</td><td class="d">Ator</td><td class="e">Curso Livre de Teatro</td></tr>
+    <tr><td class="y">2018</td><td class="t">Esquetes: Calabar, Black Tie, Ópera do Malandro, Vestido de Noiva</td><td class="d">Curso Livre de Teatro</td><td class="e"></td></tr>
     <tr><td class="y">2018</td><td class="t">O Tango dos Assassinos</td><td class="d">Esquete</td><td class="e">Festival de Esquetes de Campos</td></tr>
-    <tr><td class="y">2017–18</td><td class="t">Coisas da Gente</td><td class="d">Grupo Tubo de Ensaio</td><td class="e">Fest. Doces Palavras &middot; 1001 Espetáculos</td></tr>
-    <tr><td class="y">2017</td><td class="t">Sonhos de uma noite de verão</td><td class="d">Oberon, Rei dos Elfos &middot; Shakespeare</td><td class="e">Teatro de Bolso</td></tr>
-    <tr><td class="y">2017</td><td class="t">Exercício Cênico — Musical</td><td class="d">Dançarino (Grease + Valerie)</td><td class="e">Curso Livre de Teatro</td></tr>
-    <tr><td class="y">2012–18</td><td class="t">Paixão de Cristo</td><td class="d">Tiago, Pedro, João e Judas</td><td class="e">Dir. Pedro Carneiro &middot; Praça São Salvador</td></tr>
+    <tr><td class="y">2017–18</td><td class="t">Coisas da Gente</td><td class="d">Grupo Tubo de Ensaio</td><td class="e">Fest. Doces Palavras · Projeto 1001 Espetáculos</td></tr>
+    <tr><td class="y">2017</td><td class="t">Sonhos de uma noite de verão</td><td class="d">Oberon, Rei dos Elfos · Shakespeare</td><td class="e">Teatro de Bolso</td></tr>
+    <tr><td class="y">2017</td><td class="t">Exercício Cênico — Musical</td><td class="d">Dançarino (Grease e Valerie)</td><td class="e">Curso Livre de Teatro</td></tr>
+    <tr><td class="y">2012–18</td><td class="t">Paixão de Cristo</td><td class="d">Tiago, Pedro, João e Judas</td><td class="e">Dir. Pedro Carneiro · Praça São Salvador</td></tr>
   </table>
 
-  <h2>Teatro <span>— Sonoplastia &amp; Projeções</span></h2>
+  <h2>Sonoplastia e projeções cênicas <small>Teatro</small></h2>
   <table>
-    <tr><td class="y">2026</td><td class="t">Cinzas</td><td class="d">Sonoplastia</td><td class="e">Coletivo Teatral Àkàrà &middot; Teatro de Bolso</td></tr>
-    <tr><td class="y">2026</td><td class="t">Hamlet não. Horácio!</td><td class="d">Sonoplastia e projeção</td><td class="e">Ruptura Cia de Arte &middot; Dir. Fernando Rossi</td></tr>
-    <tr><td class="y">2025</td><td class="t">Conversas com Chocolate</td><td class="d">Projeções cênicas</td><td class="e">Dir. Fernando Rossi &middot; Teatro de Bolso</td></tr>
-    <tr><td class="y">2024</td><td class="t">"fernandos" em busca de Pessoa</td><td class="d">Sonoplastia e projeções</td><td class="e">Dir. Fernando Rossi &middot; Teatro de Bolso</td></tr>
-    <tr><td class="y">2024</td><td class="t">O Beijo da Mulher Aranha</td><td class="d">Som e projeção</td><td class="e">Dir. Fernando Rossi &middot; Teatro de Bolso</td></tr>
-    <tr><td class="y">2022</td><td class="t">O Julgamento de Lucifer</td><td class="d">Sonoplastia</td><td class="e">Dir. Fernando Rossi &middot; Teatro de Bolso</td></tr>
-    <tr><td class="y">2022</td><td class="t">Anti-Amor</td><td class="d">Sonoplastia</td><td class="e">Dir. Rodri Mendes &middot; Campos/RJ</td></tr>
+    <tr><td class="y">2026</td><td class="t">Cinzas</td><td class="d">Sonoplastia · Coletivo Teatral Àkàrà · Sessões com visita sensorial acessível</td><td class="e">Teatro de Bolso</td></tr>
+    <tr><td class="y">2026</td><td class="t">Hamlet não. Horácio!</td><td class="d">Sonoplastia e projeção · Ruptura Cia de Arte · Dramaturgia de Lucas Machado</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
+    <tr><td class="y">2025</td><td class="t">Conversas com Chocolate</td><td class="d">Projeções cênicas</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
+    <tr><td class="y">2024</td><td class="t">"fernandos" em busca de Pessoa</td><td class="d">Sonoplastia e projeções</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
+    <tr><td class="y">2024</td><td class="t">O Beijo da Mulher Aranha</td><td class="d">Som e projeção</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
+    <tr><td class="y">2022</td><td class="t">O Julgamento de Lucifer</td><td class="d">Sonoplastia</td><td class="e">Dir. Fernando Rossi · Teatro de Bolso</td></tr>
+    <tr><td class="y">2022</td><td class="t">Anti-Amor</td><td class="d">Sonoplastia · Texto de Lucas Machado e Rodri Mendes</td><td class="e">Dir. Rodri Mendes · Campos/RJ</td></tr>
   </table>
 
-  <h2>Dublagem &amp; Formação</h2>
-  <table>
-    <tr><td class="y">Atual</td><td class="t">Reino em Cena</td><td class="d">Dublador</td><td class="e">Segunda Igreja Batista &middot; @reinoemcenaoficial</td></tr>
-    <tr><td class="y">Atual</td><td class="t">Curso Livre de Teatro</td><td class="d">Formação continuada</td><td class="e">Campos dos Goytacazes, RJ</td></tr>
-  </table>
-
-  <h2>Habilidades</h2>
-  <div class="skills">
-    <span>Drama</span><span>Comédia</span><span>Teatro musical</span><span>Dublagem</span>
-    <span>Narração e locução</span><span>Sonoplastia</span><span>Projeções cênicas</span>
-    <span>Assistência de direção</span><span>Português (nativo)</span>
+  <div class="two">
+    <div>
+      <h2>Dublagem</h2>
+      <table>
+        <tr><td class="y">Atual</td><td class="t">Reino em Cena</td><td class="d">Dublador · Segunda Igreja Batista · @reinoemcenaoficial</td></tr>
+      </table>
+      <h2>Formação</h2>
+      <table>
+        <tr><td class="y">Atual</td><td class="t">Curso Livre de Teatro</td><td class="d">Formação continuada · Campos dos Goytacazes, RJ</td></tr>
+      </table>
+    </div>
+    <div>
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <span>Drama</span><span>Comédia</span><span>Teatro musical</span><span class="g">Direção</span><span class="g">Roteiro</span>
+        <span>Dublagem</span><span>Narração e locução</span><span>Sonoplastia</span><span>Projeções cênicas</span>
+        <span>Assistência de direção</span><span>Português (nativo)</span>
+      </div>
+      </div>
   </div>
 
-  <div class="foot">
-    <span>Nathan Silva — Portfólio 2026</span>
-    <span>★ trabalho premiado &middot; portfolio-artistico.vercel.app</span>
-  </div>
+  <div class="foot"><span><b>Nathan Silva</b> · Currículo artístico · outubro de 2026</span><span>ficha completa e vídeos em portfolio-artistico.vercel.app</span><span>2 / 2</span></div>
 </div>
 
 <script>
-  // ?print → abre a janela de impressão automaticamente após as fontes carregarem
   if (new URLSearchParams(location.search).has('print')) {
-    (document.fonts ? document.fonts.ready : Promise.resolve())
-      .then(() => setTimeout(() => window.print(), 300));
+    Promise.all([
+      document.fonts ? document.fonts.ready : Promise.resolve(),
+      new Promise(r => window.addEventListener('load', r, { once: true }))
+    ]).then(() => setTimeout(() => window.print(), 400));
   }
 </script>
 </body>
