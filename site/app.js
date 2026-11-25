@@ -90,6 +90,9 @@
   }
 
   /* ============ Curtas (cartões 3D) ============ */
+  // vídeos que já vêm com faixa preta (cinemascope) dentro do 16:9
+  const LETTERBOX = { CuZQeJSKTEY: 1.34 };
+
   function montarCurtas(doc) {
     const alvo = $('#curtas-lista');
     $$('.curtas__item', doc).forEach((item) => {
@@ -101,12 +104,30 @@
       const ano = txt($('.curtas__year', item)?.firstChild);
 
       const img = h('img', { src: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, alt: '', loading: 'lazy', width: 1280, height: 720 });
+      if (LETTERBOX[id]) img.style.setProperty('--zoom', LETTERBOX[id]);
       const grande = new Image();
       grande.onload = () => { if (grande.naturalWidth >= 1280) img.src = grande.src; };
       grande.src = `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
 
+      // ficha a partir de "Direção: X · Roteiro: Y · Nathan como Z · 11 minutos"
+      const ficha = [];
+      let duracao = '';
+      txt($('.curtas__meta', item)).split(/\s*·\s*/).forEach((parte) => {
+        const par = parte.match(/^([^:]+):\s*(.+)$/);
+        const min = parte.match(/^(\d+)\s*min/);
+        const nat = parte.match(/^Nathan\s+(?:no elenco|como)?\s*(.*)$/i);
+        if (min) { duracao = `${min[1]} min`; ficha.push(['Duração', duracao]); }
+        else if (par) ficha.push([par[1], par[2]]);
+        else if (nat) ficha.push(['Nathan', (nat[1] || 'Ator').replace(/\s*\+\s*Assist\.?\s*Dire[çc][ãa]o/i, ' e assistente de direção')]);
+      });
+      const premios = txt($('.curtas__tagline', item)).split(/\s+·\s+/).filter(Boolean);
+
       const tela = h('button', { type: 'button', class: 'curta__tela', 'aria-label': `Assistir ao curta ${titulo}` },
-        img, h('span', { class: 'curta__play', 'aria-hidden': 'true' }, svgEl('M6 4l14 8-14 8z')));
+        img,
+        h('span', { class: 'curta__assistir', 'aria-hidden': 'true' },
+          h('span', { class: 'curta__play' }, svgEl('M6 4l14 8-14 8z')),
+          h('span', { text: 'Assistir' }),
+          duracao ? h('small', { text: duracao }) : null));
       tela.addEventListener('click', () => {
         const iframe = h('iframe', {
           src: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&start=${inicio}`,
@@ -119,12 +140,14 @@
       const card = h('article', { class: 'curta' },
         tela,
         h('div', { class: 'curta__info' },
-          h('span', { class: 'curta__selo', text: `★ Premiado · ${ano}` }),
+          h('p', { class: 'curta__topo' },
+            h('span', { class: 'curta__selo', text: '★ Premiado' }),
+            h('span', { class: 'curta__ano', text: `Curta-metragem · ${ano}` })),
           h('h3', { class: 'curta__titulo', text: titulo }),
-          h('p', { class: 'curta__premio', text: txt($('.curtas__tagline', item)) }),
+          h('ul', { class: 'curta__premios' }, premios.map((p) => h('li', { text: p }))),
           h('p', { class: 'curta__sinopse', text: txt($('.curtas__synopsis', item)) }),
-          h('p', { class: 'curta__meta', text: txt($('.curtas__meta', item)) })));
-      inclinar(card, 8);
+          h('dl', { class: 'curta__ficha' }, ficha.map(([k, v]) => h('div', {}, h('dt', { text: k }), h('dd', { text: v }))))));
+      inclinar(card, 3);
       alvo.append(card);
     });
   }
@@ -168,12 +191,12 @@
         slug, work: works[slug] || {},
         ano: txt($('.destaques__year', c)), titulo: txt($('.destaques__title', c)), meta: txt($('.destaques__meta', c)),
         premiado: !!$('.destaques__badge', c),
-        foto: urlSegura(foto || works[slug]?.photo || ''),
+        foto: urlSegura(works[slug]?.cartaz || foto || works[slug]?.photo || ''),
       };
     }).sort((a, b) => anoMax(b.ano) - anoMax(a.ano));
     // a foto de cena abre a roda
     car.itens.unshift({
-      eu: true, titulo: 'Nathan Silva', ano: 'Em cena desde 2012', meta: 'Ator · Diretor · Dublador · Sonoplasta',
+      eu: true, titulo: 'Nathan Silva', ano: 'Em cena desde 2012', meta: 'Ator · Roteirista · Dublador · Sonoplasta',
       foto: new URL('site/img/palco.webp', document.baseURI).href,
     });
 
@@ -214,6 +237,8 @@
   function medirRaio() {
     const w = parseFloat(getComputedStyle($('#carrossel')).getPropertyValue('--card-w')) || 300;
     const n = car.itens.length || 1;
+    // raio mínimo para os cartões vizinhos não atravessarem o da frente
+    // (a largura visível é controlada escondendo os cartões do fundo)
     const raio = Math.round((w / 2) / Math.tan(Math.PI / n)) + 40;
     $('#carrossel').style.setProperty('--raio', raio + 'px');
   }
@@ -223,9 +248,14 @@
     anel.classList.toggle('sem-transicao', !!semAnimar);
     anel.style.setProperty('--giro', `${-car.i * car.passo}deg`);
     const k = indiceReal();
+    const n = car.itens.length;
     car.itens.forEach((it, j) => {
       it.el.classList.toggle('is-frente', j === k);
       it.el.tabIndex = j === k ? 0 : -1;
+      // distância até a frente: só a frente e 2 de cada lado ficam visíveis
+      const d = Math.min(Math.abs(j - k), n - Math.abs(j - k));
+      it.el.style.setProperty('--vis', d <= 1 ? 1 : d === 2 ? 0.14 : 0);
+      it.el.classList.toggle('is-oculta', d > 2);
     });
     const it = car.itens[k];
     $('#car-atual').textContent = `${String(k + 1).padStart(2, '0')} / ${car.itens.length} · ${it.titulo}`;
@@ -304,31 +334,75 @@
   ficha.addEventListener('click', (e) => { if (e.target === ficha) ficha.close(); });
 
   /* ============ Trajetória (um ano por vez) ============ */
-  function montarTrajetoria(doc) {
+  // ícones de traço por área
+  const ICONES = {
+    teatro: 'M5 4h14v7a7 7 0 0 1-14 0V4Zm4 5h.01M15 9h.01M9 14c1.6 1.3 4.4 1.3 6 0',
+    audiovisual: 'M4 9h16v10H4zM4 9l2.5-4H20l-2.5 4M10 5 7.5 9M15 5l-2.5 4',
+    sonoplastia: 'M3 12h1M7 8v8M11 4v16M15 8v8M19 6v12M22 12h-1',
+    dublagem: 'M12 3a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Zm-7 9a7 7 0 0 0 14 0M12 19v3',
+    formacao: 'M2 9l10-5 10 5-10 5L2 9Zm4 2.2V16c3.3 2.6 8.7 2.6 12 0v-4.8M22 9v5',
+  };
+  const NOMES = Object.fromEntries(AREAS.map(([k, n]) => [k, n]));
+  const normaliza = (s) => String(s || '').toLowerCase().replace(/["“”']/g, '').replace(/\s*\([^)]*\)\s*$/, '').replace(/^musical\s+/, '').replace(/\s+/g, ' ').trim();
+
+  function montarTrajetoria(doc, works = {}) {
     const bio = $('.hero__bio', doc);
     if (bio) $('#trajetoria-bio').textContent = txt(bio);
 
+    // título da trajetória -> ficha (para foto e botão "Ver ficha")
+    const porTitulo = new Map(Object.values(works).map((w) => [normaliza(w.title), w]));
+
     const alvo = $('#anos'), linha = $('#linha-anos');
     const anos = [];
-    $$('.chapter', doc).forEach((cap, idx) => {
+    const caps = $$('.chapter', doc);
+    const maxItens = Math.max(1, ...caps.map((c) => $$('.work', c).length));
+    caps.forEach((cap, idx) => {
       const ano = txt($('.chapter__year', cap));
       const itens = $$('.work', cap).map((w) => {
         const tEl = $('.work__title', w).cloneNode(true);
         $$('.badge', tEl).forEach((b) => b.remove());
-        const tipo = w.dataset.type || 'teatro';
+        const titulo = txt(tEl);
+        const meta = txt($('.work__meta', w));
+        let tipo = w.dataset.type || 'teatro';
+        // quem só fez som/projeção no teatro entra como sonoplastia
+        if (tipo === 'teatro' && /sonoplastia|proje[çc]/i.test(meta) && !/Ator/.test(meta)) tipo = 'sonoplastia';
+        const premiado = w.classList.contains('work--premiado');
+        const ficha = porTitulo.get(normaliza(titulo));
+        const foto = ficha ? urlSegura(ficha.photo) : null;
         const fontes = $$('.work__sources a', w).map((a) => ({ t: txt(a), u: urlSegura(a.getAttribute('href')) })).filter((f) => f.u);
-        return h('li', { class: 'trab', 'data-tipo': tipo, style: `--cor:${corDe(tipo)}` },
-          h('h4', { class: 'trab__titulo' }, txt(tEl), w.classList.contains('work--premiado') ? h('span', { class: 'trab__premio', text: '★ Premiado' }) : null),
-          h('p', { class: 'trab__funcao', text: txt($('.work__meta', w)) }),
-          $('.work__extra', w) ? h('p', { class: 'trab__extra', text: txt($('.work__extra', w)) }) : null,
-          fontes.length ? h('ul', { class: 'trab__fontes' }, fontes.map((f) => h('li', {}, h('a', { href: f.u, target: '_blank', rel: 'noopener', text: f.t })))) : null);
+        const icone = svgEl(ICONES[tipo] || ICONES.teatro); icone.classList.add('trab__icone');
+
+        const midia = h('div', { class: 'trab__midia' + (foto ? '' : ' trab__midia--icone') },
+          foto ? h('img', { src: foto, alt: '', loading: 'lazy' }) : icone,
+          foto ? null : h('span', { class: 'trab__area-nome', text: NOMES[tipo] || 'Teatro' }),
+          premiado ? h('span', { class: 'trab__premio', text: '★ Premiado' }) : null);
+
+        let verFicha = null;
+        if (ficha) {
+          verFicha = h('button', { type: 'button', class: 'trab__ficha' }, 'Ver ficha', svgEl('M5 12h14M13 6l6 6-6 6'));
+          verFicha.addEventListener('click', () => abrirFicha({ work: ficha, ano, titulo }));
+        }
+
+        return h('li', { class: 'trab' + (ficha ? ' trab--ficha' : ''), 'data-tipo': tipo, style: `--cor:${corDe(tipo)}` },
+          midia,
+          h('div', { class: 'trab__corpo' },
+            h('p', { class: 'trab__funcao', text: txt($('.work__meta', w)) }),
+            h('h4', { class: 'trab__titulo', text: titulo }),
+            $('.work__extra', w) ? h('p', { class: 'trab__extra', text: txt($('.work__extra', w)), title: txt($('.work__extra', w)) }) : null,
+            (fontes.length || verFicha) ? h('div', { class: 'trab__rodape' },
+              fontes.length ? h('ul', { class: 'trab__fontes' }, fontes.map((f) => h('li', {}, h('a', { href: f.u, target: '_blank', rel: 'noopener', text: f.t })))) : null,
+              verFicha) : null));
       });
       const id = 'ano-' + idx;
+      const rotulo = ano.replace(/\s*—\s*/, '–').replace(/–(\d{2})(\d{2})$/, '–$2');
+      const qtdPainel = h('span', { class: 'ano__qtd' });
       const painel = h('section', { class: 'ano', id, role: 'tabpanel', 'aria-label': ano, hidden: true },
-        h('h3', { class: 'ano__num', text: ano }),
+        h('header', { class: 'ano__cab' }, h('h3', { class: 'ano__num', text: rotulo }), qtdPainel),
         h('ul', { class: 'ano__lista' }, itens));
-      const aba = h('button', { type: 'button', class: 'ano-aba', role: 'tab', 'aria-controls': id, 'aria-selected': 'false', tabindex: '-1' },
-        ano.replace(/\s*—\s*/, '–').replace(/–(\d{2})(\d{2})$/, '–$2'), h('small'));
+      const aba = h('button', { type: 'button', class: 'ano-aba', role: 'tab', 'aria-controls': id, 'aria-selected': 'false', tabindex: '-1',
+        style: `--peso:${Math.round((itens.length / maxItens) * 100)}%` },
+        h('span', { class: 'ano-aba__ano', text: rotulo }), h('small'), h('span', { class: 'ano-aba__barra', 'aria-hidden': 'true' }));
+      aba._qtdPainel = qtdPainel;
       aba.addEventListener('click', () => escolher(anos.indexOf(reg)));
       const reg = { aba, painel, itens };
       anos.push(reg);
@@ -358,7 +432,7 @@
       }));
     }
     linha.addEventListener('keydown', (e) => {
-      const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      const dir = (e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : (e.key === 'ArrowLeft' || e.key === 'ArrowUp') ? -1 : 0;
       if (!dir) return;
       e.preventDefault();
       let j = atual;
@@ -368,7 +442,10 @@
 
     // filtros por área
     const todos = anos.flatMap((a) => a.itens);
-    $('[data-contar="30"]').textContent = String(todos.length);
+    // produções únicas (circulação / nova temporada contam uma vez só)
+    const nProd = new Set(todos.map((t) => (t.querySelector('.trab__titulo')?.firstChild?.textContent || '').replace(/\s*\((circulação|nova temporada|nova apresentação)\)\s*$/i, '').trim())).size;
+    const contProd = $('[data-producoes]');
+    if (contProd) { contProd.textContent = String(nProd); contProd.dataset.contar = String(nProd); }
     const ativos = new Set();
     const filtros = $('#filtros');
     const bTodos = h('button', { type: 'button', class: 'filtro', 'aria-pressed': 'true', style: '--cor:var(--texto)' }, 'Tudo ', h('small', { text: String(todos.length) }));
@@ -393,7 +470,9 @@
       anos.forEach((a) => {
         const n = a.itens.filter((t) => !t.hidden).length;
         a.aba.disabled = n === 0;
-        a.aba.querySelector('small').textContent = n === 1 ? '1 trabalho' : `${n} trabalhos`;
+        const rot = n === 1 ? '1 trabalho' : `${n} trabalhos`;
+        a.aba.querySelector('small').textContent = rot;
+        a.aba._qtdPainel.textContent = rot;
       });
       // se o ano aberto ficou vazio, pula para o primeiro com trabalhos
       if (atual < 0 || anos[atual].aba.disabled) escolher(anos.findIndex((a) => !a.aba.disabled), atual < 0);
@@ -423,12 +502,14 @@
   }
 
   /* ============ Início ============ */
+  // cada parte monta sozinha: se uma falhar, as outras continuam
+  const seguro = (nome, fn) => { try { fn(); } catch (e) { console.error('Falha ao montar ' + nome, e); } };
   carregar().then(({ doc, works }) => {
-    montarCurtas(doc);
-    montarCarrossel(doc, works);
-    montarTrajetoria(doc);
+    seguro('curtas', () => montarCurtas(doc));
+    seguro('roda', () => montarCarrossel(doc, works));
+    seguro('trajetória', () => montarTrajetoria(doc, works));
   }).catch((e) => {
     console.error(e);
-    $('#anos').append(h('p', { text: 'Não foi possível carregar os trabalhos. Abra pelo servidor local: http://localhost:5173/conceito-3d/' }));
+    $('#anos').append(h('p', { text: 'Não foi possível carregar os trabalhos agora. Recarregue a página em instantes.' }));
   });
 })();

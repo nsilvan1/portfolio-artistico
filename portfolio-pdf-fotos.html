@@ -3,313 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nathan Silva — Portfólio Visual (PDF)</title>
+<meta name="robots" content="noindex">
+<title>Nathan Silva — Portfólio artístico</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 14mm 15mm 15mm; }
+  @page capa { margin: 0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   :root {
-    --paper: #f6f1e8; --paper2: #ede6d9; --ink: #14110e; --ink2: #4a433b; --ink3: #857a6d;
-    --gold: #a8803d; --gold2: #d4a964; --dark: #0e0c0a; --dark2: #1a1511;
-    --line: rgba(20,17,14,.12);
-    --serif: 'Instrument Serif', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
+    --tinta: #15151c; --tinta-2: #4b4b57; --tinta-3: #7c7c88; --linha: #dcdce3; --fundo-suave: #f4f4f7;
+    --coral: #d9442f; --noite: #090a12; --f: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
-  body { font-family: var(--sans); color: var(--ink); background: #d8d2c7; font-size: 9pt; line-height: 1.5; }
-  .page {
-    width: 210mm; height: 297mm; margin: 0 auto; position: relative; overflow: hidden;
-    background: var(--paper); page-break-after: always;
+  body { font-family: var(--f); color: var(--tinta); font-size: 9pt; line-height: 1.5; background: #fff; }
+  @media screen {
+    body { background: #e7e7ec; padding: 64px 0 40px; }
+    .folha { width: 210mm; margin: 0 auto; background: #fff; padding: 14mm 15mm 15mm; box-shadow: 0 10px 40px rgba(0,0,0,.15); }
+    .capa { margin: -14mm -15mm 14mm; }
   }
-  .page:last-child { page-break-after: auto; }
-  @media screen { .page { margin: 24px auto; box-shadow: 0 10px 50px rgba(0,0,0,.25); } body { padding-top: 44px; } }
-  @media print { body { background: #fff; } .page { margin: 0; box-shadow: none; } .toolbar { display: none !important; } }
-  .toolbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 18px; background: var(--dark); color: #eee; font-size: 13px;
-  }
-  .toolbar button { font: 600 13px var(--sans); cursor: pointer; background: var(--gold2); color: var(--dark); border: 0; border-radius: 4px; padding: 8px 18px; }
+  .barra { position: fixed; top: 0; left: 0; right: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 10px 18px; background: #15151c; color: #eee; font: 500 13px var(--f); }
+  .barra button { font: 700 13px var(--f); cursor: pointer; background: #ff5d4a; color: #fff; border: 0; border-radius: 99px; padding: 9px 20px; }
+  @media print { .barra { display: none !important; } }
 
-  /* ───────── CAPA ───────── */
-  .cover { background: var(--dark); color: #ede5d3; }
-  .cover-photo {
-    position: absolute; inset: 0 0 auto 0; height: 182mm;
-    background: url('assets/fotos/hero-bg.jpg') center 28% / cover no-repeat;
-  }
-  .cover-photo::after {
-    content: ''; position: absolute; inset: 0;
-    background:
-      linear-gradient(180deg, rgba(14,12,10,.35) 0%, rgba(14,12,10,.05) 30%, rgba(14,12,10,.55) 70%, var(--dark) 100%);
-  }
-  .cover-top { position: absolute; top: 16mm; left: 16mm; right: 16mm; z-index: 2; display: flex; justify-content: space-between; align-items: flex-start; }
-  .cover-top .tag { font-size: 7.5pt; letter-spacing: .28em; text-transform: uppercase; color: var(--gold2); }
-  .cover-top .edition { font-size: 7.5pt; letter-spacing: .2em; text-transform: uppercase; color: rgba(237,229,211,.6); text-align: right; line-height: 1.6; }
-  .cover-id { position: absolute; left: 16mm; right: 16mm; top: 128mm; z-index: 2; }
-  .cover-id h1 { font-family: var(--serif); font-weight: 400; font-size: 72pt; line-height: .9; letter-spacing: -.02em; color: #f4ecdc; }
-  .cover-id h1 em { font-style: italic; color: var(--gold2); }
-  .cover-id .roles { margin-top: 6mm; font-size: 9pt; letter-spacing: .22em; text-transform: uppercase; color: rgba(237,229,211,.8); display: flex; gap: 4mm; align-items: center; flex-wrap: wrap; }
-  .cover-id .roles i { font-style: normal; width: 4px; height: 4px; border-radius: 50%; background: var(--gold2); display: inline-block; }
-  .cover-bottom { position: absolute; left: 16mm; right: 16mm; bottom: 16mm; z-index: 2; }
-  .cover-lead { font-family: var(--serif); font-style: italic; font-size: 14.5pt; line-height: 1.4; color: rgba(237,229,211,.88); max-width: 125mm; }
-  .cover-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; margin-top: 9mm; padding-top: 6mm; border-top: 1px solid rgba(237,229,211,.18); }
-  .cover-stats b { font-family: var(--serif); font-weight: 400; font-size: 30pt; line-height: 1; color: #f4ecdc; display: block; }
-  .cover-stats small { display: block; margin-top: 1.5mm; font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: rgba(237,229,211,.55); line-height: 1.4; }
-  .cover-contact { display: flex; gap: 8mm; margin-top: 8mm; font-size: 8pt; color: rgba(237,229,211,.75); }
-  .cover-contact span b { color: #f4ecdc; font-weight: 500; }
+  /* capa (página inteira, sem margem) */
+  .capa { page: capa; position: relative; width: 210mm; height: 297mm; overflow: hidden; background: var(--noite); color: #fff; break-after: page; }
+  .capa__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 30%; opacity: .78; }
+  .capa::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(9,10,18,.97) 0%, rgba(9,10,18,.75) 38%, rgba(9,10,18,.1) 70%),
+                linear-gradient(100deg, rgba(255,93,74,.28), rgba(111,227,255,0) 45%); }
+  .capa__topo, .capa__base { position: absolute; left: 16mm; right: 16mm; z-index: 1; }
+  .capa__topo { top: 15mm; display: flex; justify-content: space-between; font-size: 7.5pt; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  .capa__topo span:last-child { color: rgba(255,255,255,.7); text-align: right; }
+  .capa__base { bottom: 16mm; }
+  .capa h1 { font-size: 54pt; font-weight: 800; letter-spacing: -.04em; line-height: .92; }
+  .capa h1 em { font-style: normal; color: #ff7a5c; }
+  .capa__areas { margin-top: 4mm; font-size: 11pt; font-weight: 600; color: rgba(255,255,255,.88); }
+  .capa__linha { margin-top: 7mm; padding-top: 4mm; border-top: 1px solid rgba(255,255,255,.22); display: flex; flex-wrap: wrap; gap: 2mm 7mm; font-size: 8pt; color: rgba(255,255,255,.8); }
+  .capa__linha b { color: #fff; }
 
-  /* ───────── PÁGINAS INTERNAS ───────── */
-  .inner { padding: 12mm 16mm 18mm; height: 100%; position: relative; }
-  .run { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 3mm; border-bottom: 1px solid var(--ink); margin-bottom: 6mm; }
-  .run b { font-family: var(--serif); font-weight: 400; font-size: 14pt; }
-  .run b em { color: var(--gold); }
-  .run span { font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink3); }
-  h2 { font-family: var(--serif); font-weight: 400; font-size: 20pt; line-height: 1; margin: 0 0 4mm; display: flex; align-items: baseline; gap: 3mm; }
-  h2 small { font-family: var(--sans); font-size: 6.8pt; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-  h2::after { content: ''; flex: 1; height: 1px; background: var(--line); transform: translateY(-3px); }
-  .sec { margin-bottom: 6.5mm; }
+  h2 { font-size: 15pt; font-weight: 800; letter-spacing: -.02em; margin: 0 0 1.5mm; break-after: avoid; }
+  .sub { font-size: 8.5pt; color: var(--tinta-2); margin-bottom: 5mm; break-after: avoid; }
+  .secao { break-before: page; }
+  .secao--segue { break-before: auto; margin-top: 9mm; }
 
-  /* filmes */
-  .films { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
-  .film { break-inside: avoid; }
-  .film-img { aspect-ratio: 16/9; background: var(--paper2) center / cover no-repeat; position: relative; }
-  .film-img::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); }
-  .film-img .star { position: absolute; top: 3mm; left: 3mm; background: var(--dark); color: var(--gold2); font-size: 6.5pt; letter-spacing: .16em; text-transform: uppercase; padding: 1.3mm 2.4mm; font-weight: 600; }
-  .film-year { margin-top: 3.5mm; font-size: 6.8pt; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-  .film-title { font-family: var(--serif); font-size: 16pt; line-height: 1.05; margin: 1mm 0 1.5mm; }
-  .film-award { font-size: 7.6pt; color: var(--ink); font-weight: 500; line-height: 1.45; margin-bottom: 1.5mm; }
-  .film-award + .film-award { margin-top: -1mm; }
-  .film-syn { font-size: 7.6pt; color: var(--ink2); line-height: 1.5; }
-  .film-meta { font-size: 7pt; color: var(--ink3); margin-top: 1.5mm; }
+  .mini { background: var(--fundo-suave); border-left: 3px solid var(--coral); border-radius: 0 3mm 3mm 0; padding: 4mm 5mm; font-size: 9.6pt; line-height: 1.7; }
+  .numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 5mm 0; }
+  .numeros div { border: 1px solid var(--linha); border-radius: 3mm; padding: 3mm 3.5mm; }
+  .numeros b { display: block; font-size: 19pt; font-weight: 800; line-height: 1.1; }
+  .numeros small { font-size: 7.2pt; color: var(--tinta-2); }
+  .premios { list-style: none; display: grid; gap: 2mm; }
+  .premios li { display: grid; grid-template-columns: 5mm 1fr; font-size: 9pt; }
+  .premios li::before { content: "★"; color: var(--coral); }
+  h3 { font-size: 10pt; font-weight: 800; margin: 6mm 0 2.5mm; }
 
-  /* direção */
-  .feature { display: grid; grid-template-columns: 70mm 1fr; gap: 5mm; align-items: center; background: var(--dark); color: #ede5d3; padding: 4mm; }
-  .feature-img { aspect-ratio: 16/9; background: #222 center / cover no-repeat; outline: 1px solid rgba(255,255,255,.08); }
-  .feature-kicker { font-size: 6.8pt; letter-spacing: .2em; text-transform: uppercase; color: var(--gold2); font-weight: 600; }
-  .feature-title { font-family: var(--serif); font-size: 16pt; line-height: 1.05; margin: 1.5mm 0 2mm; color: #f4ecdc; }
-  .feature-title em { color: var(--gold2); }
-  .feature p { font-size: 8pt; line-height: 1.55; color: rgba(237,229,211,.8); }
-  .feature-meta { margin-top: 2.5mm; font-size: 7pt; color: rgba(237,229,211,.55); }
+  /* registros fotográficos */
+  .registros { width: 100%; border-collapse: separate; border-spacing: 0 4mm; margin-top: -4mm; table-layout: fixed; }
+  .registros tr { break-inside: avoid; }
+  .registros td { width: 50%; vertical-align: top; padding: 0; }
+  .registros td:first-child { padding-right: 2.5mm; } .registros td:last-child { padding-left: 2.5mm; }
+  .reg { display: block; break-inside: avoid; border: 1px solid var(--linha); border-radius: 3mm; overflow: hidden; }
+  .reg__moldura { height: 44mm; overflow: hidden; background: #111; }
+  .reg__img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .reg__img--zoom { transform: scale(1.34); }
+  .reg__img--cartaz { object-fit: contain; }
+  .reg__txt { padding: 2.6mm 3.2mm 3mm; }
+  .reg__ano { font-size: 6.8pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); }
+  .reg__tit { font-size: 9.6pt; font-weight: 800; line-height: 1.25; margin: .6mm 0 1.2mm; }
+  .reg dl { display: grid; grid-template-columns: 17mm 1fr; gap: .4mm 2mm; font-size: 7.2pt; line-height: 1.35; }
+  .reg dt { color: var(--tinta-3); font-weight: 600; }
+  .reg dd { color: var(--tinta); }
+  .reg a { color: var(--coral); text-decoration: none; font-weight: 600; word-break: break-all; }
 
-  /* palco */
-  .stage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; }
-  .stage { border-top: 2px solid var(--ink); padding: 2.5mm 0 0; break-inside: avoid; }
-  .stage.gold { border-top-color: var(--gold); }
-  .stage-year { font-size: 6.5pt; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
-  .stage-title { font-family: var(--serif); font-size: 12pt; line-height: 1.1; margin: 1mm 0 .8mm; }
-  .stage-meta { font-size: 6.8pt; color: var(--ink3); line-height: 1.45; }
+  /* comprovações */
+  .compr { width: 100%; border-collapse: collapse; }
+  .compr th { font-size: 6.5pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-3); text-align: left; padding: 0 2mm 1.5mm 0; border-bottom: 1.5px solid var(--tinta); }
+  .compr tr { break-inside: avoid; border-bottom: 1px solid var(--linha); }
+  .compr td { padding: 1.6mm 2.5mm 1.6mm 0; font-size: 7.8pt; vertical-align: top; }
+  .compr td:first-child { width: 15mm; font-weight: 600; color: var(--tinta-2); white-space: nowrap; }
+  .compr td:nth-child(2) { width: 55mm; font-weight: 700; }
+  .compr a { color: var(--coral); text-decoration: none; font-weight: 600; }
+  .compr .url { display: block; font-size: 6.6pt; color: var(--tinta-3); word-break: break-all; }
 
-  /* ficha */
-  .cols { column-count: 2; column-gap: 8mm; }
-  .group { break-inside: avoid; margin-bottom: 5mm; } .group.split { break-inside: auto; }
-  .group h3 { font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; padding-bottom: 1.5mm; border-bottom: 1px solid var(--line); margin-bottom: 2mm; display: flex; justify-content: space-between; }
-  .group h3 span { color: var(--ink3); font-weight: 400; letter-spacing: .05em; }
-  .row { display: grid; grid-template-columns: 11mm 1fr; gap: 0 2.5mm; padding: 1.1mm 0; border-bottom: 1px dotted var(--line); break-inside: avoid; }
-  .row:last-child { border-bottom: 0; }
-  .row .y { font-size: 7pt; color: var(--ink3); font-variant-numeric: tabular-nums; padding-top: .4mm; }
-  .row .t { font-size: 8pt; font-weight: 500; line-height: 1.3; }
-  .row .t s { text-decoration: none; color: var(--gold); }
-  .row .d { font-size: 7pt; color: var(--ink3); line-height: 1.4; }
-  .skills { display: flex; flex-wrap: wrap; gap: 1.5mm; }
-  .skills span { font-size: 7pt; border: 1px solid var(--ink); border-radius: 20mm; padding: 1mm 3mm; color: var(--ink2); }
-  .skills span.g { border-color: var(--gold); color: var(--gold); }
-
-  .foot { position: absolute; bottom: 9mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .08em; color: var(--ink3); border-top: 1px solid var(--line); padding-top: 2mm; }
-  .foot b { color: var(--ink); font-weight: 500; }
+  .fim { margin-top: 8mm; padding-top: 3mm; border-top: 1px solid var(--linha); display: flex; justify-content: space-between; gap: 6mm; font-size: 7.2pt; color: var(--tinta-3); }
+  .fim a { color: var(--coral); text-decoration: none; font-weight: 600; }
+  .erro { padding: 20px; color: #b00; }
 </style>
 </head>
 <body>
-
-<div class="toolbar">
-  <span>Pré-visualização — <em>na janela de impressão escolha "Salvar como PDF", A4, sem margens, com gráficos de fundo</em></span>
+<div class="barra">
+  <span>Portfólio artístico — padrão para editais. Na impressão: “Salvar como PDF”, A4, sem margens, com gráficos de fundo.</span>
   <button type="button" onclick="window.print()">Gerar PDF</button>
 </div>
+<main class="folha" id="folha"></main>
 
-<!-- ───────── PÁGINA 1 — CAPA ───────── -->
-<div class="page cover">
-  <div class="cover-photo"></div>
-  <div class="cover-top">
-    <span class="tag">Portfólio artístico</span>
-    <span class="edition">Campos dos Goytacazes · RJ<br>Edição outubro 2026</span>
-  </div>
-  <div class="cover-id">
-    <h1>Nathan<br><em>Silva</em></h1>
-    <p class="roles">Ator <i></i> Diretor <i></i> Dublador <i></i> Sonoplasta</p>
-  </div>
-  <div class="cover-bottom">
-    <p class="cover-lead">Nos palcos desde 2012 e nos sets desde 2022. Do Shakespeare do Teatro de Bolso aos curtas premiados com Fernando Rossi; da sonoplastia e das projeções cênicas à estreia como roteirista e diretor.</p>
-    <div class="cover-stats">
-      <div><b>29</b><small>Produções</small></div>
-      <div><b>14</b><small>Anos de trajetória</small></div>
-      <div><b>2</b><small>Curtas premiados</small></div>
-      <div><b>7</b><small>Espetáculos com som e projeção</small></div>
-    </div>
-    <div class="cover-contact">
-      <span><b>nathan_nunes92@hotmail.com</b></span>
-      <span><b>(22) 99710-6833</b></span>
-      <span>@nsilvan1</span>
-      <span>portfolio-artistico.vercel.app</span>
-    </div>
-  </div>
-</div>
-
-<!-- ───────── PÁGINA 2 — DESTAQUES ───────── -->
-<div class="page">
-  <div class="inner">
-    <div class="run"><b>Nathan <em>Silva</em></b><span>Trabalhos em destaque</span></div>
-
-    <div class="sec">
-      <h2>Cinema <small>Curtas premiados · dir. Fernando Rossi</small></h2>
-      <div class="films">
-        <div class="film">
-          <div class="film-img" style="background-image:url('https://i.ytimg.com/vi/CuZQeJSKTEY/maxresdefault.jpg')"><span class="star">★ Premiado</span></div>
-          <div class="film-year">2025 · Curta-metragem · 14 min</div>
-          <div class="film-title">O menino da pipa avoada</div>
-          <div class="film-award">Prêmio do Júri Popular — 1º Festival Territorial de Cinema Itinerante, Lapa RJ</div>
-          <div class="film-award">Seleção oficial — Mostra Olhares do Interior, II Festival Internacional Goitacá de Cinema (2026)</div>
-          <p class="film-syn">Uma trabalhadora encontra uma pipa caída e a leva ao filho, que vive às margens de uma rodovia. Uma história sobre infância, afeto e o direito ao brincar, a partir do conto de Adriano Moura.</p>
-          <div class="film-meta">Ator e assistente de direção · Lei Paulo Gustavo</div>
-        </div>
-        <div class="film">
-          <div class="film-img" style="background-image:url('https://i.ytimg.com/vi/AfaojNQX7nI/hqdefault.jpg')"><span class="star">★ Premiado</span></div>
-          <div class="film-year">2022 · Curta-metragem · 11 min</div>
-          <div class="film-title">O homem do cachorro</div>
-          <div class="film-award">Melhor Filme (Júri Popular) e Melhor Roteiro Adaptado — RibaCine 2022, categoria LGBT+</div>
-          <p class="film-syn">Um homem em situação de rua tem no cachorro a única companhia, até o encontro com o homem do carro preto. Retrato sobre afetividade, desejo e solidão.</p>
-          <div class="film-meta">Ator · Roteiro de Rodri Mendes · Adaptação de conto de Adriano Moura</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <h2>Direção <small>Estreia como roteirista e diretor</small></h2>
-      <div class="feature">
-        <div class="feature-img" style="background-image:url('https://i.ytimg.com/vi/IrnY2JF9JDY/maxresdefault.jpg')"></div>
-        <div>
-          <div class="feature-kicker">2026 · Musical infantil</div>
-          <div class="feature-title">Reino em Cena — <em>A Biblioteca Secreta</em></div>
-          <p>Roteiro e direção do musical infantil do projeto Reino em Cena, apresentado em 3 de outubro de 2026 no Movimento Igreja, em Campos dos Goytacazes, com transmissão ao vivo.</p>
-          <div class="feature-meta">Projeto Reino em Cena · @reinoemcenaoficial · gravação no YouTube</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="sec">
-      <h2>Palco <small>Seleção 2017 – 2026</small></h2>
-      <div class="stage-grid">
-        <div class="stage gold">
-          <div class="stage-year">2026 · Ator</div>
-          <div class="stage-title">O Sol Feriu a Terra e a Chaga se Alastrou</div>
-          <div class="stage-meta">Vital Santos · Dir. Fernando Rossi · Grupo Teatral da Escola de Dança RV · Academia Campista de Letras e Casarão</div>
-        </div>
-        <div class="stage">
-          <div class="stage-year">2026 · Sonoplastia e projeção</div>
-          <div class="stage-title">Hamlet não. Horácio!</div>
-          <div class="stage-meta">Ruptura Cia de Arte · Dir. Fernando Rossi · Teatro de Bolso Procópio Ferreira</div>
-        </div>
-        <div class="stage">
-          <div class="stage-year">2026 · Sonoplastia</div>
-          <div class="stage-title">Cinzas</div>
-          <div class="stage-meta">Coletivo Teatral Àkàrà · Teatro de Bolso · Sessões com visita sensorial acessível</div>
-        </div>
-        <div class="stage">
-          <div class="stage-year">2025 · Ator</div>
-          <div class="stage-title">Ponciano — De Amores — Furtado</div>
-          <div class="stage-meta">Comédia musical · Arlete Sendra · Dir. Fernando Rossi · Teatro de Bolso</div>
-        </div>
-        <div class="stage">
-          <div class="stage-year">2024 · Som e projeção</div>
-          <div class="stage-title">O Beijo da Mulher Aranha</div>
-          <div class="stage-meta">Dir. Fernando Rossi · Teatro de Bolso Procópio Ferreira</div>
-        </div>
-        <div class="stage">
-          <div class="stage-year">2017 · Oberon</div>
-          <div class="stage-title">Sonhos de uma noite de verão</div>
-          <div class="stage-meta">Shakespeare · Teatro de Bolso · Curso Livre de Teatro</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot"><span><b>Nathan Silva</b> · Portfólio 2026</span><span>★ trabalho premiado</span><span>2 / 3</span></div>
-  </div>
-</div>
-
-<!-- ───────── PÁGINA 3 — FICHA COMPLETA ───────── -->
-<div class="page">
-  <div class="inner">
-    <div class="run"><b>Nathan <em>Silva</em></b><span>Ficha completa · 2012 – 2026</span></div>
-
-    <div class="cols">
-      <div class="group">
-        <h3>Audiovisual <span>3</span></h3>
-        <div class="row"><div class="y">2025</div><div><div class="t"><s>★</s> O menino da pipa avoada</div><div class="d">Curta · Ator e assist. de direção · Dir. Fernando Rossi · Júri Popular, Fest. Territorial (Lapa RJ) · Seleção II Festival Goitacá 2026</div></div></div>
-        <div class="row"><div class="y">2022</div><div><div class="t"><s>★</s> O homem do cachorro</div><div class="d">Curta · Ator · Dir. Fernando Rossi · Melhor Filme e Melhor Roteiro, RibaCine 2022</div></div></div>
-        <div class="row"><div class="y">2019–23</div><div><div class="t">3 e Par</div><div class="d">Websérie · Ator · Dir. Karol Cerqueira</div></div></div>
-      </div>
-
-      <div class="group">
-        <h3>Direção e roteiro <span>1</span></h3>
-        <div class="row"><div class="y">2026</div><div><div class="t">Musical Reino em Cena — A Biblioteca Secreta</div><div class="d">Musical infantil · Roteiro e direção · Movimento Igreja / Segunda Igreja Batista de Campos</div></div></div>
-      </div>
-
-      <div class="group split">
-        <h3>Teatro · ator <span>16</span></h3><!-- split -->
-        <div class="row"><div class="y">2026</div><div><div class="t">O Sol Feriu a Terra e a Chaga se Alastrou</div><div class="d">Vital Santos · Dir. Fernando Rossi · Grupo Teatral da Escola de Dança RV · Academia Campista de Letras e Casarão</div></div></div>
-        <div class="row"><div class="y">2026</div><div><div class="t">Uma Promessa pra São Salvador</div><div class="d">Coletivo Real de Teatro · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2025</div><div><div class="t">Ponciano — De Amores — Furtado</div><div class="d">Comédia musical · Dir. Fernando Rossi · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2021</div><div><div class="t">Encontro no bar</div><div class="d">Leituras Santas · Santa Paciência Casa Criativa</div></div></div>
-        <div class="row"><div class="y">2020</div><div><div class="t">Piquenique no Front</div><div class="d">Leituras Santas (online) · Dir. Fernando Rossi</div></div></div>
-        <div class="row"><div class="y">2019</div><div><div class="t">Eu me chamo James Holmes</div><div class="d">Grupo Nós Experimento · Rinha das Artes, Macaé</div></div></div>
-        <div class="row"><div class="y">2019</div><div><div class="t">O Mágico de Oz</div><div class="d">Teatro infantil · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2018</div><div><div class="t">Os Saltimbancos</div><div class="d">Gato · Teatro musical · Núcleo de Artes ORI · Dir. Luciano de Paula</div></div></div>
-        <div class="row"><div class="y">2018</div><div><div class="t">O palhaço Paçoca no mundo mágico das Histórias</div><div class="d">Núcleo de Artes ORI · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2018</div><div><div class="t">O Pagador de Promessas</div><div class="d">Dias Gomes · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2018</div><div><div class="t">Esquetes: Calabar, Black Tie, Ópera do Malandro, Vestido de Noiva</div><div class="d">Curso Livre de Teatro</div></div></div>
-        <div class="row"><div class="y">2018</div><div><div class="t">O Tango dos Assassinos</div><div class="d">Esquete · Festival de Esquetes de Campos</div></div></div>
-        <div class="row"><div class="y">2017–18</div><div><div class="t">Coisas da Gente</div><div class="d">Grupo Tubo de Ensaio · Fest. Doces Palavras · Projeto 1001 Espetáculos</div></div></div>
-        <div class="row"><div class="y">2017</div><div><div class="t">Sonhos de uma noite de verão</div><div class="d">Oberon, Rei dos Elfos · Shakespeare · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2017</div><div><div class="t">Exercício Cênico — Musical</div><div class="d">Dançarino (Grease e Valerie) · Curso Livre de Teatro</div></div></div>
-        <div class="row"><div class="y">2012–18</div><div><div class="t">Paixão de Cristo</div><div class="d">Tiago, Pedro, João e Judas · Dir. Pedro Carneiro · Praça São Salvador</div></div></div>
-      </div>
-
-      <div class="group">
-        <h3>Sonoplastia e projeções <span>7</span></h3>
-        <div class="row"><div class="y">2026</div><div><div class="t">Cinzas</div><div class="d">Sonoplastia · Coletivo Teatral Àkàrà · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2026</div><div><div class="t">Hamlet não. Horácio!</div><div class="d">Sonoplastia e projeção · Ruptura Cia de Arte · Dir. Fernando Rossi</div></div></div>
-        <div class="row"><div class="y">2025</div><div><div class="t">Conversas com Chocolate</div><div class="d">Projeções cênicas · Dir. Fernando Rossi · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2024</div><div><div class="t">"fernandos" em busca de Pessoa</div><div class="d">Sonoplastia e projeções · Dir. Fernando Rossi · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2024</div><div><div class="t">O Beijo da Mulher Aranha</div><div class="d">Som e projeção · Dir. Fernando Rossi · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2022</div><div><div class="t">O Julgamento de Lucifer</div><div class="d">Sonoplastia · Dir. Fernando Rossi · Teatro de Bolso</div></div></div>
-        <div class="row"><div class="y">2022</div><div><div class="t">Anti-Amor</div><div class="d">Sonoplastia · Dir. Rodri Mendes · Campos/RJ</div></div></div>
-      </div>
-
-      <div class="group">
-        <h3>Dublagem e formação <span>2</span></h3>
-        <div class="row"><div class="y">Atual</div><div><div class="t">Reino em Cena</div><div class="d">Dublador · Segunda Igreja Batista · @reinoemcenaoficial</div></div></div>
-        <div class="row"><div class="y">Atual</div><div><div class="t">Curso Livre de Teatro</div><div class="d">Formação continuada · Campos dos Goytacazes, RJ</div></div></div>
-      </div>
-
-      <div class="group">
-        <h3>Habilidades</h3>
-        <div class="skills">
-          <span>Drama</span><span>Comédia</span><span>Teatro musical</span><span class="g">Direção</span><span class="g">Roteiro</span>
-          <span>Dublagem</span><span>Narração e locução</span><span>Sonoplastia</span><span>Projeções cênicas</span>
-          <span>Assistência de direção</span><span>Português (nativo)</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot"><span><b>Nathan Silva</b> · nathan_nunes92@hotmail.com · (22) 99710-6833</span><span>portfolio-artistico.vercel.app</span><span>3 / 3</span></div>
-  </div>
-</div>
-
+<script src="site/pdf-dados.js"></script>
 <script>
-  if (new URLSearchParams(location.search).has('print')) {
-    Promise.all([
-      document.fonts ? document.fonts.ready : Promise.resolve(),
-      new Promise(r => window.addEventListener('load', r, { once: true }))
-    ]).then(() => setTimeout(() => window.print(), 400));
+(async () => {
+  const { carregar, producoes, h, area, legenda, anosDeCarreira, mesAno, MINI, CONTATO: C, finalizar } = window.PDF;
+  const folha = document.getElementById('folha');
+  const pares = (a) => a.reduce((acc, x, i) => (i % 2 ? acc[acc.length - 1].push(x) : acc.push([x]), acc), []);
+  try {
+    const { itens, premios, destaques } = await carregar();
+
+    // capa
+    folha.append(h('section', { class: 'capa' },
+      h('img', { class: 'capa__foto', src: 'site/img/palco.webp', alt: '' }),
+      h('div', { class: 'capa__topo' }, h('span', { text: 'Portfólio artístico' }), h('span', { text: `${C.cidade} · ${mesAno()}` })),
+      h('div', { class: 'capa__base' },
+        h('h1', {}, 'Nathan', h('br'), h('em', { text: 'Silva' })),
+        h('p', { class: 'capa__areas', text: C.areas }),
+        h('div', { class: 'capa__linha' },
+          h('span', {}, h('b', { text: 'Em atividade desde 2012' })),
+          h('span', { text: C.email }), h('span', { text: C.fone }), h('span', { text: C.insta }), h('span', { text: C.site })))));
+
+    // apresentação
+    folha.append(h('section', { class: 'secao' },
+      h('h2', { text: 'Apresentação' }),
+      h('p', { class: 'sub', text: 'Minicurrículo do agente cultural' }),
+      h('p', { class: 'mini', text: MINI }),
+      h('div', { class: 'numeros' },
+        h('div', {}, h('b', { text: String(producoes(itens)) }), h('small', { text: 'produções artísticas' })),
+        h('div', {}, h('b', { text: String(anosDeCarreira()) }), h('small', { text: 'anos de atuação' })),
+        h('div', {}, h('b', { text: String(itens.filter((i) => area(i) === 'teatro').length) }), h('small', { text: 'trabalhos em teatro' })),
+        h('div', {}, h('b', { text: String(premios.length) }), h('small', { text: 'curtas premiados' }))),
+      h('h3', { text: 'Prêmios e seleções' }),
+      h('ul', { class: 'premios' }, premios.flatMap((p) => p.premio.split(/\s*·\s*/).map((pr) =>
+        h('li', {}, h('span', {}, h('b', { text: `${p.titulo} (${p.ano})` }), ' — ', pr)))))));
+
+    // registros fotográficos
+    folha.append(h('section', { class: 'secao secao--segue' },
+      h('h2', { text: 'Registros dos trabalhos' }),
+      h('p', { class: 'sub', text: 'Fotos, cartazes e frames, com ano, função, realização, local e link de comprovação.' }),
+      h('table', { class: 'registros' }, h('tbody', {}, pares(destaques.map(({ w, foto }) => {
+        const L = legenda(w);
+        const link = (w.links || [])[0];
+        const linha = (k, v) => (v ? [h('dt', { text: k }), h('dd', {}, v)] : []);
+        const cartaz = /cartaz/i.test(foto);
+        return h('article', { class: 'reg' },
+          h('div', { class: 'reg__moldura' }, h('img', { class: 'reg__img' + (cartaz ? ' reg__img--cartaz' : '') + (/CuZQeJSKTEY/.test(foto) ? ' reg__img--zoom' : ''), src: foto, alt: `Registro de ${w.title}` })),
+          h('div', { class: 'reg__txt' },
+            h('p', { class: 'reg__ano', text: `${w.year} · ${w.tagline ? w.tagline.split(/ — /)[0] : ''}` }),
+            h('h3', { class: 'reg__tit', text: w.title }),
+            h('dl', {},
+              linha('Função', L.funcao),
+              linha('Direção', L.direcao),
+              linha('Realização', L.grupo),
+              linha('Local', L.local),
+              linha('Foto', L.foto),
+              link ? linha('Link', h('a', { href: link.url, text: link.label + ' ↗' })) : [])));
+      })).map((par) => h('tr', {}, par.map((c) => h('td', {}, c)), par.length < 2 ? h('td') : null))))));
+
+    // comprovações
+    const comLinks = itens.filter((it) => it.fontes.length);
+    folha.append(h('section', { class: 'secao' },
+      h('h2', { text: 'Comprovações de atuação' }),
+      h('p', { class: 'sub', text: 'Matérias, publicações e registros online de cada trabalho (links clicáveis no PDF; endereço completo para conferência).' }),
+      h('table', { class: 'compr' },
+        h('thead', {}, h('tr', {}, ['Ano', 'Trabalho', 'Fonte'].map((t) => h('th', { text: t })))),
+        h('tbody', {}, comLinks.map((it) => h('tr', {},
+          h('td', { text: it.ano }),
+          h('td', { text: it.titulo }),
+          h('td', {}, it.fontes.map((f) => h('div', {}, h('a', { href: f.u, text: f.t + ' ↗' }), h('span', { class: 'url', text: f.u }))))))))),
+      h('footer', { class: 'fim' },
+        h('span', { text: `${C.nome} · ${C.email} · ${C.fone} · ${C.insta}` }),
+        h('span', {}, 'Vídeos e ficha completa: ', h('a', { href: C.siteUrl, text: C.site }))));
+  } catch (e) {
+    folha.append(h('p', { class: 'erro', text: 'Não foi possível montar o portfólio: ' + e.message }));
   }
+  await finalizar();
+})();
 </script>
 </body>
 </html>
