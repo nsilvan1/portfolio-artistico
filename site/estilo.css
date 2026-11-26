@@ -357,53 +357,84 @@ svg { display: block; }
 .redondo svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ---------- Trajetória ---------- */
-.filtros { max-width: var(--container); margin: 0 auto 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-.filtro {
-  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px; border-radius: 99px;
-  background: rgba(255,255,255,.05); border: 1px solid var(--borda); color: var(--texto-2); font-weight: 600; font-size: .9375rem;
-  transition: background .2s, color .2s, border-color .2s;
+/* filtros por área: controle segmentado com ícone, nome e contagem */
+.filtros {
+  width: fit-content; max-width: 100%; margin: 0 auto 26px; display: flex; gap: 4px; padding: 5px;
+  border-radius: 99px; background: rgba(255,255,255,.03); border: 1px solid var(--borda);
+  overflow-x: auto; scrollbar-width: none;
 }
-.filtro::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--cor); }
-.filtro small { font-weight: 500; opacity: .75; }
-.filtro:hover { color: var(--texto); }
-.filtro[aria-pressed="true"] { background: color-mix(in srgb, var(--cor) 18%, transparent); border-color: var(--cor); color: var(--texto); }
+.filtros::-webkit-scrollbar { display: none; }
+.filtro {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 38px; padding: 0 10px 0 12px; border-radius: 99px;
+  border: 0; background: transparent; color: var(--texto-2); font-weight: 600; font-size: .875rem; white-space: nowrap;
+  transition: background .25s var(--ease), color .2s, box-shadow .25s;
+}
+.filtro svg { width: 16px; height: 16px; fill: none; stroke: var(--cor); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+.filtro small {
+  min-width: 22px; height: 20px; padding: 0 6px; display: inline-grid; place-items: center; border-radius: 99px;
+  background: rgba(255,255,255,.07); font-size: .6875rem; font-weight: 700; color: var(--texto-2); transition: background .2s, color .2s;
+}
+.filtro:hover { color: var(--texto); background: rgba(255,255,255,.05); }
+.filtro[aria-pressed="true"] {
+  color: var(--texto); background: color-mix(in srgb, var(--cor) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cor) 50%, transparent);
+}
+.filtro[aria-pressed="true"] svg { opacity: 1; }
+.filtro[aria-pressed="true"] small { background: var(--cor); color: #10101a; }
 
 /* duas colunas: anos à esquerda, painel do ano à direita */
-.traj { max-width: var(--container); margin: 0 auto; display: grid; gap: 20px; }
-@media (min-width: 900px) { .traj { grid-template-columns: 200px minmax(0, 1fr); gap: clamp(28px, 4vw, 48px); align-items: start; } }
+.traj { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
 
+/* linha do tempo horizontal: anos sobre uma linha, o escolhido no centro */
+.seletor-anos { position: relative; display: flex; align-items: center; gap: 2px; min-width: 0; width: 100%; max-width: 880px; margin: 0 auto; user-select: none; }
 .linha-anos {
-  display: flex; gap: 4px; overflow-x: auto; padding: 6px; border-radius: 18px;
-  background: rgba(255,255,255,.03); border: 1px solid var(--borda);
-  scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: var(--noite-3) transparent;
+  --item: 104px;
+  flex: 1; min-width: 0; position: relative; display: flex; overflow-x: auto; overflow-y: hidden;
+  padding: 6px calc(50% - var(--item) / 2) 4px;
+  scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; cursor: grab;
+  background: linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)) 0 17px / 100% 2px no-repeat;   /* trilho fixo por toda a largura */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
 }
+.linha-anos::-webkit-scrollbar { display: none; }
+.is-arrastando .linha-anos { scroll-snap-type: none; cursor: grabbing; }
 .ano-aba {
-  flex: none; scroll-snap-align: start; position: relative; display: grid; justify-items: start; gap: 2px;
-  min-width: 92px; min-height: 56px; padding: 8px 14px; border-radius: 12px; border: 0; background: transparent; text-align: left;
-  color: var(--texto-2); transition: background .25s var(--ease), color .2s;
+  flex: none; width: var(--item); position: relative; display: grid; justify-items: center; gap: 6px;
+  padding: 0 0 6px; border: 0; background: transparent; color: var(--texto-2); scroll-snap-align: center;
+  opacity: calc(1 - var(--d, 0) * .17);
+  transition: color .2s;
 }
-.ano-aba__ano { font-family: var(--f-tit); font-weight: 800; font-size: 1.0625rem; letter-spacing: -.02em; line-height: 1.1; white-space: nowrap; }
-.ano-aba small { font-weight: 500; font-size: .75rem; color: var(--texto-2); }
-.ano-aba__barra { display: none; }
-.ano-aba:hover { color: var(--texto); background: rgba(255,255,255,.05); }
-.ano-aba[aria-selected="true"] { color: var(--texto); background: color-mix(in srgb, var(--coral) 16%, transparent); }
-.ano-aba[aria-selected="true"] .ano-aba__ano { color: var(--coral); }
-.ano-aba:disabled { opacity: .3; cursor: default; }
-@media (min-width: 900px) {
-  .linha-anos { position: sticky; top: 24px; flex-direction: column; overflow: visible; padding: 8px; gap: 2px; }
-  .ano-aba { width: 100%; min-height: 0; padding: 9px 12px 11px 16px; grid-template-columns: 1fr auto; align-items: baseline; }
-  .ano-aba small { font-size: .75rem; }
-  .ano-aba::before {   /* marcador do ano escolhido */
-    content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 3px; background: var(--coral);
-    transform: scaleY(0); transition: transform .3s var(--mola);
-  }
-  .ano-aba[aria-selected="true"]::before { transform: scaleY(1); }
-  .ano-aba__barra {   /* quantidade de trabalhos no ano */
-    display: block; grid-column: 1 / -1; height: 3px; margin-top: 5px; border-radius: 3px; background: rgba(255,255,255,.07); overflow: hidden; position: relative;
-  }
-  .ano-aba__barra::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--peso); background: rgba(255,255,255,.28); border-radius: 3px; }
-  .ano-aba[aria-selected="true"] .ano-aba__barra::after { background: var(--coral); }
+.ano-aba::before {   /* trilho da linha do tempo */
+  content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: rgba(255,255,255,.12);
 }
+.ano-aba__ponto {
+  position: relative; width: 12px; height: 12px; margin: 5px 0 2px; border-radius: 50%;
+  background: var(--noite); border: 2px solid rgba(255,255,255,.35);
+  transition: transform .3s var(--mola), background .2s, border-color .2s, box-shadow .3s;
+}
+.ano-aba__ano {
+  font-family: var(--f-tit); font-weight: 800; font-size: 1rem; letter-spacing: -.02em; line-height: 1; white-space: nowrap;
+  transform: scale(calc(1 - var(--d, 0) * .05)); transition: transform .25s var(--ease), color .2s;
+}
+.ano-aba small { font-size: .6875rem; font-weight: 500; color: var(--texto-2); white-space: nowrap; opacity: .8; }
+.ano-aba:hover { color: var(--texto); }
+.ano-aba:hover .ano-aba__ponto { border-color: var(--texto); }
+.ano-aba[aria-selected="true"] { color: var(--texto); }
+.ano-aba[aria-selected="true"] .ano-aba__ano { color: var(--coral); font-size: 1.25rem; }
+.ano-aba[aria-selected="true"] .ano-aba__ponto {
+  background: var(--coral); border-color: var(--coral); transform: scale(1.35);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--coral) 22%, transparent), 0 0 18px color-mix(in srgb, var(--coral) 60%, transparent);
+}
+.ano-aba[aria-selected="true"] small { color: var(--texto); opacity: 1; }
+.ano-aba:disabled { opacity: .2; cursor: default; }
+.seletor-anos__seta {
+  flex: none; width: 28px; height: 28px; margin-bottom: 22px; display: grid; place-items: center; border-radius: 50%;
+  border: 0; background: transparent; color: var(--texto-2); transition: background .2s, color .2s;
+}
+.seletor-anos__seta svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.seletor-anos__seta:hover:not(:disabled) { background: rgba(255,255,255,.08); color: var(--texto); }
+.seletor-anos__seta:disabled { opacity: .25; cursor: default; }
+@media (max-width: 560px) { .linha-anos { --item: 84px; } }
 
 .anos { min-width: 0; }
 .ano { display: grid; gap: 18px; }

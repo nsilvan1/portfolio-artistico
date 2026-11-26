@@ -355,7 +355,6 @@
     const alvo = $('#anos'), linha = $('#linha-anos');
     const anos = [];
     const caps = $$('.chapter', doc);
-    const maxItens = Math.max(1, ...caps.map((c) => $$('.work', c).length));
     caps.forEach((cap, idx) => {
       const ano = txt($('.chapter__year', cap));
       const itens = $$('.work', cap).map((w) => {
@@ -399,9 +398,8 @@
       const painel = h('section', { class: 'ano', id, role: 'tabpanel', 'aria-label': ano, hidden: true },
         h('header', { class: 'ano__cab' }, h('h3', { class: 'ano__num', text: rotulo }), qtdPainel),
         h('ul', { class: 'ano__lista' }, itens));
-      const aba = h('button', { type: 'button', class: 'ano-aba', role: 'tab', 'aria-controls': id, 'aria-selected': 'false', tabindex: '-1',
-        style: `--peso:${Math.round((itens.length / maxItens) * 100)}%` },
-        h('span', { class: 'ano-aba__ano', text: rotulo }), h('small'), h('span', { class: 'ano-aba__barra', 'aria-hidden': 'true' }));
+      const aba = h('button', { type: 'button', class: 'ano-aba', role: 'tab', 'aria-controls': id, 'aria-selected': 'false', tabindex: '-1' },
+        h('span', { class: 'ano-aba__ponto', 'aria-hidden': 'true' }), h('span', { class: 'ano-aba__ano', text: rotulo }), h('small'));
       aba._qtdPainel = qtdPainel;
       aba.addEventListener('click', () => escolher(anos.indexOf(reg)));
       const reg = { aba, painel, itens };
@@ -409,6 +407,73 @@
       linha.append(aba);
       alvo.append(painel);
     });
+
+    // linha do tempo horizontal: o ano escolhido fica no centro, arrastável para os lados
+    const ant = h('button', { type: 'button', class: 'seletor-anos__seta', 'aria-label': 'Ano mais recente' }, svgEl('M15 6l-6 6 6 6'));
+    const prox = h('button', { type: 'button', class: 'seletor-anos__seta', 'aria-label': 'Ano mais antigo' }, svgEl('M9 6l6 6-6 6'));
+    const seletor = h('div', { class: 'seletor-anos' });
+    linha.before(seletor);
+    seletor.append(ant, linha, prox);
+    linha.setAttribute('aria-orientation', 'horizontal');
+    const vizinho = (de, dir) => { let j = de; do { j += dir; } while (anos[j] && anos[j].aba.disabled); return anos[j] ? j : -1; };
+    ant.addEventListener('click', () => escolher(vizinho(atual, -1)));
+    prox.addEventListener('click', () => escolher(vizinho(atual, 1)));
+
+    const centroDe = (a) => a.offsetLeft + a.offsetWidth / 2;
+    // ano (habilitado) mais perto do centro
+    function maisPerto() {
+      const c = linha.scrollLeft + linha.clientWidth / 2;
+      let best = -1, dist = Infinity;
+      anos.forEach((a, j) => { if (a.aba.disabled) return; const d = Math.abs(centroDe(a.aba) - c); if (d < dist) { dist = d; best = j; } });
+      return best;
+    }
+    // anos longe do centro ficam menores e mais apagados
+    let pinta = 0;
+    function pintar() {
+      pinta = 0;
+      const c = linha.scrollLeft + linha.clientWidth / 2;
+      anos.forEach(({ aba }) => {
+        const d = Math.abs(centroDe(aba) - c) / aba.offsetWidth;
+        aba.style.setProperty('--d', Math.min(d, 4).toFixed(3));
+      });
+    }
+    let fimRolagem = 0, arrastando = false;
+    linha.addEventListener('scroll', () => {
+      if (!pinta) pinta = requestAnimationFrame(pintar);
+      clearTimeout(fimRolagem);
+      fimRolagem = setTimeout(() => { if (arrastando) return; const j = maisPerto(); if (j >= 0 && j !== atual) escolher(j); }, 140);
+    }, { passive: true });
+    // roda do mouse (vertical) também anda pela linha do tempo
+    linha.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      e.preventDefault();
+      linha.scrollBy({ left: e.deltaY, behavior: 'auto' });
+    }, { passive: false });
+
+    // arrastar com o mouse (no toque a rolagem nativa já resolve)
+    let x0 = 0, esq0 = 0, moveu = false;
+    linha.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      arrastando = true; moveu = false; x0 = e.clientX; esq0 = linha.scrollLeft;
+      linha.setPointerCapture(e.pointerId);
+    });
+    linha.addEventListener('pointermove', (e) => {
+      if (!arrastando) return;
+      const dx = e.clientX - x0;
+      if (!moveu && Math.abs(dx) < 4) return;
+      if (!moveu) { moveu = true; seletor.classList.add('is-arrastando'); }
+      linha.scrollLeft = esq0 - dx;
+    });
+    const soltar = () => {
+      if (!arrastando) return;
+      arrastando = false;
+      seletor.classList.remove('is-arrastando');
+      if (moveu) { const j = maisPerto(); if (j >= 0) escolher(j, j === atual); }
+    };
+    linha.addEventListener('pointerup', soltar);
+    linha.addEventListener('pointercancel', soltar);
+    // depois de arrastar, o clique que vem junto não troca de ano
+    linha.addEventListener('click', (e) => { if (moveu) { e.stopPropagation(); e.preventDefault(); moveu = false; } }, true);
 
     let atual = -1;
     function escolher(i, semAnimar) {
@@ -420,9 +485,12 @@
         a.painel.hidden = !sel;
       });
       atual = i;
-      // rola só a barra de anos (na horizontal), nunca a página
+      // centraliza o ano na linha do tempo (rola só o seletor, nunca a página)
       const aba = anos[i].aba;
-      linha.scrollTo({ left: aba.offsetLeft - linha.clientWidth / 2 + aba.offsetWidth / 2, behavior: reduz ? 'auto' : 'smooth' });
+      linha.scrollTo({ left: centroDe(aba) - linha.clientWidth / 2, behavior: reduz || semAnimar ? 'auto' : 'smooth' });
+      ant.disabled = vizinho(i, -1) < 0;
+      prox.disabled = vizinho(i, 1) < 0;
+      if (!pinta) pinta = requestAnimationFrame(pintar);
       if (semAnimar || reduz) return;
       // entrada 3D em cascata
       const vis = anos[i].itens.filter((t) => !t.hidden);
@@ -448,13 +516,13 @@
     if (contProd) { contProd.textContent = String(nProd); contProd.dataset.contar = String(nProd); }
     const ativos = new Set();
     const filtros = $('#filtros');
-    const bTodos = h('button', { type: 'button', class: 'filtro', 'aria-pressed': 'true', style: '--cor:var(--texto)' }, 'Tudo ', h('small', { text: String(todos.length) }));
+    const bTodos = h('button', { type: 'button', class: 'filtro', 'aria-pressed': 'true', style: '--cor:var(--texto)' }, svgEl('M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z'), 'Tudo', h('small', { text: String(todos.length) }));
     filtros.append(bTodos);
     const botoes = [];
     AREAS.forEach(([k, nome, cor]) => {
       const q = todos.filter((t) => t.dataset.tipo === k).length;
       if (!q) return;
-      const b = h('button', { type: 'button', class: 'filtro', 'aria-pressed': 'false', style: `--cor:${cor}` }, nome + ' ', h('small', { text: String(q) }));
+      const b = h('button', { type: 'button', class: 'filtro', 'aria-pressed': 'false', style: `--cor:${cor}` }, svgEl(ICONES[k]), nome, h('small', { text: String(q) }));
       b.addEventListener('click', () => {
         ativos.has(k) ? ativos.delete(k) : ativos.add(k);
         b.setAttribute('aria-pressed', String(ativos.has(k)));
@@ -472,6 +540,7 @@
         a.aba.disabled = n === 0;
         const rot = n === 1 ? '1 trabalho' : `${n} trabalhos`;
         a.aba.querySelector('small').textContent = rot;
+        a.aba.setAttribute('aria-label', `${a.aba.firstChild.textContent}: ${rot}`);
         a.aba._qtdPainel.textContent = rot;
       });
       // se o ano aberto ficou vazio, pula para o primeiro com trabalhos
