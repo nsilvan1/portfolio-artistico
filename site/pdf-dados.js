@@ -105,7 +105,7 @@
   }
 
   // mesma produção em mais de um ano (circulação, nova temporada) conta uma vez só
-  const producoes = (itens) => new Set(itens.map((i) => i.titulo.replace(/\s*\((circulação|nova temporada|nova apresentação)\)\s*$/i, ''))).size;
+  const producoes = (itens) => new Set(itens.map((i) => i.titulo.replace(/\s*\((circulação|nova temporada|nova apresentação|leitura dramatizada)\)\s*$/i, ''))).size;
   const anosDeCarreira = () => new Date().getFullYear() - 2012;
   const mesAno = () => new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' });
 

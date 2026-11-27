@@ -511,7 +511,7 @@
     // filtros por área
     const todos = anos.flatMap((a) => a.itens);
     // produções únicas (circulação / nova temporada contam uma vez só)
-    const nProd = new Set(todos.map((t) => (t.querySelector('.trab__titulo')?.firstChild?.textContent || '').replace(/\s*\((circulação|nova temporada|nova apresentação)\)\s*$/i, '').trim())).size;
+    const nProd = new Set(todos.map((t) => (t.querySelector('.trab__titulo')?.firstChild?.textContent || '').replace(/\s*\((circulação|nova temporada|nova apresentação|leitura dramatizada)\)\s*$/i, '').trim())).size;
     const contProd = $('[data-producoes]');
     if (contProd) { contProd.textContent = String(nProd); contProd.dataset.contar = String(nProd); }
     const ativos = new Set();
